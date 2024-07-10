@@ -83,7 +83,7 @@ const BasicDetails = () => {
                 <center>Basic Details</center>
               </div>
               <div className="card-body">
-                <Table striped bordered hover>
+                <Table >
                   <tbody>
                     <tr>
                       <th>Sign</th>
@@ -125,26 +125,7 @@ const BasicDetails = () => {
                       <th>Paya</th>
                       <td>{kundliAstroDetails ? kundliAstroDetails.paya : ""}</td>
                     </tr>
-                    <tr>
-                      <th>Nakshatra</th>
-                      <td>{kundliBirthDetails ? kundliBirthDetails.nakshatra : ""}</td>
-                    </tr>
-                    <tr>
-                      <th>Nakshatra Lord</th>
-                      <td>{kundliBirthDetails ? kundliBirthDetails.nakshatraLord : ""}</td>
-                    </tr>
-                    <tr>
-                      <th>Moon Sign</th>
-                      <td>{kundliBirthDetails ? kundliBirthDetails.moonSign : ""}</td>
-                    </tr>
-                    <tr>
-                      <th>Sun Sign</th>
-                      <td>{kundliBirthDetails ? kundliBirthDetails.sunSign : ""}</td>
-                    </tr>
-                    <tr>
-                      <th>Ascendant</th>
-                      <td>{kundliBirthDetails ? kundliBirthDetails.ascendant : ""}</td>
-                    </tr>
+                   
                   </tbody>
                 </Table>
               </div>
