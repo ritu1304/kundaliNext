@@ -186,3 +186,26 @@ button[type="button"] {
 }
 
 /* Inventory */
+.tableBody {
+  text-align: center;
+
+}
+
+.tableHead {
+  text-align: center;
+
+  font-weight: bold;
+}
+
+.tableHead th {
+
+  color: #9C4018 !important;
+  font-weight: bold;
+}
+
+.tableHeadBirth {
+  text-align: center;
+  background-color: #9C4018;
+  color: white;
+  font-weight: bold;
+}

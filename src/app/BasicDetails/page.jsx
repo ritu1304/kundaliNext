@@ -27,6 +27,7 @@ const fetchAstroDetails = async (param) => {
     body: JSON.stringify(param),
   });
   const data = await response.json();
+  console.log("==data===", response)
   return data;
 };
 
