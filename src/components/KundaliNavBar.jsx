@@ -6,7 +6,6 @@ const Navbar = () => {
     <nav className="kundliNvRow ">
       <ul className="navbar-nav kundliSubNav">
         <li className="nav-item1 p-1  linksTab"><Link href="/BasicDetails" className="nav-link1" activeClassName="nav_link1"><p>Basic Details</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/DashaReport" className="nav-link1" activeClassName="nav_link1"><p>DashaReport</p></Link></li>
         <li className="nav-item1 p-1  linksTab"><Link href="/AshtakVarga" className="nav-link1" activeClassName="nav_link1"><p>Ashtak Varga</p></Link></li>
         <li className="nav-item1 p-1  linksTab"><Link href="/BioRhythm" className="nav-link1" activeClassName="nav_link1"><p>BioRhythm</p></Link></li>
         <li className="nav-item1 p-1  linksTab"><Link href="/DailyPrediction" className="nav-link1" activeClassName="nav_link1"><p>Daily Prediction</p></Link></li>
