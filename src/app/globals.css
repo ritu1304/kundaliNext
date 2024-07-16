@@ -209,3 +209,1531 @@ button[type="button"] {
   color: white;
   font-weight: bold;
 }
+/* HOroscope */
+.h1_color {
+  color: #fa8a00;
+  text-shadow: 2px 2px 3px #433838;
+}
+
+.cModalHeaderCSS {
+  background: #8E2E0F !important;
+  color: white;
+}
+
+.mtopcss {
+  margin-top: 10%;
+}
+
+.zodiac_sign_img img {
+  width: 50%;
+  margin-left: 26%;
+  margin-top: 15px;
+}
+
+.horascope {
+  /* width: 85vw; */
+  margin-left: 3vw;
+}
+
+.text_signs {
+  color: white;
+  font-size: 26px;
+  margin-top: 6px;
+}
+
+.for_date {
+  margin-left: 30%;
+  font-family: system-ui;
+}
+
+.for-manage {
+  margin-top: 15px;
+}
+
+
+.form-horizontal {
+  width: 50vw;
+  margin-left: 24vw;
+}
+
+.text_for_h1 {
+  float: left;
+  margin-left: 30%;
+}
+
+.for_imgs {
+  width: 10%;
+}
+
+.backgraound_h1 {
+  height: 20px;
+  width: 100%;
+}
+
+.for_line {
+  background-color: #F29726;
+  height: 10px;
+  margin: 0px;
+  padding: opx;
+}
+
+.inner-tex {
+  margin-top: 2%;
+}
+
+.heading {
+  color: #8E2E0F;
+  font-weight: bold;
+}
+
+.pull {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-right: -4%;
+  background-color: #F29726;
+  border-radius: 30px;
+  color: white;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.find_now_css {
+  color: #8E2E0F;
+  font-weight: bold;
+  border-bottom: 3px solid #8E2E0F;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.pull2 {
+  font-size: 23px;
+  background-color: #F29726;
+  border-radius: 30px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.for_paragraph {
+  font-size: -16px
+}
+
+.control {
+  margin-bottom: 8px;
+  /* background: white !important; */
+}
+
+.manage_input_box {
+  width: 40vw;
+  margin-left: 26vw;
+}
+
+.control_for_btn {
+  font-size: 18px;
+  background-color: #F29726;
+  border-radius: 25px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.for_lables {
+  font-size: 20px;
+}
+
+.border_modal {
+  border: 6px solid rgb(226 143 21);
+}
+
+hr:not([size]) {
+  height: 1px;
+}
+
+.horoscope_text {
+  /* height: 20vh; */
+  /* padding: 10px;
+   background-color: #8E2E0F;
+   opacity:90% ;
+
+    width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0px 100px 0px 100px; */
+  /* margin-top: -73px; */
+  height: 15vh;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -73px;
+  /* border: 2px solid black; */
+
+
+}
+
+.horotext {
+  border: 5px solid white;
+  border-radius: 0px 100px 0px 100px;
+  height: 15vh;
+  width: 100%;
+  /* margin-left: 18px; */
+  padding: 5px;
+  color: white;
+  opacity: 100% !important;
+  ;
+
+}
+
+.horoscope_text2 {
+  text-align: center;
+  margin-top: 30px;
+  color: #fa8a00;
+  /* margin-top: 10%; */
+  font-family: "Gill Sans", sans-serif;
+}
+
+.horoImage {
+  /* height: 35vh;  */
+  height: 35vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -5%;
+}
+
+/* .yourDay{
+  text-align: center;
+  margin-top: 30px;
+  color: #8E2E0F;
+  margin-top: -125px;
+  font-family: "Gill Sans", sans-serif;
+} */
+.yourDay {
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  margin-left: 19%;
+  color: #8E2E0F;
+  margin-top: -198px;
+  font-family: "Gill Sans";
+}
+
+.boxText {
+  margin-top: -20px;
+}
+
+.select_DatePicker_horoscope {
+  border-radius: 20px;
+  height: 40px;
+  width: 25%;
+  border: 0px solid;
+  color: white !important;
+  margin-top: 1%;
+  margin-left: 5%;
+  text-align: center;
+  box-shadow: 2px 4px 6px 0px #433838;
+  background-color: #8E2E0F !important;
+}
+
+.moonSignPredictionBtn {
+  border-radius: 8px;
+  height: 60px;
+  color: white !important;
+  text-align: center;
+  box-shadow: 2px 4px 6px 0px #433838;
+  background-color: #8E2E0F !important;
+}
+
+.label_horoscope {
+
+  font-size: 22px;
+  color: #c46e05;
+  margin-left: 11%;
+
+}
+
+.horModalCardHead {
+  background-color: #8E2E0F !important;
+  padding: 9px;
+
+}
+
+.HoroscopeModalBody {
+  /* width: 1000px; */
+  background-color: white;
+  /* margin-top: -8px; */
+
+}
+
+.modalData1 {
+  border-right: 2px solid #8E2E0F;
+}
+
+.borderBottom {
+  border-bottom: 2px solid #8E2E0F;
+}
+
+.horoHeadingColor {
+  color: #8E2E0F;
+
+}
+.close-button1 {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #8E2E0F;
+}
+
+.close-button:hover {
+  color: #8E2E0F;
+}
+
+.horaaName {
+  text-align: center;
+  font-family: system-ui;
+  color: #8E2E0F;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+
+
+.modal_bg_color1 {
+  background-color: #FFFFAA !important;
+  border-radius: 15px;
+}
+
+.manage_prediction {
+  top: 50%;
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  position: absolute;
+  /* width: 100%; */
+
+}
+
+.show {
+  opacity: 1;
+  /* top: calc(56% + 0em) !important; */
+}
+
+.headerDate {
+  color: white;
+  /* font-size: 26px; */
+  margin-top: 6px;
+}
+
+.paragraphHoro {
+  text-align: justify;
+}
+
+.underlineSun {
+  height: 4px;
+  background-color: #8E2E0F;
+  width: 44%;
+  margin-top: 0px;
+  margin-bottom: 13px;
+  margin-left: 28%;
+}
+
+.zodiacSigns {
+  /* margin-left: -41px; */
+}
+
+.moonPrediction {
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 44%;
+}
+
+.westernHighlight {
+  /* background-color: green; */
+  border-bottom: 3px solid #8E2E0F;
+  /* border-radius: 10px; */
+  /* padding: 6%; */
+  /* box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 5%) 0px 12px 13px, rgb(0 0 0 / 4%) 0px -3px 5px; */
+  margin-top: 3px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.wishesImage {
+  margin-left: -7%;
+}
+
+.frameRow {
+  margin-top: -7%;
+  margin-bottom: -6%;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.zoom {
+  transition: transform .2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+.zodiacModal {
+  margin-left: 100px;
+  
+  height: 100%;
+
+}
+
+.Xsign {
+  color: white;
+
+}
+.zodiacModal_for_width{
+  display: flex;
+  align-items: center;
+  width: 600px !important;
+}
+@media (min-width: 1201px) {
+  .zodiacModal_for_width{
+      width: 1300px !important;
+  }
+}
+@media (min-width: 1020px) and (max-width: 1200px) {
+  .zodiacModal_for_width{
+      width: 900px !important;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+
+  .yourDay {
+      z-index: 1;
+      position: absolute;
+      text-align: center;
+      margin-left: 23%;
+      color: #8E2E0F;
+      margin-top: -198px;
+      font-family: "Gill Sans";
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .wishesImage {
+      margin-left: -27%;
+      width: 154%;
+
+  }
+
+  .yourDay {
+      z-index: 1;
+      position: absolute;
+      /* text-align: center; */
+      margin-left: 11%;
+      color: #8E2E0F;
+      /* margin-top: -138px; */
+      font-family: "Gill Sans";
+      font-size: 20px;
+      font-weight: bolder;
+  }
+
+  /* .ZodiacImagesSigns {
+      display: none;
+  } */
+
+  .select_DatePicker_horoscope_sun {
+      border-radius: 5px;
+      /* padding: 10px; */
+      height: 60px;
+      /* width: 100%; */
+      /* border: 0px solid; */
+      color: white !important;
+      margin-top: 2%;
+      /* margin-left: 16%; */
+      text-align: center;
+      box-shadow: 2px 4px 6px 0px #433838;
+      background-color: #8E2E0F !important;
+  }
+
+  .headerDate {
+      margin-left: 0px;
+      margin-top: 0px;
+  }
+
+
+  .label_horoscope {
+      font-size: 13px;
+
+      margin-left: 6%;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wishesImage {
+      margin-left: -27%;
+      width: 154%;
+
+  }
+
+  .yourDay {
+      z-index: 1;
+      position: absolute;
+      /* text-align: center; */
+      margin-left: 11%;
+      color: #8E2E0F;
+      margin-top: -138px;
+      font-family: "Gill Sans";
+      font-size: 14px;
+      font-weight: bolder;
+  }
+
+
+  .select_DatePicker_horoscope_sun {
+      border-radius: 5px;
+      height: 60px;
+      color: white !important;
+      margin-top: 2%;
+      /* margin-left: 16%; */
+      text-align: center;
+      box-shadow: 2px 4px 6px 0px #433838;
+      background-color: #8E2E0F !important;
+  }
+
+  .Xsign {
+      margin-left: 61%;
+
+
+  }
+
+  .label_horoscope {
+      font-size: 13px;
+
+      margin-left: 6%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .horoRow {
+      margin-top: 21%;
+  }
+
+  .wishesImage {
+      margin-left: 0%;
+      width: 100%;
+      display: none;
+
+  }
+
+  .borderBottom {
+      border-bottom: 0px;
+  }
+
+  .modalData1 {
+      border-right: 0px;
+  }
+
+  .yourDay {
+      z-index: 1;
+      position: absolute;
+      /* text-align: center; */
+      margin-left: -8%;
+      color: #8E2E0F;
+      margin-top: 28px;
+      font-family: "Gill Sans";
+      font-size: 15px;
+      font-weight: bolder;
+  }
+
+  .ZodiacImagesSigns {
+      display: none;
+  }
+
+  .select_DatePicker_horoscope_sun {
+      border-radius: 5px;
+      height: 36px;
+      width: 100%;
+      color: white !important;
+      margin-top: 2%;
+      text-align: center;
+      box-shadow: 2px 4px 6px 0px #433838;
+      background-color: #8E2E0F !important;
+  }
+
+  .zodiacModal_for_width {
+      margin-left: 4px;
+      width: 99%;
+
+  }
+
+  .zodiacSignImage {
+  }
+
+  .zodiacModal {
+      height: 92%;
+      margin-top: 6%;
+  }
+
+  .text_signs {
+      margin-left: -243px;
+      margin-top: -67px;
+  }
+
+  .headerDate {
+      margin-left: 196px;
+      margin-top: -64px;
+  }
+
+  .XsignCol {
+      margin-top: -10%;
+
+  }
+
+  .Xsign {
+      margin-left: 50%;
+      margin-top: 5%;
+
+
+  }
+
+  .label_horoscope {
+      font-size: 13px;
+
+      margin-left: 6%;
+  }
+}
+
+/* Contact css */
+.last_om_for_margin img {
+  margin-left: 45%;
+}
+
+.contect_us_form_control {
+  margin-bottom: 2%;
+
+}
+
+.flexx{
+  display: flex;
+  align-items: center;
+}
+
+.contect_us_form_control_message {
+  margin-bottom: 2%;
+  background-color: #FFA11D;
+  height: 60px;
+}
+
+.contect_us_submit_btn {
+  background-color: #8E2E0F;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  /* margin-left: -6px; */
+
+}
+
+.reach_out_action {
+  color: #8E2E0F;
+  font-weight: bold;
+}
+
+.find_nows {
+
+  background-color: #8E2E0F;
+  border: 2px solid linear-gradient(to bottom, #ffff66 0%, #ff9900 100%);
+  ;
+  margin-top: 2px;
+}
+
+.top_heading_contect_us {
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  /* font-family:Poppins semi bold ; */
+}
+
+.top_heading_contect_uss {
+  color: white;
+
+}
+
+/* .form-control{
+  color: aqua !important;
+} */
+.aa,
+::placeholder {
+  /* color: rgb(215, 45, 45)!important; */
+  color: rgb(105, 105, 105) !important;
+}
+
+.contactForm {
+  z-index: 1;
+  margin-top: -156%;
+  position: inherit;
+  width: 120%;
+  margin-left: -9%;
+}
+
+.PaymentText {
+  color: white;
+
+}
+
+.contactLinks {
+  margin-top: 13%;
+}
+
+.messageHeading {
+  color: #8E2E0F;
+}
+
+.DonateMoney {
+  background-color: #f5e16b;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  width: 90%;
+  color: black;
+}
+
+.DonateMoney:hover {
+  background-color: #8E2E0F !important;
+  transition: 0.7s;
+}
+
+.borderLineCards {
+  height: 4px;
+  background-color: #f5e16b;
+  width: 82%;
+  margin-bottom: 7px;
+  margin-top: -2%;
+
+}
+
+.borderLineUPI {
+  height: 4px;
+  background-color: #f5e16b;
+  width: 31%;
+  margin-bottom: 7px;
+  margin-top: -2%;
+
+}
+
+.mailId {
+  margin-top: 4%;
+  margin-left: -11%;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.phoneId {
+  margin-top: 4%;
+  margin-left: -11%;
+}
+
+.locationId {
+  margin-top: 4%;
+  margin-left: -9%;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.handImage {
+  margin-top: 15%;
+  margin-left: 8%;
+}
+
+.textMargin {
+  margin-left: 3px;
+}
+
+.moneySubmitButton {
+  background-color: #8E2E0F;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  width: 90%;
+  color: white;
+}
+
+.donationBox {
+  background-color: #FFA11D;
+}
+
+.paytmIcon {
+  margin-top: -4px;
+  margin-left: -27px;
+}
+
+.phonepeIcon {
+  margin-top: -4%;
+
+}
+
+.UPIIcon {
+  margin-top: -4px;
+  margin-left: -7px;
+}
+
+.discoveryCard {
+  margin-top: -2%;
+}
+
+.visaCard {
+  margin-top: -2%;
+}
+
+.masterCard {
+  margin-top: -1%;
+}
+
+.paypal {
+  margin-top: -1%;
+}
+
+
+.baseMargin {
+  margin-bottom: 130px;
+}
+
+.contactBg {
+  background-color: #FFFAE2;
+}
+
+.contactUsBg {
+  background-color: white;
+}
+
+.contactImages {
+  width: 45%;
+}
+
+.contactCard {
+  margin-left: 2%;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .mailId {
+      margin-top: -7%;
+      margin-left: 15%;
+  }
+
+  .phoneId {
+      margin-top: -7%;
+      margin-left: 14%;
+  }
+
+  .locationId {
+      margin-top: -7%;
+      margin-left: 15%;
+  }
+
+  .contactImages {
+      width: 10%;
+  }
+
+  .contactForm {
+      margin-top: 0px;
+      width: 100%;
+      margin-left: 0%;
+  }
+
+  .formBackImage {
+      display: none;
+  }
+
+  .contactBoxed {
+      /* margin-top: -11px !important; */
+      margin-bottom: -10px !important;
+  }
+
+  .contactCard {
+      margin-top: -17%;
+  }
+
+  .contactDescriptionText {
+      margin-top: 1% !important;
+      margin-bottom: -10% !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .mailId {
+      margin-top: -7%;
+      margin-left: 20%;
+  }
+
+  .phoneId {
+      margin-top: -7%;
+      margin-left: 14%;
+  }
+
+  .locationId {
+      margin-top: -7%;
+      margin-left: 20%;
+  }
+
+  .contactImages {
+      width: 10%;
+  }
+
+  .contactForm {
+      margin-top: 0px;
+      width: 100%;
+      margin-left: 0%;
+  }
+
+  .formBackImage {
+      display: none;
+  }
+
+  .contactBoxed {
+      margin-top: 39px !important;
+      margin-bottom: -10px !important;
+  }
+
+  .contactCard {
+      margin-top: -17%;
+  }
+
+  .contactDescriptionText {
+      margin-top: 1% !important;
+      margin-bottom: -10% !important;
+  }
+}
+
+@media (width: 768px) {
+
+  .locationId,
+  .mailId,
+  .phoneId {
+      margin-top: 8%;
+      margin-left: -7%;
+  }
+
+  .contactImages {
+      width: 70%;
+  }
+
+  .contactUs {
+      margin-top: 6rem !important;
+  }
+}
+
+@media(width: 912px) {
+
+  .mailId,
+  .locationId,
+  .phoneId {
+      margin-top: 1%;
+      margin-left: 0%;
+  }
+
+  .contactImages {
+      width: 100%;
+      margin-bottom: .6rem;
+
+  }
+}
+
+@media(width: 820px) {
+
+  .mailId,
+  .locationId,
+  .phoneId {
+      margin-top: 12%;
+      margin-left: 0%;
+  }
+
+  .contactImages {
+      width: 100%;
+      margin-bottom: .6rem;
+  }
+}
+
+@media(width:280px) {
+  .contactLinks .col-sm-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .mailId,
+  .phoneId,
+  .locationId {
+      margin-left: 0 !important;
+      text-align: center;
+  }
+ 
+}
+
+/* Blog */
+.blogBox {
+  height: 60px;
+  /* background: linear-gradient(to bottom, #f5e16b 0%, #FFB345 100%); */
+  /* background: radial-gradient(circle at 20%,rgb(255, 94, 7)  0%, rgb(255, 197, 61) 40%); */
+  background: radial-gradient(circle at 50% 20%, rgb(255, 197, 61) 0%, rgb(255, 94, 7, 0.6) 90%);
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8E2E0F;
+  font-weight: 700;
+}
+.lineHeight{
+  line-height: 32px;
+}
+
+
+.blogzoom {
+  margin: 4px;
+  transition: transform .2s;
+}
+
+.popularHeader {
+  background-color: #8E2E0F;
+}
+
+.popularBox {
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #ffe552; */
+  /* background-color: #FFFFAA; */
+  margin-top: 20px;
+}
+
+.profileImg {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.blogImg {
+
+  width: 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.blogDate {
+  text-align: right;
+}
+
+.blogPara {
+  padding: 18px;
+  text-align: justify;
+  margin-top: -2%;
+}
+
+.blogParaP {
+  font-weight: bold;
+}
+
+.blogFrontCards {
+  /* height: 540px !important; */
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #ffe552; */
+  background-color: #FFFFAA;
+  margin-top: 18px;
+}
+
+.img_div {
+  /* border:2px solid red; */
+  width: 100%;
+
+
+
+
+}
+
+.blogFrontImg {
+  /* width: 50%; */
+  /* height: 380px; */
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.blogSearch {
+  color: black;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+.has-search {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+/* =====================tabs-========================== */
+.bloc-tabs {
+  display: flex;
+  overflow-x: auto;
+}
+
+.tabs {
+  margin: 5px;
+  padding: 5px 14px 5px 14px;
+  color: #8E2E0F;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  background: none;
+
+}
+
+.active-tabs {
+  background: #8E2E0F;
+  color: white;
+  border-bottom: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  /* height: 5px; */
+
+}
+
+
+
+button {
+  border: none;
+
+}
+
+.content-tabs {
+  flex-grow: 1;
+}
+
+.contentss {
+
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.contentss p {
+  width: 100%;
+  height: 100%;
+}
+
+.active-contentss {
+  display: block;
+}
+
+.buttonBorder {
+  border: 1px groove #8E2E0F;
+  border-radius: 5px;
+  color: #8E2E0F;
+  background: none;
+  font-weight: 400;
+  padding: 5px 14px 5px 14px;
+
+}
+
+.buttonBorder:hover {
+  background: #8E2E0F;
+  color: white;
+
+}
+
+/* ================search bar========= */
+
+
+.icon-input {
+  margin-bottom: 10px;
+  position: relative;
+
+}
+
+.icon-input__text-field {
+  width: 100%;
+  padding: 5px 30px 5px 5px;
+  border-radius: 20px;
+
+}
+
+.icon-input__icon {
+  color: gray;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+
+  transform: translateY(-50%);
+}
+
+.icon-input__text-field:focus+.icon-input__icon {
+  color: #8E2E0F;
+}
+
+.hr_main {
+  margin-top: -5px;
+  border: 2px solid red;
+}
+
+.readMore {
+  /* position: absolute;
+  bottom: -20px;
+  right: 25px; */
+  /* border:2px solid  red; */
+  display: flex;
+  justify-content: end;
+  /* text-align: end; */
+  color: #8E2E0F;
+
+  cursor: pointer;
+
+}
+
+.readMore :hover {
+  color: blue
+}
+
+
+.imageMain {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.ViewButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(248, 248, 248, 0.7);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.ViewButton:hover {
+  background: rgba(248, 248, 248);
+  font-size: 20px;
+
+}
+
+.titlePara {
+  font-size: 25px;
+  text-align: center;
+}
+
+.singleArticleRead {
+
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #ffe552; */
+  background-color: #FFFFAA;
+  margin-top: 18px;
+}
+
+.writerName {
+  line-height: 10px;
+}
+
+.viewDiv {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: white;
+  border-radius: 0px 11px 0px 0px;
+  margin-right: 12px;
+
+
+}
+
+
+.material-icons {
+  cursor: pointer;
+}
+
+
+/* ========================category============================== */
+.CategoryUl {
+  display: flex;
+}
+
+.CategoryUl li {
+
+  list-style: none;
+}
+
+.CategoryUl li a {
+  margin: 0px 10px;
+  color: #8E2E0F !important;
+  cursor: pointer;
+
+
+}
+
+.CategoryUl li a .active {
+  margin: 0px 10px;
+  color: white !important;
+  border: 1px groove #8E2E0F;
+  padding: 5px 15px;
+  background: #8E2E0F;
+  cursor: pointer;
+
+
+}
+
+.topBlogImg {
+  width: 80%;
+  height: 80%;
+  padding: 0px 15px;
+  border-radius: 20px;
+
+}
+
+.newCard {
+  /* background-color: #FFFFAA; */
+}
+
+.blogPanchangBox {
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 20px;
+  /* background-color: #FFFFAA; */
+}
+
+.adminRow2UserBox {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+
+}
+
+.adminRow2UserBoxImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3fa3cf;
+  color: white;
+  font-weight: 700;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-left: 30px;
+
+}
+
+.adminRow2UserBoxDiv {
+  position: relative;
+  top: -25px;
+}
+
+.adminRow2UserBoxBasic {
+
+  background: rgb(71, 92, 102, .2);
+  border-radius: 23px;
+  width: 53px;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 400;
+
+
+
+}
+
+.paginationButton {
+  float: right;
+}
+
+.previous {
+  background-color: #8E2E0F;
+  color: white;
+}
+
+.next {
+  background-color: #8E2E0F;
+  color: white;
+}
+
+/* a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+} */
+.scrollableCards {
+  height: 75vh;
+  overflow-y: auto;
+}
+
+.scrollableCardsRelated {
+  height: 135vh;
+  overflow-y: auto;
+}
+
+.marginAdded {
+  margin-top: 5px;
+}
+
+.paginationButton {
+  float: right;
+}
+
+.cardContent {
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+.cardHeight {
+  height: 150vh;
+}
+
+.cardSlidesHeight {
+  height: 35vh;
+  width: 42vh;
+}
+
+.cardSlidesBox {
+  /* box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%); */
+  /* border-radius: 10px 10px 10px 10px; */
+  /* background-color: #ffe552; */
+  background-color: #FFFFAA;
+  margin-top: 20px;
+}
+
+.stickyDiv {
+  position: sticky;
+  top: 104px;
+  /* font-size: 30px;
+  color: white;
+  background-color: #3991bd;
+  width: 150px; */
+  /* height: 150px; */
+  bottom: 0;
+}
+
+.hiddenScroll ::-webkit-scrollbar {
+  display: none;
+}
+
+.popularBoxCards {
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #ffe552; */
+  /* background-color: #FFFFAA; */
+  /* margin-top: 20px; */
+}
+
+.react-multiple-carousel__arrow--right {
+  right: calc(4% + 1px);
+  z-index: 2 !important;
+  background-color: #8E2E0F;
+}
+
+/* .react-multiple-carousel__arrow--left {
+  right: calc(4% + 1px);
+  z-index: 2 !important;
+} */
+
+/* .react-multiple-carousel__arrow--left::before {
+  content: "\e824";
+  z-index: 1 !important;
+} */
+.react-multiple-carousel__arrow--left {
+  left: calc(4% + 1px);
+  z-index: 2 !important;
+  background-color: #8E2E0F;
+}
+
+.titleColor {
+  color: #8E2E0F;
+}
+
+.titleColor:hover {
+  color: black;
+}
+
+.cardZoom:hover {
+  /* padding: 50px; */
+  /* background-color: green; */
+  transition: transform .2s;
+  margin: 0 auto;
+}
+
+.googleSpeechButton {
+  background-color: #8E2E0F;
+  color: white;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .bloc-tabs {
+    display: inline-block;
+  }
+
+  .blogPanchangBox {
+    /* display:none; */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bloc-tabs {
+    display: inline-block;
+  }
+
+  .blogPanchang {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .bloc-tabs {
+    display: inline-block;
+  }
+
+  .blogPanchang {
+    display: none;
+  }
+
+  .marginResp {
+    margin-top: 5%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .bloc-tabs {
+    display: inline-block;
+  }
+
+  .blogPanchang {
+    display: none;
+  }
+}
