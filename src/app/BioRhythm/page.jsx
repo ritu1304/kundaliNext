@@ -61,13 +61,7 @@ const BioRhythm = () => {
     fetchBiorhythm();
   }, []); // Empty dependency array ensures this runs only once on component mount
 
-  if (loading) {
-    return <p>Loading...</p>; // Optional: You can replace with a loader component
-  }
-
-  if (error) {
-    return <p>Error: {error.message}</p>; // Optional: Handle error UI
-  }
+ 
 
 
   return (
