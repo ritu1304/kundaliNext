@@ -154,7 +154,7 @@ const AnushthanFront = () => {
                                     </ReactReadMoreReadLess>
                                 </p>
                                 <p className='for_paragraph textAlignment fullText'>
-                                    {t('What is Anushthan')}
+                                The literal meaning of 'Anushthan' is a ritualistic practice aimed at achieving desired results, and it involves performing auspicious actions and worshiping divine elements for success and fruitful outcomes.An 'Anushthan' assists in reducing physical ailments, mental unrest, pain, fear, and obstacles encountered in life. Many people face domestic troubles, harmful effects of unfavorable planets, legal issues, continuous losses in business, incurable diseases, fear of untimely death, etc. In such situations, Anushthan undoubtedly helps alleviate the fear of these upheavals in a person's life. Therefore, Anushthan provides maximum relief to individuals by addressing various problems, fears, stress, etc., in their lives. However, Anushthan is akin to awakening divine elements to attain one's desired outcome (blessing). Therefore, performing this ritual under the guidance of Vedic rituals and proficient Acharyas ensures complete benefits. If the Anushthan ritual is not conducted according to Vedic rituals or if errors occur in it, it certainly has adverse effects. Particularly in Sanatan Dharma, Anushthan rituals are conducted by proficient Acharyas trained in Gurukuls, who are skilled and proficient in performing Anushthan through Vedic rituals.There are different types of rituals for different problems which you can know in detail below:-
                                 </p>
 
                             </span>
