@@ -1,9 +1,13 @@
-import Image from "next/image";
-import KundaliChart from "@/components/Kundali";
-import Form from "@/components/Form";
-import Horoscope from "@/components/HoroScope";
-import Contact from "@/components/ContactUs";
-import Blog from "@/components/Blog";
+// import Image from "next/image";
+// import KundaliChart from "@/components/Kundali";
+// import Form from "@/components/Form";
+// import Horoscope from "@/components/HoroScope";
+// import Contact from "@/components/ContactUs";
+// import Blog from "@/components/Blog";
+// import About from "@/components/AboutUs";
+// import Header from "@/components/Header";
+// import Festival from "@/components/Festival";
+// import AnushthanFront from "@/components/AnushthanFront";
 const Home = async () => {
   
   return (
@@ -21,7 +25,12 @@ const Home = async () => {
       
         {/* <Horoscope /> */}
         {/* <Contact /> */}
-        <Blog />
+        {/* <Blog /> */}
+        {/* <Header /> */}
+        {/* <About /> */}
+        {/* <Festival /> */}
+        {/* <AnushthanFront /> */}
+        {/* <Header /> */}
       
       
     </div>

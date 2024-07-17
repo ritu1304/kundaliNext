@@ -15,7 +15,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Autoplay , Pagination} from 'swiper/modules';
-import pisces from '../../public/KundaliImg.png'
+import pisces from '../../../public/KundaliImg.png'
 import Image from 'next/image';
 // import './CustomCarousel.css';
 

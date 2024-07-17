@@ -3156,3 +3156,3667 @@ button {
   /* width: 85%; */
   /* margin-left: 10px; */
 }
+
+/* About Us */
+
+ .about_flag_img {
+     width: 100%;
+     margin: 0px;
+     padding: 0px;
+     top: 0;
+     left: 0;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-size: auto;
+
+ }
+
+ .about_flag_imgs {
+     width: 100%;
+     background-repeat: no-repeat;
+     /* background-size: cover; */
+     background-position: center;
+     background-size: auto;
+ }
+
+ .guruName {
+     font-size: 21px;
+     padding-bottom: 5px;
+ }
+
+ .about_paragraf {
+     margin-top: 0px;
+ }
+
+ .iphone_img {
+     height: 70%;
+ }
+
+ .about_img_text {
+     width: 27%;
+
+     position: absolute;
+     margin-left: 24%;
+     margin-top: 8%;
+     color: white;
+     /* font-size: 60px; */
+ }
+
+ .sanatan_font_size {
+     font-size: 50px;
+ }
+
+ .sanatan_font_size_app {
+     font-size: 50px;
+     margin-left: 40%;
+ }
+
+ .sanatan_font_size_app_soon {
+     font-size: 30px;
+     margin-left: 16%;
+     margin-top: 10%;
+     color: #ffe552;
+ }
+
+ .logo_about {
+     margin: 10% 0 0 -16%
+ }
+
+ .why_we_start_about {
+     color: #8E2E0F;
+     font-weight: bold;
+     padding-bottom: 10px;
+ }
+
+ .shree_krishna img {
+     width: 80%;
+     /* margin-top: 33px; */
+
+ }
+
+ .inspText {
+     margin-top: 13px;
+ }
+
+ .heading_for_margin_buttom {
+     margin-bottom: -20px;
+ }
+
+ .img_group_13 {
+     margin-left: -12px;
+ }
+
+ .backgroundSpace {
+     margin-bottom: 5px;
+ }
+ .inspirationBox1{
+    display: flex;
+    align-items: center;
+ }
+
+ .inspirationBox {
+  padding: 12px;
+    display: flex;
+    align-items: center;
+     background-image: url('https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/AboutinspirationBg.svg');
+ }
+
+ .bihariJiBg {
+     background-image: url('https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/Aboutfeather.svg');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+ }
+
+ .visionBg {
+     background-color: #FFFAE2;
+ }
+
+ .shree_krishna img {
+     /* width: 120%; */
+ }
+
+ .logoSanatanAboutPage {
+     margin: 8% 0 0 -16%;
+ }
+
+ .moreText {
+     display: none;
+ }
+
+ @media screen and (max-width: 650px) {
+     .shree_krishna img {
+         margin-top: 19px;
+         margin-left: 80px;
+         width: 62%;
+     }
+
+     .inspText {
+         /* margin-top: -5px; */
+     }
+
+     .about_img_text {
+         width: 37%;
+         position: absolute;
+         margin-left: 40%;
+         margin-top: 4%;
+         color: white;
+         font-size: 0px;
+     }
+
+     .bankeBihariImage {
+         margin-left: 0%;
+     }
+
+     .logoSanatanAboutPage {
+         margin: 0% 0px 0px 0%;
+     }
+ }
+
+ @media (min-width: 320px) and (max-width: 480px) {
+     .inspirationBox {
+         /* margin-top: 7%; */
+     }
+
+     .shree_krishna img {
+         margin-top: -45px;
+         margin-left: 45px;
+         width: 62%;
+     }
+
+     .shree_krishna img {
+         margin-top: -13px;
+     }
+
+     .logoSanatanAboutPage {
+         margin: 0% 0px 0px 5%;
+     }
+
+     /* .moreText {
+         display: block;
+         margin: .4rem;
+     } */
+
+     .why_we_start_about {
+         text-align: center;
+     }
+
+     .visionBg {
+         padding-bottom: 2rem;
+     }
+
+     /* .plainText {
+         display: none;
+     } */
+
+     .inspText {
+         text-align: center;
+     }
+
+     .read-more-button {
+         background-color: #913211;
+         color: #fff;
+         border-radius: 3px;
+         padding: 4px 8px;
+         font-size: 14px;
+         margin-bottom: 0.5rem;
+     }
+
+     .displayed-text {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+     }
+ }
+
+ @media (min-width: 481px) and (max-width: 768px) {
+     .inspirationBox {
+         /* margin-top: 7%; */
+     }
+
+     .why_we_start_about {
+         text-align: center;
+     }
+
+     .shree_krishna img {
+         margin-top: -45px;
+         margin-left: 45px;
+         width: 62%;
+     }
+
+     .read-more-button {
+         background-color: #913211;
+         color: #fff;
+         border-radius: 3px;
+         padding: 4px 8px;
+         font-size: 14px;
+         margin-bottom: 0.5rem;
+     }
+
+     .displayed-text {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+     }
+
+     .about_img_text {
+         margin-top: 2%important;
+     }
+
+     .visionBg {
+         padding-bottom: 2rem;
+     }
+
+     .inspText {
+         text-align: center;
+     }
+
+     .shree_krishna img {
+         margin-top: -13px;
+     }
+
+     .logoSanatanAboutPage {
+         margin: 0% 0px 0px 5%;
+     }
+
+     /* .moreText {
+         display: block;
+         margin: .4rem;
+
+     } */
+
+     /* .plainText {
+         display: none;
+     } */
+ }
+
+ @media(width: 280px) {
+     .about_img_text h2 {
+         font-size: 16px;
+     }
+
+     .about_img_text {
+         margin-top: 14% !important;
+     }
+ }
+
+ @media(max-width: 1400px) {
+     .moreText {
+         display: block;
+         margin: .4rem;
+
+     }
+
+     .plainText {
+         display: none;
+     }
+ }
+/* Landing */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.exclusiveText{
+  margin: 0px 338px;
+}
+.flexZodiac{
+  display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+.img-fluid1{
+  width: 100%;
+}
+
+.zodiacFlex{
+ display: flex;
+ align-items: center;
+}
+.centerZodiac{
+  margin-left: 40px;
+}
+.hero {
+  position: relative;
+}
+
+.text {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.text.closed {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  /* Move slightly up and scale down when closing */
+  pointer-events: none;
+}
+
+.imageTxt {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.imageTxt.hide {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  /* Move slightly up and scale down when hiding */
+  pointer-events: none;
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.8;
+  background-color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  outline: none;
+
+  /* color: #040404; */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.ulLp {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.headingLp {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #8E2E0F;
+}
+
+h2 {
+  margin-bottom: 0px;
+  /* font-size: 20px; */
+}
+
+/* p {
+  margin-bottom: 20px;
+} */
+
+p a {
+  color: #122DBC;
+  font-weight: 600;
+}
+
+p a:hover {
+  color: #8E2E0F;
+}
+
+/* global */
+.centeredLp {
+  padding-right: calc((100% - 1720px)/ 2);
+  padding-left: calc((100% - 1720px)/ 2);
+}
+
+.btnLp {
+  padding: 5px 25px;
+  min-height: 40px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #8E2E0F;
+}
+
+.logoutButton {
+  align-items: center;
+  border-radius: 8px;
+  background-color: #8E2E0F;
+  color: #fff;
+}
+
+/* wrapper1 */
+.wrapper1 {
+  padding-top: 140px;
+  width: 100%;
+  /* position: relative; */
+  overflow: hidden;
+}
+.carousel-margin{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 140px;
+  z-index: 99;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/header-bg.png") center center repeat-x;
+}
+
+.header .logo {
+  display: block;
+  width: 120px;
+}
+
+.header .center {
+  width: calc(100% - 300px);
+}
+
+.header .topLp {
+  padding-bottom: 15px;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 4px solid #9C4018;
+}
+
+.header .language li {
+  position: relative;
+}
+
+.header .language>li>a {
+  padding: 0 35px 0 15px;
+  display: block;
+  position: relative;
+  color: #fff;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.header .language>li>a:after {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  background: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/arrow-down.svg") no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 7px;
+}
+
+.header .language>li>a:hover,
+.header .language>li:hover>a {
+  background-color: #8E2E0F;
+}
+
+.header .language li>ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  background-color: #8E2E0F;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header .language li:hover>ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header .language li>ul>li {
+  width: 100%;
+}
+
+.header .language li>ul>li>a {
+  padding: 5px 0;
+  width: 100%;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+
+.header .mainMenu {
+  width: 100%;
+}
+
+.header .ganesha {
+  width: 120px;
+}
+
+.header .menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header .menu li .nav-link {
+  position: relative;
+  font-size: 18px;
+  display: block;
+  font-weight: 600;
+  color: #913211;
+}
+
+.header .menu li .nav-link:after {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  content: '';
+  height: 3px;
+  width: 0;
+  background-color: #913211;
+  transition: all 0.3s ease-in-out;
+}
+
+.header .menu li.is-active .nav-link,
+.header .menu li a:hover {
+  color: #fff;
+}
+
+.header .menu li.is-active .nav-link:after,
+.header .menu li .nav-link:hover:after {
+  width: 100%;
+
+}
+
+.header .mobileMenu {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+.header .mobileMenu span {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  text-indent: -9999px;
+  transition: .2s;
+  background-color: #913211;
+}
+
+/* Add this to your CSS */
+.active {
+  /* Define the styles for the active link here */
+  font-weight: bold;
+  /* For example, making the font bold */
+  color: #fff !important;
+  /* border-bottom: 2px solid #913211; */
+  /* For example, changing the text color */
+
+}
+
+/* 
+.active:hover {
+  border-bottom: none;
+} */
+
+
+.header .mobileMenu span:before,
+.header .mobileMenu span:after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  transition-duration: .2s, .2s;
+  content: "";
+  background-color: #913211;
+}
+
+.header .mobileMenu span:before {
+  top: -10px;
+}
+
+.header .mobileMenu span:after {
+  bottom: -10px;
+}
+
+.header .mobileMenu.is-active span {
+  background-color: transparent;
+}
+
+.header .mobileMenu.is-active span:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.header .mobileMenu.is-active span:after {
+  bottom: 0;
+  transform: rotate(-135deg);
+}
+
+/* hero */
+.hero {
+  margin-bottom: 50px;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hero .text {
+  padding: 30px 80px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  color: #8E2E0F;
+  text-align: center;
+  height: 100%;
+  width: 70%;
+  clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+  background-color: #fff;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 75px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero p {
+  margin: 0 auto 30px auto;
+  max-width: 700px;
+}
+
+.hero ul {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero li img {
+  width: 50px;
+}
+
+.hero .subscribe {
+  margin-inline: auto;
+  color: #000;
+}
+
+.hero .link {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-46%) rotate(-15deg);
+  left: 63%;
+}
+
+/* text sec */
+.textSec {
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.textSec h2 {
+  text-align: center;
+}
+
+.textSec h2 img {
+  margin-inline: auto;
+  width: 270px;
+}
+
+/* panchang sec */
+.panchangSec {
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.panchangSec h2 {
+  text-align: center;
+}
+
+.panchangSec .date {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #000;
+}
+
+.panchangSec .date strong {
+  font-size: 18px;
+}
+
+.panchangSec .list {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panchangSec .list li {
+  padding: 10px 15px;
+  width: 25%;
+  gap: 15px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+
+.panchangSec .icon {
+  width: 35px;
+}
+
+/* Western sec */
+.WesternSec {
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.WesternSec h2 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.WesternSec h2 img {
+  margin-top: 4px;
+  width: 16px;
+}
+
+.WesternSec p {
+  text-align: center;
+}
+
+.WesternSec .list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.WesternSec .list li {
+  width: calc(16.67% - 13px);
+}
+
+.WesternSec .icon {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.WesternSec h4 {
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+}
+
+.WesternSec .date {
+  text-align: center;
+  font-size: 12px;
+  display: block;
+  color: #913211;
+  font-weight: 600;
+}
+
+/* blog sec */
+.blogSec {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.blogSec h2 {
+  text-align: center;
+}
+
+.blogSec p {
+  text-align: center;
+}
+
+/* .blogSec {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.blogSec h2 {
+  text-align: center;
+}
+
+.blogSec p {
+  text-align: center;
+}
+
+.blogSec .swiper-button-prev,
+.blogSec .swiper-button-next {
+  padding: 13px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #8E2E0F;
+}
+
+.blogSec .swiper-button-prev:after,
+.blogSec .swiper-button-next:after {
+  display: none;
+}
+
+.blogSec .swiper {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  overflow: visible;
+}
+
+.blogSec .swiper-slide {
+  width: 400px;
+  transition: none;
+}
+
+.blogSec .swiper-slide.swiper-slide-active {
+  transform: scale(1.15);
+} */
+
+/* card blog sec */
+.cardBlog {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardBlog:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.cardBlog img {
+  width: 100%;
+  height: auto;
+}
+
+.cardBlog .view {
+  padding: 0 10px;
+  font-size: 12px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* content sec */
+.contentSec {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contentSec .text {
+  padding: 20px;
+  text-align: center;
+  width: calc(50% - 15px);
+  background-color: #FFFAE2;
+}
+
+.contentSec h2 {
+  text-align: center;
+}
+
+/* anushthan sec */
+.anushthanSec {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.anushthanSec .leftLp {
+  width: calc(50% - 15px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.anushthanSec .rightLp {
+  width: calc(50% - 15px);
+  text-align: center;
+}
+
+.anushthanSec h2 {
+  text-align: center;
+  font-size: 75px;
+}
+
+.anushthanSec .img {
+  width: 24%;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.anushthanSec .img img {
+  width: 100%;
+  height: auto;
+}
+
+.anushthanSec .img:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.anushthanSec h5 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.anushthanSec .img.one {
+  margin-top: 10%;
+}
+
+.anushthanSec .img.two {
+  margin-top: 18%;
+  width: 26%;
+}
+
+.anushthanSec .img.three {
+  width: 40%;
+}
+
+.anushthanSec .img.four {
+  width: 40%;
+}
+
+.anushthanSec .img.five {
+  margin-top: 12%;
+  width: 27%;
+}
+
+.anushthanSec .img.six {
+  margin-top: -5%;
+  width: 22%;
+}
+
+.anushthanSec .img:hover {
+  transform: scale(1.1);
+}
+
+.anushthanSec .img:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.anushthanSec .img:hover h5 {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* review sec */
+.reviewSec {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.reviewSec h2 {
+  text-align: center;
+}
+
+.reviewSec p {
+  text-align: center;
+}
+
+.reviewSec .swiper-pagination {
+  margin-top: 25px;
+  position: relative;
+}
+
+.reviewSec .swiper-pagination-bullet {
+  /* width: 15px;
+  height: 15px; */
+  transition: all 0.3s ease-in-out;
+  background-color: #D9D9D9;
+  opacity: 1;
+}
+
+.reviewSec .swiper-pagination-bullet-active {
+  transform: scale(1.3);
+  background-color: #8E2E0F;
+}
+
+/* card review */
+.cardReview {
+  padding: 15px;
+  text-align: left;
+  width: 100%;
+  background-color: #fff;
+  max-height: fit-content;
+}
+
+.cardReview .topLp {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cardReview .img {
+  width: 58px;
+}
+
+.cardReview .rating {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.cardReview .date {
+  width: 100%;
+  font-size: 14px;
+}
+
+.cardReview p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* fastival sec */
+.fastivalSec {
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  background-color: #FFFAE2;
+}
+
+.fastivalSec h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.fastivalSec .fastivalBlock {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.fastivalSec .fastival {
+  padding: 20px;
+  width: calc(33.33% - 10px);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.fastivalSec .fastival h3 {
+  margin-bottom: 15px;
+  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+}
+
+.fastivalSec .fastival li {
+  margin-bottom: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.fastivalSec .fastival li.first {
+  color: #913211;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fastivalSec .date {
+  width: 120px;
+}
+
+.fastivalSec .button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* footer side */
+.footerSec {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #FFA11D;
+}
+
+.footerSec .leftLp {
+  width: 30%;
+}
+
+.footerSec .rightLp {
+  width: 15%;
+}
+
+.footerSec .contact {
+  margin-bottom: 30px;
+}
+
+.footerSec h3 {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+/* .footerSec h3:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  content: '';
+  background-color: #FFFF8C;
+} */
+
+.footerSec .logo {
+  margin-bottom: 20px;
+  width: 180px;
+  display: block;
+}
+
+.footerSec .payment {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footerSec .payment li img {
+  width: 34px;
+}
+
+.footerSec .social {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.footerSec .social li img {
+  width: 30px;
+}
+
+.footerSec .link {
+  width: 100%;
+}
+
+.footerSec .link li {
+  padding-left: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.footerSec .link li:before {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  content: '';
+  background-color: #122DBC;
+}
+
+.footerSec .link li a {
+  color: #122DBC;
+  text-decoration: none;
+}
+
+.footerSec .copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.zodiacSignCrousel {
+  display: none;
+}
+
+.homeButtonsHeader {
+  background-color: #8e2e0f;
+  width: 100%;
+  border-radius: 8px;
+  color: #f0efea;
+}
+
+
+
+@media screen and (max-width: 1760px) {
+  .centeredLp {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ 
+
+}
+@media  (min-width: 1760px) {
+  .centerZodiac{
+    margin-left: 114px;
+  }
+}
+@media screen  and (max-width:360px){
+  .centerZodiac{
+    margin-left: 44px;
+  }
+}
+@media  (min-width:361px) and (max-width:411px){
+  .centerZodiac{
+    margin-left: 65px;
+  }
+}
+@media  (min-width:412px) and (max-width:467px){
+  .centerZodiac{
+    margin-left: 75px;
+  }
+}
+
+@media  (min-width: 468px) and (max-width :1760px){
+  .centerZodiac{
+    margin-left: 110px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header .logo {
+    width: 100px;
+  }
+
+  .header .ganesha {
+    width: 100px;
+  }
+
+  .header .center {
+    width: calc(100% - 230px);
+  }
+
+  .header .menu li .nav-link {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+  }
+
+  .hero .link {
+    left: 59.8%;
+    width: 60px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .header .mainMenu {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .wrapper1 {
+    padding-top: 105px;
+  }
+
+  .header {
+    min-height: 100px;
+  }
+
+  .header .logo {
+    width: 80px;
+  }
+
+  .header .ganesha {
+    width: 80px;
+  }
+
+  .header .center {
+    width: calc(100% - 200px);
+  }
+
+  .header .mobileMenu {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .mainMenu {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    display: none;
+    background: #fc9f28;
+  }
+
+  .header .menu {
+    display: block;
+  }
+
+  .header .menu li {
+    padding-bottom: 15px;
+  }
+
+  .header .menu li:last-child {
+    padding-bottom: 0;
+  }
+
+  .header .menu li .nav-link {
+    text-align: center;
+  }
+
+  .header .topLp {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero .text {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .hero p {
+    margin-bottom: 20px;
+  }
+
+  .hero li img {
+    width: 40px;
+  }
+
+  .hero .link {
+    left: 60%;
+    width: 40px;
+  }
+
+  .panchangSec .list li {
+    width: 33.33%;
+    font-size: 14px;
+  }
+
+  .panchangSec .icon {
+    width: 25px;
+  }
+
+  .anushthanSec .leftLp {
+    gap: 15px;
+  }
+
+  .anushthanSec h2 {
+    font-size: 50px;
+  }
+
+  .anushthanSec .img {
+    border-radius: 15px;
+  }
+
+  .anushthanSec h5 {
+    font-size: 14px;
+  }
+
+  .fastivalSec .date {
+    width: 90px;
+  }
+
+  .fastivalSec .fastival li.first {
+    font-size: 16px;
+  }
+
+  .fastivalSec .fastival li {
+    font-size: 14px;
+  }
+
+  .zodiacSignCrousel {
+    display: contents;
+  }
+
+  .WesternZodiacSignsImages {
+    display: none;
+  }
+
+}
+
+.align {
+  margin-right: 250px;
+}
+
+
+
+@keyframes blink {
+  0%, 100% { 
+    opacity: 1;
+    background-color: #fc9f28; 
+    color: #8e2e0f; 
+  }
+  50% { 
+    opacity: 1;
+    background-color: #a73813; 
+    color: white; 
+  }
+}
+
+
+
+.sticky-note {
+  position: relative; 
+  background-color: #fc9f28;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  width: 300px;
+  height: 130px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right:20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  animation: blink 3s infinite; 
+  color: #8e2e0f; 
+}
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #f0f0f0; 
+  border-radius: 10px; 
+  pointer-events: none; 
+}
+
+.content1 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  font-weight: 600;
+ 
+  color: inherit;
+  text-align: center;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+}
+
+.close-button:hover {
+  color: #8E2E0F;
+}
+
+
+.text-stroke {
+  -webkit-text-stroke: 1px #8E2E0F !important;
+  background-color: #ffffff;
+  color: #af4d2c !important;
+  font-size: 36px;
+  font-family: poppins;
+  font-weight: 800;
+  gap: 8px;
+  display: table;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  position: relative; 
+  /* border: 2px solid #8E2E0F; */
+  border-radius: 6px;
+  padding: 4px;
+}
+.elementor-heading-title1::before {
+  font-size: 36px;
+  content: '~ अग्रिम पंचांग जांचें ~';
+  gap: 8px;
+  color: #8e2e0f;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  /* border: 2px solid #8E2E0F; */
+  border-radius: 6px;
+  padding: 4px;
+  border-right: 0 solid #8E2E0F !important;
+  -webkit-animation: animateX 6s linear infinite;
+          animation: animateX 6s linear infinite;
+}
+
+.elementor-heading-title::before {
+  font-size: 36px;
+  content: '~ CHECK ADVANCE PANCHANG ~';
+  gap: 8px;
+  color: #8e2e0f;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  /* border: 2px solid #8E2E0F; */
+  border-radius: 6px;
+  padding: 4px;
+  border-right: 0 solid #8E2E0F !important;
+  -webkit-animation: animateX 6s linear infinite;
+          animation: animateX 6s linear infinite;
+}
+ 
+@-webkit-keyframes animateX {
+  0%, 10%, 100% {
+    width: 0%;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+
+@keyframes animateX {
+  0%, 10%, 100% {
+    width: 0%;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+
+.text-deco{
+  text-decoration: underline;
+}
+@media  (min-width: 1140px) {
+  .content1{
+    font-size: 18px;
+    padding: 4px;
+  }
+  .exText{
+    margin-right: 160px;
+  }
+
+  .elementor-heading-title::before{
+    font-size: 30px; 
+    margin-left: 2px;
+  }
+  .elementor-heading-title1::before{
+    font-size: 30px; 
+  }
+  .elementor-heading-title1{
+    font-size: 30px; 
+  }
+  .text-stroke{
+    font-size: 30px; 
+    /* bottom:114px; */
+    /* left: 10px; */
+    /* margin: 0px 205px; */
+  }
+ 
+  
+}
+.mail{
+  font-size: 20px;
+}
+@media ((min-width: 768px) and (max-width: 950px)) {
+  .footerSec h3{
+    font-size: 20px;
+  }
+ 
+  .close-button{
+    font-size: 16px;
+  }
+  .wrapper-sticky-note{
+    display: flex;
+    flex-direction: row;
+  }
+  .sticky-note{
+    width: 250px;
+    height: 110px;
+  }
+  .content1{
+    font-size: 14px;
+  }
+
+  .elementor-heading-title::before{
+    font-size: 20px; 
+    
+  }
+  .elementor-heading-title1::before{
+    font-size: 20px; 
+    
+  }
+  .text-stroke{
+    font-size: 20px; 
+    margin-bottom: 20px;
+    /* bottom:114px; */
+    /* left: 65px; */
+  } 
+  .exclusiveText {
+    margin: 0px 170px;
+}
+  
+}
+@media ((min-width: 950px) and (max-width: 1140px)) {
+  .exclusiveText {
+    margin: 0px 248px;
+}
+  .close-button{
+    font-size: 16px;
+  }
+  .wrapper-sticky-note{
+    display: flex;
+    flex-direction: row;
+  }
+  .sticky-note{
+    width: 250px;
+    height: 140px;
+  }
+  .content1{
+    font-size: 16px;
+  }
+
+  .elementor-heading-title::before{
+    font-size: 26px; 
+    
+  }
+  .elementor-heading-title1::before{
+    font-size: 26px; 
+    
+  }
+  .text-stroke{
+    font-size: 26px; 
+    margin-bottom: 20px;
+    /* bottom:114px; */
+    /* left: 16px; */
+    margin: 10px 148px;
+  } 
+  
+}
+@media screen and (max-width: 468px) {
+ 
+  .close-button{
+    font-size: 16px;
+  }
+  .wrapper-sticky-note{
+    display: flex;
+    flex-direction: column;
+  }
+  .sticky-note{
+    width: 250px;
+    height: 120px;
+  }
+  .content1{
+    font-size: 12px;
+  }
+
+  .elementor-heading-title::before{
+    font-size: 14px; 
+    
+  }
+  .elementor-heading-title1::before{
+    font-size: 14px; 
+    
+  }
+  .text-stroke{
+    font-size: 14px; 
+    margin-bottom: 20px;
+  }
+  
+ 
+ 
+}
+
+@media screen and ((max-width: 768px)) {
+  .footerSec h3{
+    font-size: 20px;
+  }
+  .social{
+    margin-left: 15px;
+  }
+  .exclusiveText {
+    margin: 0px 125px;
+}
+  .close-button{
+    font-size: 14px;
+  }
+  .wrapper-sticky-note{
+    display: flex;
+    flex-direction: column;
+  }
+  .sticky-note{
+    width: auto;
+    height: auto;
+  }
+  .content1{
+    font-size: 14px;
+  }
+
+  .elementor-heading-title::before{
+    font-size: 20px; 
+    
+  }
+  .elementor-heading-title1::before{
+    font-size: 20px; 
+    
+  }
+  .text-stroke{
+    font-size: 20px; 
+    margin-bottom: 20px;
+  }
+    .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .wrapper1 {
+    padding-top: 83px;
+  }
+
+  .header {
+    min-height: 80px;
+  }
+
+  .header .logo {
+    width: 60px;
+  }
+
+  .header .ganesha {
+    display: none;
+  }
+
+  .header .center {
+    width: auto;
+  }
+
+  .header .topLp {
+    gap: 15px;
+  }
+
+  .header .btn {
+    font-size: 14px;
+  }
+
+  .header .language>li>a,
+  .header .language li>ul>li>a {
+    font-size: 14px;
+  }
+
+  .header .mainMenu {
+    height: calc(100vh - 80px);
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .hero .text {
+    display: none;
+  }
+
+  .hero .link {
+    display: none;
+  }
+
+  .textSec h2 img {
+    width: 180px;
+  }
+
+  .panchangSec .list {
+    margin: 0;
+  }
+
+  .panchangSec .list li {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .WesternSec .list li {
+    width: calc(33.33% - 13px);
+  }
+
+  .blogSec .swiper-slide {
+    width: 300px;
+  }
+
+  .contentSec {
+    gap: 20px;
+  }
+
+  .contentSec .text {
+    width: 100%;
+  }
+
+  .anushthanSec h2 {
+    font-size: 35px;
+  }
+
+  .anushthanSec .leftLp {
+    order: 1;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .anushthanSec .rightLp {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .anushthanSec .img {
+    border-radius: 10px;
+  }
+
+  .anushthanSec h5 {
+    font-size: 12px;
+  }
+
+  .anushthanSec .img.six {
+    margin-top: -2%;
+  }
+
+  .fastivalSec .fastival {
+    width: 100%;
+  }
+
+  .footerSec .leftLp {
+    width: 100%;
+  }
+
+  .footerSec .center {
+    width: 100%;
+    order: -1;
+  }
+  .footerSec{
+    font-size: 20px;
+  }
+
+  .align {
+    margin-right: 0;
+  }
+
+  .footerSec .rightLp {
+    width: 100%;
+  }
+
+  .footerSec .logo {
+    margin: 0 auto 20px auto;
+    width: 120px;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+  .blogSec .swiper-slide {
+    width: 260px;
+  }
+
+  .WesternSec .list li {
+    width: calc(50% - 13px);
+  }
+
+  .anushthanSec h5 {
+    font-size: 10px;
+  }
+}
+/* Header */
+.navBackground {
+  background-color: #fa8a00;
+  position: fixed;
+  z-index: 98;
+  /* height: 100px; */
+}
+
+.for_bg_positin {
+  /* position: fixed;
+    z-index: 99; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 100%; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+}
+
+.hamburger {
+  margin-right: 8px;
+}
+
+/* Add padding to the body to account for the fixed header */
+body {
+  /* padding-top: 115px; */
+  /* Adjust the value based on the height of your fixed header */
+}
+
+.Geeks {
+  background-image:
+    url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/header-bg.png");
+  /* background-size: "cover";
+  background-repeat: no-repeat; */
+}
+
+.mainHeader .nav-item {
+  padding: 5px;
+}
+
+.nav-item {
+  text-align: center;
+  /* padding: 5px; */
+  font-weight: bolder;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
+  color: #f0efea !important;
+  border-bottom: 2px solid;
+}
+
+.homeButtonsHeader {
+  background-color: #8e2e0f;
+  width: 80%;
+
+  border-radius: 20px;
+  color: #f0efea;
+}
+
+.headerSanatanLogo {
+  margin-left: 3px;
+}
+
+.marginInHaeader {
+  margin-bottom: 111px;
+}
+
+.digit-group input {
+  width: 15%;
+  height: 40px;
+  background: transparent;
+  /* border: 1px solid; */
+  /* margin-left: 10px; */
+  /* border-radius: 6px; */
+  border: none;
+  line-height: 50px;
+  text-align: center;
+  font-size: 19px;
+  margin: -5px 3px;
+  border-bottom: 1.7px solid #F29726;
+}
+
+@media (max-width: 991px) {
+  .ganesh_img {
+    display: none;
+  }
+
+  .marginInHaeader {
+    margin-bottom: 101px;
+  }
+
+  .homeButtonsHeader {
+    margin-top: 7px;
+  }
+
+  .mainHeader .nav-item {
+    padding: 0px;
+  }
+
+
+  .HomepageButtons {
+    display: none;
+  }
+
+  .dropheadermenu {
+    margin-left: 309px;
+    margin-top: -23% !important;
+  }
+
+}
+
+@media (max-width: 513px) {
+  .dropheadermenu {
+    margin-left: 3px;
+    margin-top: -34% !important;
+  }
+}
+
+@media (min-width: 991px) {
+  /* .homeButtonsHeader {
+    margin-bottom: 25px;
+    margin-left: 22px
+  } */
+
+  .navbar-nav {
+    margin-top: 36px !important;
+  }
+
+  .navbarBorders {
+    border-top: 3px solid #8e2e0f;
+    margin-left: 11px;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1250px) {
+  .homeButtonsHeader {
+    margin-bottom: 25px;
+    /* margin-left: 22px */
+  }
+
+  .mainHeader .nav-item {
+    padding: 0px;
+  }
+
+}
+
+@media (min-width: 1251px) {
+  .homeButtonsHeader {
+    margin-bottom: 25px;
+    margin-left: 22px
+  }
+
+
+}
+
+.langColor {
+  color: #f0efea;
+}
+
+.dropLang {
+  min-width: max-content;
+}
+
+/* Festival */
+.festival_card1 {
+  background: linear-gradient(45deg, #C6D480, #F3BB73);
+  border-radius: 10px;
+  width: 207px;
+  height: 136px;
+  border: 2px solid orange;
+}
+
+.festival_card {
+  background: linear-gradient(45deg, #C6D480, #F3BB73);
+  border-radius: 10px;
+  /* width: 88%; */
+}
+
+.fesCardImage {
+  /* padding-left:8px; */
+  padding: 9px 2px 17px 7px;
+  margin-top: 13px;
+}
+
+.festival_for_margin_festival {
+  padding-left: 38px !important;
+  /* text-align: center; */
+}
+
+.festival_for_margin_date {
+  padding-left: 28px !important;
+  /* text-align: center; */
+  /* width: 29%; */
+}
+
+.festivalHeading {
+  margin-left: -16px;
+  color: #9C4018;
+
+}
+
+
+
+.festivalHeading1 {
+  margin-left: -48px;
+  color: #9C4018;
+
+}
+
+.festivalHeading2 {
+  margin-left: -80px;
+  color: #9C4018;
+
+}
+
+.festivalHeadingCategory {
+  /* margin-left: -5px; */
+  color: #9C4018;
+
+}
+
+.festivalHeadingCategory1 {
+  margin-left: 31px;
+  color: #9C4018;
+
+}
+
+.festivalHeadingCategory2 {
+  margin-left: -22px;
+  color: #9C4018;
+
+}
+
+.festivalsection {
+  margin: -47px 100px 0 100px;
+}
+
+.text_festival {
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: "Gill Sans", sans-serif;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.calDateFes {
+  margin-top: 24%;
+  /* color: black; */
+  background-color: #9C4018;
+  width: 71%;
+  margin-left: 23%;
+  border-radius: 20px;
+  /* background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right; */
+}
+
+
+.calDateFes::placeholder {
+  color: white !important;
+  text-align: center;
+
+
+}
+
+
+
+.calHeader {
+  margin-top: -4%;
+}
+
+.calHeading {
+  margin-left: 28px;
+
+}
+
+
+.calSearched {
+  margin-top: 81%;
+  color: white;
+  background-color: #9C4018;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1px;
+
+}
+
+.calSearchButton {
+  color: white;
+  background-color: #9C4018;
+  width: 100%;
+  border-radius: 5px;
+  margin-left: -37%;
+  padding: 3px;
+}
+
+.calSearch11 {
+  margin-top: 81%;
+  color: black;
+  padding: 3px;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.calSearchYearSelect {
+  margin-left: -10px;
+  margin-top: 81%;
+  color: black;
+  padding: 3px;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.calSearch223 {
+  margin-top: 81%;
+  color: black;
+  padding: 3px;
+
+  background-color: white;
+  width: 121%;
+
+  border-radius: 20px;
+  text-align: center;
+}
+
+.calSearchYear {
+
+  color: black;
+  padding: 5px;
+
+  background-color: white;
+
+  margin-left: -16%;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.calSearch22 {
+  margin-top: 81%;
+  color: black;
+
+  background-color: white;
+  width: 121%;
+
+  border-radius: 20px;
+  text-align: center;
+}
+
+.calSearchFestival {
+
+  color: black;
+
+  background-color: white;
+  width: 100%;
+
+  border-radius: 5px;
+  text-align: center;
+}
+
+.calSearched::placeholder {
+
+  color: white;
+
+}
+
+.fesDate {
+  color: #9C4018;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+.fesCal {
+  margin-right: 3%;
+  margin-top: 5%;
+}
+
+.fesSearch {
+  margin-top: -40%;
+}
+
+.searchFestival {
+  color: black !important;
+  margin-left: 0% !important;
+  margin-top: 5% !important;
+}
+
+.calenderBox {
+  /* margin-top: 10%; */
+}
+
+.modalFestival {
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 676px !important;
+  margin-top: 16% !important;
+  opacity: 1000;
+
+}
+
+
+.modalTitle {
+
+  color: yellow !important;
+  margin-top: 59px !important;
+}
+
+.modalDescription {
+
+  color: white !important;
+}
+
+.categoryFestival {
+
+
+  background-repeat: no-repeat;
+}
+
+.fesCategoryBox {
+
+  border: 3px solid orange;
+  background: linear-gradient(45deg, #C6D480, #F3BB73);
+  border-radius: 15px;
+}
+
+.ganeshFes {
+  margin-top: 10px;
+
+}
+
+.img_for_lefts1 {
+  transform: scaleX(-1);
+  height: 110px;
+  width: 120px;
+  margin-left: 50px;
+}
+
+.img_for_rights1 {
+
+  height: 110px;
+  width: 120px;
+}
+
+.categoryDate {
+  padding-left: 15px !important;
+  /* text-align: center; */
+  width: 41%;
+}
+
+.categoryFestivalName {
+  padding-left: 20px !important;
+  /* text-align: center; */
+  width: 41%;
+}
+
+.categoryName {
+  color: #9C4018;
+  margin-top: 12px;
+}
+
+.calenderFestival {
+  /* background-image: url("../images/festival.png"); */
+  border-radius: 20px;
+  margin-top: 3%;
+  border: 3px solid orange;
+  background: linear-gradient(45deg, #C6D480, #F3BB73);
+  height: inherit;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  background-color: #FFFFAA;
+  background-repeat: no-repeat;
+  /* background-size: 1115px 921px; */
+}
+
+.calenderContent {
+  margin-left: 2px;
+}
+
+.monthlyCalanderData {
+  margin-left: 8px;
+}
+
+.dateHeading {
+  margin-left: -14px;
+}
+
+.festivalHeading3 {
+  margin-left: -25px;
+}
+
+.categoryDates1 {
+  margin-left: -12px;
+}
+
+.categoryDates2 {
+  margin-left: -12px;
+}
+
+.categoryDates3 {
+  margin-left: -12px;
+}
+
+.categoryFestivals1 {
+  margin-left: -24px;
+}
+
+.categoryFestivals2 {
+  margin-left: -24px;
+}
+
+.categoryFestivals3 {
+  margin-left: -45px;
+}
+
+.categorySection {
+  margin-left: 51px !important;
+}
+
+.categorySection1 {
+  margin-left: 36px !important;
+}
+
+
+
+.festivalCategoryHeading {
+  margin-left: -14px;
+  color: #9C4018;
+
+}
+
+
+
+.festivalCategoryHeading1 {
+  margin-left: -34px;
+  color: #9C4018;
+
+}
+
+.festivalCategoryHeading2 {
+  margin-left: -24px;
+  color: #9C4018;
+
+}
+
+.festival_for_category_margin_date {
+  /* padding-left: 28px !important; */
+  color: #9C4018;
+  width: 119px;
+}
+
+.festival_for_category_margin_festival {
+  /* padding-left: 38px !important; */
+  width: "166px";
+}
+
+.festival_date_heading {
+  /* padding-left: 28px !important; */
+  color: #9C4018;
+  width: "119px";
+}
+
+.festival_festival_heading {
+  /* padding-left: 38px !important; */
+  width: "166px";
+  color: #9C4018;
+}
+
+.searchModDate {
+  color: #9C4018;
+  font-size: 20px;
+}
+
+.searchModFestival {
+  color: black;
+  font-size: 20px;
+}
+
+.FesSearchModal {
+  background: linear-gradient(45deg, #C6D480, #F3BB73);
+  /* margin-top: 5%; */
+  /* margin-bottom: 5%; */
+  border-radius: 10px;
+  border: 2px solid orange;
+
+  /* margin-left: 0;
+  overflow: scroll;
+  overflow-x: auto;
+  padding: 5px;
+  width: 100%; */
+
+}
+
+.searchFesHead {
+  color: #9C4018;
+}
+
+.typoBody {
+  /* overflow: scroll; */
+  /* overflow-y:scroll ; */
+}
+
+.aaa {
+  max-width: 500px;
+  max-height: 400px;
+  /* width: 0px;
+ height: 110px; */
+  overflow: auto;
+  scrollbar-color: light;
+
+
+}
+
+/* .aaa::-webkit-scrollbar {
+ width: 5px;
+
+ background-color: #fff;
+} */
+.xButton {
+  float: right;
+  margin-top: -3%;
+}
+
+.scrollbox {
+  background: white;
+  color: black;
+  padding: 15px;
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 0px 0px 5px 5px;
+
+}
+
+.calCatName {
+  position: absolute;
+  z-index: 1;
+  margin-top: -115px;
+  margin-left: 20px;
+  color: #9C4018;
+
+}
+
+.calenDar {
+  position: absolute;
+  z-index: 1;
+  margin-top: -85px;
+  margin-left: 20px;
+  color: #9C4018;
+
+}
+
+.HindiSearchNotAva {
+  color: grey;
+}
+
+.festivalNameHover:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.festivalNameHoverHome:hover {
+  cursor: pointer;
+  color: #9C4018;
+}
+
+.datesColor {
+  color: #9C4018;
+
+}
+
+.festivalCardsListHome {
+  display: flex;
+
+}
+
+.categoryTextHead {
+  margin-top: 39px !important;
+}
+
+.FestivalCardsCrousel {
+  display: none;
+}
+
+
+.homeFestivalBig {}
+
+.homeFestivalSmall {
+  display: none;
+}
+
+@media (min-width: 1201px) {}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .FestivalCardsCrousel {
+     display: flex;
+  }
+
+  .festivalCardsListHome {
+     display: block;
+  }
+
+  .festivalsection {
+     display: none;
+  }
+
+  .homeFestivalBig {
+     display: none;
+  }
+
+  .homeFestivalSmall {
+     display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .FestivalCardsCrousel {
+     display: flex;
+  }
+
+  .festivalCardsListHome {
+     display: block;
+  }
+
+
+  .calSearchYear {
+     margin-left: 0%;
+     width: 100%;
+     /* margin-top: 1%; */
+     margin-bottom: 3%;
+  }
+
+  .calSearchButton {
+     margin-left: 0px;
+     margin-bottom: 0px;
+  }
+
+  .monthTextHeading {
+     margin-left: 99px;
+  }
+
+  .calSearch11 {
+     margin-top: 0%;
+  }
+
+  .calSearchYearSelect {
+     margin-left: 0px;
+     margin-top: 0%;
+
+  }
+
+  .calSearched {
+     margin-top: 0%;
+
+  }
+
+  .fesCategoryBox {
+     /* margin-left: -92px;
+    width: 182%; */
+
+  }
+
+  .img_for_lefts1 {
+
+     height: 60px;
+     width: 70px;
+     margin-left: 0px;
+  }
+
+  .img_for_rights1 {
+     height: 60px;
+     width: 70px;
+     float: right;
+     margin-top: -20%;
+  }
+
+  .categoryTextHead {
+     /* margin-top: 5px !important; */
+  }
+
+  .CarouselCategoryImages {
+     width: 56%;
+  }
+
+  .CarouselCatName {
+     position: absolute;
+     z-index: 1;
+     margin-top: -117px;
+     margin-left: 96px;
+     color: #9C4018;
+  }
+
+  .CarouselcalenDar {
+     position: absolute;
+     z-index: 1;
+     margin-top: -78px;
+     margin-left: 95px;
+     color: #9C4018;
+  }
+
+  .festivalsection {
+     display: none;
+  }
+
+  .homeFestivalBig {
+     display: none;
+  }
+
+  .homeFestivalSmall {
+     display: block;
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .FestivalCardsCrousel {
+     display: flex;
+  }
+
+  .festivalCardsListHome {
+     display: block;
+  }
+
+
+  .calSearchYear {
+     margin-left: 0%;
+     width: 100%;
+     margin-top: 1%;
+     margin-bottom: 3%;
+  }
+
+  .calSearchButton {
+     margin-left: 0px;
+     margin-bottom: 0px;
+  }
+
+  .monthTextHeading {
+     margin-left: 99px;
+  }
+
+  .calSearch11 {
+     margin-top: 0%;
+  }
+
+  .calSearchYearSelect {
+     margin-left: 0px;
+     margin-top: 0%;
+
+  }
+
+  .calSearched {
+     margin-top: 4%;
+
+  }
+
+  .fesCategoryBox {
+     /* margin-left: -92px;
+    width: 182%; */
+
+  }
+
+  .img_for_lefts1 {
+
+     height: 60px;
+     width: 70px;
+     margin-left: 0px;
+  }
+
+  .img_for_rights1 {
+     height: 60px;
+     width: 70px;
+     float: right;
+     margin-top: -20%;
+  }
+
+  .categoryTextHead {
+     /* margin-top: -50px !important; */
+  }
+
+  .CarouselCategoryImages {
+     width: 56%;
+  }
+
+  .CarouselCatName {
+     position: absolute;
+     z-index: 1;
+     margin-top: -165px;
+     margin-left: 180px;
+     color: #9C4018;
+  }
+
+  .CarouselcalenDar {
+     position: absolute;
+     z-index: 1;
+     margin-top: -136px;
+     margin-left: 174px;
+     color: #9C4018;
+  }
+
+  .festivalsection {
+     display: none;
+  }
+
+  .homeFestivalBig {
+     display: none;
+  }
+
+  .homeFestivalSmall {
+     display: block;
+  }
+
+  .resFontMob {
+     font-size: 15px;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+  .FestivalCardsCrousel {
+     display: flex;
+  }
+
+  .resFontMob {
+     font-size: 15px;
+  }
+
+  .festivalCardsListHome {
+     display: block;
+  }
+
+
+  .calSearchYear {
+     margin-left: 0%;
+     width: 100%;
+     margin-top: 1%;
+     margin-bottom: 3%;
+  }
+
+  .calSearchButton {
+     margin-left: 0px;
+     margin-bottom: 0px;
+  }
+
+  .monthTextHeading {
+     /* margin-left: 99px; */
+  }
+
+  .calSearch11 {
+     margin-top: 0%;
+  }
+
+  .calSearchYearSelect {
+     margin-left: 0px;
+     margin-top: 3%;
+
+  }
+
+  .calSearched {
+     margin-top: 4%;
+
+  }
+
+  .fesCategoryBox {
+     /* margin-left: -92px;
+    width: 182%; */
+
+  }
+
+  .img_for_lefts1 {
+
+     height: 60px;
+     width: 70px;
+     margin-left: 0px;
+  }
+
+  .img_for_rights1 {
+     height: 60px;
+     width: 70px;
+     float: right;
+     margin-top: -20%;
+  }
+
+  .categoryTextHead {
+     /* margin-top: -50px !important; */
+  }
+
+  .CarouselCategoryImages {
+     width: 56%;
+  }
+
+  .CarouselCatName {
+     position: absolute;
+     z-index: 1;
+     margin-top: -115px;
+     margin-left: 105px;
+     color: #9C4018;
+  }
+
+  .CarouselcalenDar {
+     position: absolute;
+     z-index: 1;
+     margin-top: -81px;
+     margin-left: 107px;
+     color: #9C4018;
+  }
+
+  .festivalsection {
+     display: none;
+  }
+
+  .homeFestivalBig {
+     display: none;
+  }
+
+  .homeFestivalSmall {
+     display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {}
+
+@media (min-width: 1700px) {
+  .planDataPan {
+     display: flex;
+     overflow-x: auto;
+     white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+
+  .planDataPan {
+
+     overflow-x: auto;
+     white-space: nowrap;
+  }
+}
+
+@media (max-width: 1025px) {
+  .ganeshFes {
+     display: none !important;
+  }
+
+}
+
+.image-container {
+ position: relative;
+ max-width: 100%;
+ overflow: hidden;
+}
+
+.responsive-image {
+ width: 100%;
+ height: auto;
+ display: block;
+}
+
+.overlay-text {
+ position: absolute;
+ top: 46%;
+ left: 34%;
+ transform: translate(-50%, -50%);
+ font-size: 18px;
+ color: #9C4018;
+ text-align: center;
+}
+
+/* Profile css */
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: linear-gradient(to bottom, #FFD690, #EC9200);
+  margin-top: 8%;
+  min-height: 620px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: linear-gradient(to bottom, #FFD690, #EC9200);
+  min-height: 620px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+
+}
+
+.dashboard-stat,
+.portlet {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.portlet {
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.portlet.bordered {
+  border-left: 2px solid #e6e9ec !important;
+}
+
+.portlet.light {
+  padding: 12px 20px 15px;
+  /* background-color: #fff; */
+}
+
+.portlet.light.bordered {
+  border: 1px solid #e7ecf1 !important;
+}
+
+.list-separated {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.profile-stat {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-stat-title {
+  color: #7f90a4;
+  font-size: 25px;
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.profile-stat-text {
+  color: #5b9bd1;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.profile-desc-title {
+  color: #7f90a4;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.profile-desc-text {
+  color: #7e8c9e;
+  font-size: 14px;
+}
+
+.margin-top-20 {
+  margin-top: 20px !important;
+}
+
+
+
+.profile-desc-link i {
+  width: 22px;
+  font-size: 19px;
+  color: #abb6c4;
+  margin-right: 5px;
+}
+
+.containerColor {
+  /* background: linear-gradient(to right, #ffe552, #ffee80); */
+  margin-top: -18px;
+  margin-bottom: -20px;
+}
+
+.matchProfile {
+  /* height: 82px; */
+  background-image: linear-gradient(to left, #C2D780, #F2BB74);
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.updateUserDetails {
+  margin-left: 10px;
+}
+
+.updateIcon {
+  float: right;
+}
+
+.sidebarButton {
+  margin-top: 80%;
+}
+
+.headerKProfile {
+  background-color: #8e2e0f;
+}
+
+.bodyKProfile {
+  background: linear-gradient(to bottom, #f5e16b 0%, #FFB345 100%);
+}
+
+.profileCard {
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  background-image: linear-gradient(to left, #C2D780, #F2BB74);
+  border: 0;
+}
+
+.profHead {
+  color: #8e2e0f;
+}
+
+.profilesButton {
+  background: #8e2e0f;
+  color: white;
+}
+
+.kundliProfilesCard {
+  background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileKundli.png");
+  /* background: linear-gradient(to top, #FA7754, #ffff66); */
+  background-repeat: no-repeat;
+  /* height: 326px;
+  width: 100%; */
+  border-radius: 27px;
+  background-size: cover;
+  /* box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%); */
+}
+
+.matchProfilesCard {
+  background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileMatch.png");
+  /* background: linear-gradient(to top, #FA7754, #ffff66); */
+  background-repeat: no-repeat;
+  /* height: 326px;
+  width: 100%; */
+  border-radius: 27px;
+  background-size: cover;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+
+}
+
+@media screen and (max-width: 1400px) {
+  .kundliProfilesCard {
+    /* background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileKundli.png"); */
+    background: linear-gradient(to top, #FA7754, #ffff66);
+
+  }
+
+  .matchProfilesCard {
+    /* background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileMatch.png"); */
+    background: linear-gradient(to top, #FA7754, #ffff66);
+
+  }
+
+  .kundliList {
+    margin-left: 0% !important;
+  }
+
+  .matchList {
+    margin-right: 0% !important;
+  }
+}
+
+.buttonRow {
+  margin-top: 49px;
+
+}
+
+.profilesCardManage {
+  margin-right: 197px;
+  margin-top: 7px;
+}
+
+.kundliList {
+  margin-left: -58%;
+}
+
+.kundliList h1 {
+  font-size: 85px;
+  color: #8e2e0f;
+}
+
+.matchList {
+  margin-right: 55%;
+}
+
+.matchList h1 {
+  font-size: 85px;
+  color: #8e2e0f;
+}
+
+.cardsList {
+  color: #8e2e0f;
+}
+
+.clickToView {
+  color: green;
+  cursor: pointer;
+  float: right;
+}
+
+.profileName {
+  /* background-color: radial-gradient(left #FF5407 (45%), center #FFC53D (60% ), right #FF5407 (60% )); */
+  background: radial-gradient(circle at 10% 20%, rgb(255, 197, 61) 0%, rgb(255, 94, 7) 90%);
+}
+
+.profiles {
+  color: green;
+  margin-top: 1%;
+  position: absolute;
+  margin-left: -17px;
+}
+
+.profileNameHeading {
+  color: #8e2e0f;
+  margin-bottom: -14px;
+}
+
+.proUnderline {
+  background-color: #8e2e0f;
+  height: 2px;
+  width: 25%;
+}
+
+.saved {
+  color: #8e2e0f;
+}
+
+.scrollableKundliList {
+  height: 25vh;
+  overflow-y: auto;
+}
+
+.profileImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+/* ------------------------------------Profile Pic ---------------------------------------- */
+.profile-pic-wrapper {
+  /* height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.pic-holder {
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pic-holder .pic {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.pic-holder .upload-file-block,
+.pic-holder .upload-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(90, 92, 105, 0.7);
+  color: #f8f9fc;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pic-holder .upload-file-block {
+  cursor: pointer;
+}
+
+.pic-holder:hover .upload-file-block,
+.uploadProfileInput:focus~.upload-file-block {
+  opacity: 1;
+}
+
+.pic-holder.uploadInProgress .upload-file-block {
+  display: none;
+}
+
+.pic-holder.uploadInProgress .upload-loader {
+  opacity: 1;
+}
+
+/* Snackbar css */
+.snackbar {
+  visibility: hidden;
+  /* min-width: 250px; */
+
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  transform: translateX(-50%);
+}
+
+.snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/* Anushthan CSS */
+.AnushthanHeading {
+  font-weight: bold;
+  color: #8E2E0F;
+}
+
+.modalScrollRep {
+  max-height: 80vh;
+  overflow-y: auto;
+
+}
+
+.AnuSubject {
+  text-align: justify;
+}
+
+.AnuContent {
+  text-align: justify;
+}
+
+a :hover {
+  color: #8E2E0F;
+}
+
+.AnushthanImage {
+  border: 4px solid #8E2E0F;
+}
+
+.success {
+  color: #00AA30;
+  font-weight: bold;
+}
+
+.failed {
+  color: #AA0000;
+  font-weight: bold;
+}
+
+.paymentCard {
+  margin: 150px;
+}
+
+.anushthanSubmitButton {
+  background-color: #8E2E0F;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+}
+
+.panditSubmitButton {
+  background-color: #8E2E0F;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  width: 25%;
+  color: white;
+  padding: 7px;
+}
+@media  (max-width: 400px){
+  .hiddenMobile{
+      display: none !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .paymentDataTable {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+}
+
+/* Custom header */
+
+
+
+.logoLeft img, .logoRight img {
+  height: 50px; 
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  padding: 10px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white; 
+}
