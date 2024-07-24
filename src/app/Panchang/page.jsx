@@ -2,12 +2,12 @@
 import React, { useState, useEffect, useRef } from 'react'
 import 'react-calendar/dist/Calendar.css'
 // import './Panchang.css'
-import axios from "axios";
-import { toast } from "react-toastify";
+// import axios from "axios";
+// import { toast } from "react-toastify";
 import moment from 'moment';
 import { useTranslation } from "react-i18next";
 import { Table } from 'react-bootstrap';
-
+import Image from 'next/image'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // import { data } from 'jquery';
@@ -20,7 +20,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 // import mixpanel from 'mixpanel-browser';
 import { Link } from 'react-router-dom'
-import Loader from "../../components/Loader";
+// import Loader from "../../components/Loader";
 import PrevSVG from '../../../public/icons8-back-to-32.png'
 import NextSVG from '../../../public/icons8-back-to-32 (1).png'
 import PanchangChart from '../../components/PanchangChart';
@@ -80,17 +80,17 @@ function Panchang() {
     const [error, setError] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 1400);
-        };
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         setIsMobile(window.innerWidth <= 1400);
+    //     };
 
-        window.addEventListener('resize', handleResize);
+    //     window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     };
+    // }, []);
 
     // const monthPanchangData = useSelector(
     //     (state) => state.PanchangReducer?.result?.data
@@ -111,16 +111,16 @@ function Panchang() {
     const currentTime = new Date();
     // ----------------------------------------Profile Panchang----------------------
 
-    let data1 = {
-        day: 1,
-        month: moment(date).format("M"),
-        year: moment(date).format("yy"),
-        hour: 2,
-        min: 15,
-        lat: 19.0759837,
-        lon: 72.8776559,
-        tzone: 5.5,
-    };
+    // let data1 = {
+    //     day: 1,
+    //     month: moment(date).format("M"),
+    //     year: moment(date).format("yy"),
+    //     hour: 2,
+    //     min: 15,
+    //     lat: 19.0759837,
+    //     lon: 72.8776559,
+    //     tzone: 5.5,
+    // };
    
 
     // useEffect(() => {
@@ -128,295 +128,295 @@ function Panchang() {
     // }, [monthPanchangpayload]);
     
 
-    var IdStore = localStorage.getItem("id")
-    useEffect(() => {
-        setMonthCount(moment(date).format('M'))
-        if (IdStore) {
-            const url = `/api/get_User_By_Id?userId=${IdStore}`
-            axios.get(url)
-                .then((res) => {
-                    setUserData(res?.data?.data)
-                    const requestOptions = {
-                        method: 'POST',
-                        headers: {
-                            'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                            'Content-Type': 'application/json',
-                            'Accept-Language': LocalStore
-                        },
-                        body: JSON.stringify(
-                            {
-                                "day": moment(date).format('DD'),
-                                "month": moment(date).format('M'),
-                                "year": moment(date).format('yy'),
-                              "hour": 0,
-                                "min": 1,
-                                "lat": res?.data?.data.lat || 19.0759837,
-                                "lon": res?.data?.data.lon || 72.8776559,
-                                "tzone": res?.data?.data.tzone || 5.5
-                            })
-                    };
-                    setLatitude(res?.data?.data.lat);
-                    setLongitude(res?.data?.data.lon);
-                    var monthPanchangPayloadProfile = {
-                        "day": 1,
-                        "month": moment(date).format('M'),
-                        "year": moment(date).format('yy'),
-                        "hour": 0,
-                        "min": 1,
-                        "lat": res?.data?.data.lat || 19.0759837,
-                        "lon": res?.data?.data.lon || 72.8776559,
-                        "tzone": res?.data?.data.tzone || 5.5
-                    }
-                    const bodyLoad1 = {
-                        "day": moment(date).format('DD'),
-                        "month": moment(date).format('M'),
-                        "year": moment(date).format('yy'),
-                       "hour": 0,
-                        "min": 1,
-                        "lat": res?.data?.data.lat || 19.0759837,
-                        "lon": res?.data?.data.lon || 72.8776559,
-                        "tzone": res?.data?.data.tzone || 5.5
-                    }
+    // var IdStore = localStorage.getItem("id")
+    // useEffect(() => {
+    //     setMonthCount(moment(date).format('M'))
+    //     if (IdStore) {
+    //         const url = `/api/get_User_By_Id?userId=${IdStore}`
+    //         axios.get(url)
+    //             .then((res) => {
+    //                 setUserData(res?.data?.data)
+    //                 const requestOptions = {
+    //                     method: 'POST',
+    //                     headers: {
+    //                         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //                         'Content-Type': 'application/json',
+    //                         'Accept-Language': LocalStore
+    //                     },
+    //                     body: JSON.stringify(
+    //                         {
+    //                             "day": moment(date).format('DD'),
+    //                             "month": moment(date).format('M'),
+    //                             "year": moment(date).format('yy'),
+    //                           "hour": 0,
+    //                             "min": 1,
+    //                             "lat": res?.data?.data.lat || 19.0759837,
+    //                             "lon": res?.data?.data.lon || 72.8776559,
+    //                             "tzone": res?.data?.data.tzone || 5.5
+    //                         })
+    //                 };
+    //                 setLatitude(res?.data?.data.lat);
+    //                 setLongitude(res?.data?.data.lon);
+    //                 var monthPanchangPayloadProfile = {
+    //                     "day": 1,
+    //                     "month": moment(date).format('M'),
+    //                     "year": moment(date).format('yy'),
+    //                     "hour": 0,
+    //                     "min": 1,
+    //                     "lat": res?.data?.data.lat || 19.0759837,
+    //                     "lon": res?.data?.data.lon || 72.8776559,
+    //                     "tzone": res?.data?.data.tzone || 5.5
+    //                 }
+    //                 const bodyLoad1 = {
+    //                     "day": moment(date).format('DD'),
+    //                     "month": moment(date).format('M'),
+    //                     "year": moment(date).format('yy'),
+    //                    "hour": 0,
+    //                     "min": 1,
+    //                     "lat": res?.data?.data.lat || 19.0759837,
+    //                     "lon": res?.data?.data.lon || 72.8776559,
+    //                     "tzone": res?.data?.data.tzone || 5.5
+    //                 }
 
-                    dispatch(monthPanchang(monthPanchangPayloadProfile));
-                    dispatch(advancePanchang(requestOptions, bodyLoad1))
-                    dispatch(panchangChartSunrise(requestOptions))
-                })
-        } else {
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                    'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                    'Content-Type': 'application/json',
-                    'Accept-Language': LocalStore
-                },
-                body: JSON.stringify(
-                    {
-                        "day": moment(date).format('DD'),
-                        "month": moment(date).format('M'),
-                        "year": moment(date).format('yy'),
-                        "hour": 0,
-                        "min": 1,
-                        "lat": 19.0759837,
-                        "lon": 72.8776559,
-                        "tzone": 5.5
-                    })
-            };
-            var monthPanchangPayload = {
-                "day": 1,
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-               "hour": 0,
-                "min": 1,
-                "lat": 19.0759837,
-                "lon": 72.8776559,
-                "tzone": 5.5
-            }
-            const bodyLoad1 = {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-               "hour": 0,
-                "min": 1,
-                "lat": 19.0759837,
-                "lon": 72.8776559,
-                "tzone": 5.5
-            }
-            dispatch(monthPanchang(monthPanchangPayload));
-            dispatch(advancePanchang(requestOptions, bodyLoad1))
-            dispatch(panchangChartSunrise(requestOptions))
-         }
+    //                 dispatch(monthPanchang(monthPanchangPayloadProfile));
+    //                 dispatch(advancePanchang(requestOptions, bodyLoad1))
+    //                 dispatch(panchangChartSunrise(requestOptions))
+    //             })
+    //     } else {
+    //         const requestOptions = {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //                 'Content-Type': 'application/json',
+    //                 'Accept-Language': LocalStore
+    //             },
+    //             body: JSON.stringify(
+    //                 {
+    //                     "day": moment(date).format('DD'),
+    //                     "month": moment(date).format('M'),
+    //                     "year": moment(date).format('yy'),
+    //                     "hour": 0,
+    //                     "min": 1,
+    //                     "lat": 19.0759837,
+    //                     "lon": 72.8776559,
+    //                     "tzone": 5.5
+    //                 })
+    //         };
+    //         var monthPanchangPayload = {
+    //             "day": 1,
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //            "hour": 0,
+    //             "min": 1,
+    //             "lat": 19.0759837,
+    //             "lon": 72.8776559,
+    //             "tzone": 5.5
+    //         }
+    //         const bodyLoad1 = {
+    //             "day": moment(date).format('DD'),
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //            "hour": 0,
+    //             "min": 1,
+    //             "lat": 19.0759837,
+    //             "lon": 72.8776559,
+    //             "tzone": 5.5
+    //         }
+    //         dispatch(monthPanchang(monthPanchangPayload));
+    //         dispatch(advancePanchang(requestOptions, bodyLoad1))
+    //         dispatch(panchangChartSunrise(requestOptions))
+    //      }
 
-    }, [])
+    // }, [])
 
 
     // ----------------------------------------Festival on side----------------------
-    useEffect(() => {
-        fetchFestivals(selectedMonth);
-    }, [selectedMonth]);
+    // useEffect(() => {
+    //     fetchFestivals(selectedMonth);
+    // }, [selectedMonth]);
 
-    const fetchFestivals = async (month) => {
-        var urlFes;
-        if (LocalStore === "hi") {
+    // const fetchFestivals = async (month) => {
+    //     var urlFes;
+    //     if (LocalStore === "hi") {
 
-            urlFes = `/api/getHindiFestivalsOnCategory?category=Main&year=${moment(date).format('YYYY')}`
-        }
-        else {
-            urlFes = `/api/getFestivalsOnCategory?category=Main&year=${moment(date).format('YYYY')}`
-        }
+    //         urlFes = `/api/getHindiFestivalsOnCategory?category=Main&year=${moment(date).format('YYYY')}`
+    //     }
+    //     else {
+    //         urlFes = `/api/getFestivalsOnCategory?category=Main&year=${moment(date).format('YYYY')}`
+    //     }
 
-        try {
-            const response = await axios.get(urlFes);
-            setMainFestival(response.data.data)
-            const startOfMonth = moment().month(month).startOf('month');
-            const endOfMonth = moment().month(month).endOf('month');
-            const nextTwoMonthsEnd = moment().month(month).add(4, 'months').endOf('month');
+    //     try {
+    //         const response = await axios.get(urlFes);
+    //         setMainFestival(response.data.data)
+    //         const startOfMonth = moment().month(month).startOf('month');
+    //         const endOfMonth = moment().month(month).endOf('month');
+    //         const nextTwoMonthsEnd = moment().month(month).add(4, 'months').endOf('month');
 
-            const filteredFestivals = response.data.data.filter(festival => {
-                const festivalDate = moment(festival.date);
+    //         const filteredFestivals = response.data.data.filter(festival => {
+    //             const festivalDate = moment(festival.date);
 
-                return festivalDate.isBetween(startOfMonth, nextTwoMonthsEnd, 'day', '[]');
-            });
+    //             return festivalDate.isBetween(startOfMonth, nextTwoMonthsEnd, 'day', '[]');
+    //         });
 
-            setFestivals(filteredFestivals);
+    //         setFestivals(filteredFestivals);
 
-            let LocalStore = localStorage.getItem('lng');
-            var url;
-            if (LocalStore === "hi") {
+    //         let LocalStore = localStorage.getItem('lng');
+    //         var url;
+    //         if (LocalStore === "hi") {
 
-                url = `/article/get_blog_by_festivalName?festivalName=दही हांडी&festivalStatus=false&articleType=PUBLISH&status=true`
-            }
-            else {
-                url = `/article/get_blog_by_festivalName?festivalName=Holi&festivalStatus=true&articleType=PUBLISH&status=true`
-            }
+    //             url = `/article/get_blog_by_festivalName?festivalName=दही हांडी&festivalStatus=false&articleType=PUBLISH&status=true`
+    //         }
+    //         else {
+    //             url = `/article/get_blog_by_festivalName?festivalName=Holi&festivalStatus=true&articleType=PUBLISH&status=true`
+    //         }
 
-            axios.get(url)
-                .then((res) => {
-                    setFirstFestival(res?.data?.data[0]?.imageUrl)
+    //         axios.get(url)
+    //             .then((res) => {
+    //                 setFirstFestival(res?.data?.data[0]?.imageUrl)
 
-                })
+    //             })
 
 
 
-        } catch (error) {
-            console.error('Error fetching festivals:', error);
-        }
-    };
+    //     } catch (error) {
+    //         console.error('Error fetching festivals:', error);
+    //     }
+    // };
 
     //------------------------- function with time zone ----------------------------------
 
-    const callbackFunction = (latitude, longitude, timezone, place, value) => {
-        setLatitude(latitude);
-        setLongitude(longitude);
-        setTimezone(timezone);
-        setPlace(place)
-    };
+    // const callbackFunction = (latitude, longitude, timezone, place, value) => {
+    //     setLatitude(latitude);
+    //     setLongitude(longitude);
+    //     setTimezone(timezone);
+    //     setPlace(place)
+    // };
     // data = Array.from(planetPanchangData);
-    let LocalStore = localStorage.getItem('lng');
-    const onChange = date => {
-        setDate(date)
+    // let LocalStore = localStorage.getItem('lng');
+    // const onChange = date => {
+    //     setDate(date)
 
-        setSelectedDate1(date);
-    }
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-            'Content-Type': 'application/json',
-            'Accept-Language': LocalStore
-        },
-        body: JSON.stringify(
-            {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-               "hour": 0,
-                "min": 1,
-                "lat": 19.0759837,
-                "lon": 72.8776559,
-                "tzone": 5.5
-            })
-    };
+    //     setSelectedDate1(date);
+    // }
+    // const requestOptions = {
+    //     method: 'POST',
+    //     headers: {
+    //         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //         'Content-Type': 'application/json',
+    //         'Accept-Language': LocalStore
+    //     },
+    //     body: JSON.stringify(
+    //         {
+    //             "day": moment(date).format('DD'),
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //            "hour": 0,
+    //             "min": 1,
+    //             "lat": 19.0759837,
+    //             "lon": 72.8776559,
+    //             "tzone": 5.5
+    //         })
+    // };
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        dispatch(geoLocation(place))
+    //     dispatch(geoLocation(place))
 
-    }, []);
+    // }, []);
 
-    const requestOptions1 = {
-        method: 'POST',
-        headers: {
-            'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-            'Content-Type': 'application/json',
-            'Accept-Language': LocalStore
-        },
-        body: JSON.stringify(
-            {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-                "hour": 0,
-                "min": 1,
-               "lat": latitude,
-                "lon": longitude,
-                "tzone": timezone
-            })
+    // const requestOptions1 = {
+    //     method: 'POST',
+    //     headers: {
+    //         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //         'Content-Type': 'application/json',
+    //         'Accept-Language': LocalStore
+    //     },
+    //     body: JSON.stringify(
+    //         {
+    //             "day": moment(date).format('DD'),
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //             "hour": 0,
+    //             "min": 1,
+    //            "lat": latitude,
+    //             "lon": longitude,
+    //             "tzone": timezone
+    //         })
 
-    }; const onSubmit11 = (e) => {
-        setMonthCount(moment(date).format('M'))
+    // }; const onSubmit11 = (e) => {
+    //     setMonthCount(moment(date).format('M'))
 
-        mixpanel.track('getPanchangOfDateClicked', { buttonName: 'getPanchangOfDateClicked' });
-        e.preventDefault();
-        setLoaderState(true);
-        if (place === "" || place === null) {
-            setNewDate(date);
+    //     mixpanel.track('getPanchangOfDateClicked', { buttonName: 'getPanchangOfDateClicked' });
+    //     e.preventDefault();
+    //     setLoaderState(true);
+    //     if (place === "" || place === null) {
+    //         setNewDate(date);
 
-            const dateObject = moment(date);
-            const monthNumber = dateObject.month() + 1; // Adding 1 because Moment.js months are zero-based
-            fetchFestivals(monthNumber);
-            var monthPanchangPayloadDateSelect = {
-                "day": 1,
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-                "hour": 0,
-                "min": 1,
-                "lat": 19.0759837,
-                "lon": 72.8776559,
-                "tzone": 5.5
-            }
-            const bodyLoad1 = {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-               "hour": 0,
-                "min": 1,
-                "lat": 19.0759837,
-                "lon": 72.8776559,
-                "tzone": 5.5
-            }
-            if (monthCount !== moment(date).format('M')) {
-                dispatch(monthPanchang(monthPanchangPayloadDateSelect));
-            }
+    //         const dateObject = moment(date);
+    //         const monthNumber = dateObject.month() + 1; // Adding 1 because Moment.js months are zero-based
+    //         fetchFestivals(monthNumber);
+    //         var monthPanchangPayloadDateSelect = {
+    //             "day": 1,
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //             "hour": 0,
+    //             "min": 1,
+    //             "lat": 19.0759837,
+    //             "lon": 72.8776559,
+    //             "tzone": 5.5
+    //         }
+    //         const bodyLoad1 = {
+    //             "day": moment(date).format('DD'),
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //            "hour": 0,
+    //             "min": 1,
+    //             "lat": 19.0759837,
+    //             "lon": 72.8776559,
+    //             "tzone": 5.5
+    //         }
+    //         if (monthCount !== moment(date).format('M')) {
+    //             dispatch(monthPanchang(monthPanchangPayloadDateSelect));
+    //         }
 
-            dispatch(advancePanchang(requestOptions, bodyLoad1))
-            dispatch(panchangChartSunrise(requestOptions))
-        } else {
-            setNewDate(date);
-            setNewPlace(place);
-            const dateObject = moment(date);
-            const monthNumber = dateObject.month() + 1; // Adding 1 because Moment.js months are zero-based
-            fetchFestivals(monthNumber);
-            const dataMonthSelect11 = {
-                day: 1,
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-                hour: 3,
-                min: 15,
-                lat: latitude,
-                lon: longitude,
-                tzone: timezone,
-            };
-            const bodyLoad1 = {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-                "hour": 0,
-                "min": 1,
-               "lat": latitude,
-                "lon": longitude,
-                "tzone": timezone
-            }
-           dispatch(monthPanchang(dataMonthSelect11));
-            dispatch(advancePanchang(requestOptions1, bodyLoad1))
-            dispatch(panchangChartSunrise(requestOptions1))
-           setPlaceShow(false);
-            setShow(true);
+    //         dispatch(advancePanchang(requestOptions, bodyLoad1))
+    //         dispatch(panchangChartSunrise(requestOptions))
+    //     } else {
+    //         setNewDate(date);
+    //         setNewPlace(place);
+    //         const dateObject = moment(date);
+    //         const monthNumber = dateObject.month() + 1; // Adding 1 because Moment.js months are zero-based
+    //         fetchFestivals(monthNumber);
+    //         const dataMonthSelect11 = {
+    //             day: 1,
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //             hour: 3,
+    //             min: 15,
+    //             lat: latitude,
+    //             lon: longitude,
+    //             tzone: timezone,
+    //         };
+    //         const bodyLoad1 = {
+    //             "day": moment(date).format('DD'),
+    //             "month": moment(date).format('M'),
+    //             "year": moment(date).format('yy'),
+    //             "hour": 0,
+    //             "min": 1,
+    //            "lat": latitude,
+    //             "lon": longitude,
+    //             "tzone": timezone
+    //         }
+    //        dispatch(monthPanchang(dataMonthSelect11));
+    //         dispatch(advancePanchang(requestOptions1, bodyLoad1))
+    //         dispatch(panchangChartSunrise(requestOptions1))
+    //        setPlaceShow(false);
+    //         setShow(true);
 
-        }
-        // window.scrollTo({ top: 500, left: 0, behavior: 'smooth' });
+    //     }
+    //     // window.scrollTo({ top: 500, left: 0, behavior: 'smooth' });
 
-    };
+    // };
 
    
     // -----------------------------------Next and Previous dates---------------------------------    
@@ -427,7 +427,7 @@ function Panchang() {
 
         nextDate.setDate(nextDate.getDate() + 1);
         setSelectedDate1(nextDate);
-        panchangDispatch()
+        // panchangDispatch()
     }
     const previousdateFnc = () => {
         date.setDate(date.getDate() - 1);
@@ -438,380 +438,380 @@ function Panchang() {
         prevDate.setDate(prevDate.getDate() - 1);
         setSelectedDate1(prevDate);
 
-        panchangDispatch()
+        // panchangDispatch()
     }
-    const panchangDispatch = () => {
-        const requestOptions2 = {
-            method: 'POST',
-            headers: {
-                'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                'Content-Type': 'application/json',
-                'Accept-Language': LocalStore
-            },
-            body: JSON.stringify(
-                {
-                    "day": moment(date).format('DD'),
-                    "month": moment(date).format('M'),
-                    "year": moment(date).format('yy'),
-                    "hour": 0,
-                    "min": 1,
+    // const panchangDispatch = () => {
+    //     const requestOptions2 = {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //             'Content-Type': 'application/json',
+    //             'Accept-Language': LocalStore
+    //         },
+    //         body: JSON.stringify(
+    //             {
+    //                 "day": moment(date).format('DD'),
+    //                 "month": moment(date).format('M'),
+    //                 "year": moment(date).format('yy'),
+    //                 "hour": 0,
+    //                 "min": 1,
 
-                    "lat": 19.0759837,
-                    "lon": 72.8776559,
-                    "tzone": 5.5
-                })
-        };
-        const bodyLoad2 = {
-            "day": moment(date).format('DD'),
-            "month": moment(date).format('M'),
-            "year": moment(date).format('yy'),
-            "hour": 0,
-            "min": 1,
-            "lat": 19.0759837,
-            "lon": 72.8776559,
-            "tzone": 5.5
-        }
+    //                 "lat": 19.0759837,
+    //                 "lon": 72.8776559,
+    //                 "tzone": 5.5
+    //             })
+    //     };
+    //     const bodyLoad2 = {
+    //         "day": moment(date).format('DD'),
+    //         "month": moment(date).format('M'),
+    //         "year": moment(date).format('yy'),
+    //         "hour": 0,
+    //         "min": 1,
+    //         "lat": 19.0759837,
+    //         "lon": 72.8776559,
+    //         "tzone": 5.5
+    //     }
 
-        const requestOptions3 = {
-            method: 'POST',
-            headers: {
-                'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                'Content-Type': 'application/json',
-                'Accept-Language': LocalStore
-            },
-            body: JSON.stringify(
-                {
-                    "day": moment(date).format('DD'),
-                    "month": moment(date).format('M'),
-                    "year": moment(date).format('yy'),
-                    "hour": 0,
-                    "min": 1,
-                    "lat": latitude,
-                    "lon": longitude,
-                    "tzone": timezone
-                })
-        };
-        const bodyLoad3 = {
-            "day": moment(date).format('DD'),
-            "month": moment(date).format('M'),
-            "year": moment(date).format('yy'),
-            "hour": 0,
-            "min": 1,
-           "lat": latitude,
-            "lon": longitude,
-            "tzone": timezone
-        }
+    //     const requestOptions3 = {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+    //             'Content-Type': 'application/json',
+    //             'Accept-Language': LocalStore
+    //         },
+    //         body: JSON.stringify(
+    //             {
+    //                 "day": moment(date).format('DD'),
+    //                 "month": moment(date).format('M'),
+    //                 "year": moment(date).format('yy'),
+    //                 "hour": 0,
+    //                 "min": 1,
+    //                 "lat": latitude,
+    //                 "lon": longitude,
+    //                 "tzone": timezone
+    //             })
+    //     };
+    //     const bodyLoad3 = {
+    //         "day": moment(date).format('DD'),
+    //         "month": moment(date).format('M'),
+    //         "year": moment(date).format('yy'),
+    //         "hour": 0,
+    //         "min": 1,
+    //        "lat": latitude,
+    //         "lon": longitude,
+    //         "tzone": timezone
+    //     }
 
-        if (place === "" || place === null) {
-            setNewDate(date)
+    //     if (place === "" || place === null) {
+    //         setNewDate(date)
 
-            dispatch(advancePanchang(requestOptions2, bodyLoad2))
-            dispatch(panchangChartSunrise(requestOptions2))
-         }
-        else {
-            setNewDate(date)
-            setNewPlace(place)
+    //         dispatch(advancePanchang(requestOptions2, bodyLoad2))
+    //         dispatch(panchangChartSunrise(requestOptions2))
+    //      }
+    //     else {
+    //         setNewDate(date)
+    //         setNewPlace(place)
 
-            dispatch(advancePanchang(requestOptions3, bodyLoad3))
-            dispatch(panchangChartSunrise(requestOptions3))
-           setPlaceShow(false)
-            setShow(true)
-        }
-    }
+    //         dispatch(advancePanchang(requestOptions3, bodyLoad3))
+    //         dispatch(panchangChartSunrise(requestOptions3))
+    //        setPlaceShow(false)
+    //         setShow(true)
+    //     }
+    // }
 
     const todaydateFnc = () => {
         setDate(new Date())
         setSelectedDate1(new Date());
-        mixpanel.track('getTodayPanchangClicked', { buttonName: 'getTodayPanchangClicked' });
-        const requestOptions2 = {
-            method: 'POST',
-            headers: {
-                'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                'Content-Type': 'application/json',
-                'Accept-Language': LocalStore
-            },
-            body: JSON.stringify(
-                {
-                    "day": moment(dateToday).format('DD'),
-                    "month": moment(dateToday).format('M'),
-                    "year": moment(dateToday).format('yy'),
-                    "hour": currentTime.getHours(),
-                    "min": currentTime.getMinutes(),
-                   "lat": 19.0759837,
-                    "lon": 72.8776559,
-                    "tzone": 5.5
-                })
-        };
-        const bodyLoad2 = {
-            "day": moment(dateToday).format('DD'),
-            "month": moment(dateToday).format('M'),
-            "year": moment(dateToday).format('yy'),
-            "hour": currentTime.getHours(),
-            "min": currentTime.getMinutes(),
-           "lat": 19.0759837,
-            "lon": 72.8776559,
-            "tzone": 5.5
-        }
+        // mixpanel.track('getTodayPanchangClicked', { buttonName: 'getTodayPanchangClicked' });
+        // const requestOptions2 = {
+        //     method: 'POST',
+        //     headers: {
+        //         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+        //         'Content-Type': 'application/json',
+        //         'Accept-Language': LocalStore
+        //     },
+        //     body: JSON.stringify(
+        //         {
+        //             "day": moment(dateToday).format('DD'),
+        //             "month": moment(dateToday).format('M'),
+        //             "year": moment(dateToday).format('yy'),
+        //             "hour": currentTime.getHours(),
+        //             "min": currentTime.getMinutes(),
+        //            "lat": 19.0759837,
+        //             "lon": 72.8776559,
+        //             "tzone": 5.5
+        //         })
+        // };
+        // const bodyLoad2 = {
+        //     "day": moment(dateToday).format('DD'),
+        //     "month": moment(dateToday).format('M'),
+        //     "year": moment(dateToday).format('yy'),
+        //     "hour": currentTime.getHours(),
+        //     "min": currentTime.getMinutes(),
+        //    "lat": 19.0759837,
+        //     "lon": 72.8776559,
+        //     "tzone": 5.5
+        // }
 
-        const requestOptions3 = {
-            method: 'POST',
-            headers: {
-                'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-                'Content-Type': 'application/json',
-                'Accept-Language': LocalStore
-            },
-            body: JSON.stringify(
-                {
-                    "day": moment(dateToday).format('DD'),
-                    "month": moment(dateToday).format('M'),
-                    "year": moment(dateToday).format('yy'),
-                    "hour": 0,
-                    "min": 1,
-                   "lat": latitude,
-                    "lon": longitude,
-                    "tzone": timezone
-                })
-        };
-        const bodyLoad3 = {
-            "day": moment(dateToday).format('DD'),
-            "month": moment(dateToday).format('M'),
-            "year": moment(dateToday).format('yy'),
-            "hour": currentTime.getHours(),
-            "min": currentTime.getMinutes(),
-            "lat": 19.0759837,
-            "lon": 72.8776559,
-            "tzone": 5.5
-        }
-        if (place === "" || place === null) {
-            setNewDate(dateToday)
+        // const requestOptions3 = {
+        //     method: 'POST',
+        //     headers: {
+        //         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+        //         'Content-Type': 'application/json',
+        //         'Accept-Language': LocalStore
+        //     },
+        //     body: JSON.stringify(
+        //         {
+        //             "day": moment(dateToday).format('DD'),
+        //             "month": moment(dateToday).format('M'),
+        //             "year": moment(dateToday).format('yy'),
+        //             "hour": 0,
+        //             "min": 1,
+        //            "lat": latitude,
+        //             "lon": longitude,
+        //             "tzone": timezone
+        //         })
+        // };
+        // const bodyLoad3 = {
+        //     "day": moment(dateToday).format('DD'),
+        //     "month": moment(dateToday).format('M'),
+        //     "year": moment(dateToday).format('yy'),
+        //     "hour": currentTime.getHours(),
+        //     "min": currentTime.getMinutes(),
+        //     "lat": 19.0759837,
+        //     "lon": 72.8776559,
+        //     "tzone": 5.5
+        // }
+        // if (place === "" || place === null) {
+        //     setNewDate(dateToday)
 
-            dispatch(advancePanchang(requestOptions2, bodyLoad2))
-            dispatch(panchangChartSunrise(requestOptions2))
-        }
-        else {
-            setNewDate(dateToday)
-            setNewPlace(place)
+        //     dispatch(advancePanchang(requestOptions2, bodyLoad2))
+        //     dispatch(panchangChartSunrise(requestOptions2))
+        // }
+        // else {
+        //     setNewDate(dateToday)
+        //     setNewPlace(place)
 
-            dispatch(additionalPanchang(requestOptions3, bodyLoad3))
-            setPlaceShow(false)
-            setShow(true)
-        }
+        //     dispatch(additionalPanchang(requestOptions3, bodyLoad3))
+        //     setPlaceShow(false)
+        //     setShow(true)
+        // }
 
 
     }
 
 
 
-    useEffect(() => {
-        // 👇️ scroll to top on page load
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, []);
-    const { t } = useTranslation();
+    // useEffect(() => {
+    //     // 👇️ scroll to top on page load
+    //     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    // }, []);
+     const { t } = useTranslation();
 
-    const handleMixPanelClick = (linkName) => {
-        mixpanel.track(linkName, { buttonName: linkName });
+    // const handleMixPanelClick = (linkName) => {
+    //     mixpanel.track(linkName, { buttonName: linkName });
 
-    };
-    const panchangDispatch1 = () => {
-        const data = {
-            day: 1,
-            month: moment(date).format("M"),
-            year: moment(date).format("yy"),
-            lat: 19.0759837,
-            lon: 72.8776559,
-            tzone: 5.5,
-        };
-        const dataMonthSelect = {
-            day: 1,
-            month: moment(date).format("M"),
-            year: moment(date).format("yy"),
-            lat: latitude,
-            lon: longitude,
-            tzone: timezone,
-        };
-        if (place === "" || place === null) {
-            setNewDate(date);
-            setShowTime(false);
-            dispatch(monthPanchang(data));
-        } else {
-            setNewDate(date);
-            setNewPlace(place);
-            setShowTime(false);
-            dispatch(monthPanchang(dataMonthSelect));
-            setPlaceShow(false);
-            setShow(true);
-        }
-    };
+    // };
+    // const panchangDispatch1 = () => {
+    //     const data = {
+    //         day: 1,
+    //         month: moment(date).format("M"),
+    //         year: moment(date).format("yy"),
+    //         lat: 19.0759837,
+    //         lon: 72.8776559,
+    //         tzone: 5.5,
+    //     };
+    //     const dataMonthSelect = {
+    //         day: 1,
+    //         month: moment(date).format("M"),
+    //         year: moment(date).format("yy"),
+    //         lat: latitude,
+    //         lon: longitude,
+    //         tzone: timezone,
+    //     };
+    //     if (place === "" || place === null) {
+    //         setNewDate(date);
+    //         setShowTime(false);
+    //         dispatch(monthPanchang(data));
+    //     } else {
+    //         setNewDate(date);
+    //         setNewPlace(place);
+    //         setShowTime(false);
+    //         dispatch(monthPanchang(dataMonthSelect));
+    //         setPlaceShow(false);
+    //         setShow(true);
+    //     }
+    // };
     const todaydateFnc1 = () => {
         setLoaderState(true);
         setDate(new Date());
-        const data = {
-            day: 1,
-            month: moment(dateToday).format("M"),
-            year: moment(dateToday).format("yy"),
-            lat: 28.535517,
-            lon: 77.391029,
-            tzone: 5.5,
-        };
-        const dataMonthSelect = {
-            day: 1,
-            month: moment(dateToday).format("M"),
-            year: moment(dateToday).format("yy"),
-            lat: latitude,
-            lon: longitude,
-            tzone: timezone,
-        };
-        if (place === "" || place === null) {
-            setNewDate(dateToday);
-            setShowTime(false);
-            dispatch(monthPanchang(data));
-        } else {
-            setNewDate(dateToday);
-            setNewPlace(place);
-            setShowTime(false);
-            dispatch(monthPanchang(dataMonthSelect));
-            setPlaceShow(false);
-            setShow(true);
-        }
+        // const data = {
+        //     day: 1,
+        //     month: moment(dateToday).format("M"),
+        //     year: moment(dateToday).format("yy"),
+        //     lat: 28.535517,
+        //     lon: 77.391029,
+        //     tzone: 5.5,
+        // };
+        // const dataMonthSelect = {
+        //     day: 1,
+        //     month: moment(dateToday).format("M"),
+        //     year: moment(dateToday).format("yy"),
+        //     lat: latitude,
+        //     lon: longitude,
+        //     tzone: timezone,
+        // };
+        // if (place === "" || place === null) {
+        //     setNewDate(dateToday);
+        //     setShowTime(false);
+        //     dispatch(monthPanchang(data));
+        // } else {
+        //     setNewDate(dateToday);
+        //     setNewPlace(place);
+        //     setShowTime(false);
+        //     dispatch(monthPanchang(dataMonthSelect));
+        //     setPlaceShow(false);
+        //     setShow(true);
+        // }
 
     };
 
     const nextDateFnc1 = () => {
         date.setMonth(date.getMonth() + 1);
         setSelectedMonth(nextMonth => nextMonth + 1);
-        panchangDispatch1();
+        // panchangDispatch1();
         setLoaderState(true);
     };
     const previousdateFnc1 = () => {
         date.setMonth(date.getMonth() - 1);
         setSelectedMonth(prevMonth => prevMonth - 1);
-        panchangDispatch1();
+        // panchangDispatch1();
         setLoaderState(true);
     };
 
 
-    const onSubmit = async (e, value) => {
-        e.preventDefault();
+    // const onSubmit = async (e, value) => {
+    //     e.preventDefault();
 
-        const requestOptions1 = {
-            method: "POST",
-            headers: {
-                Authorization: "Basic " + btoa(userId + ":" + apiKey),
-                "Content-Type": "application/json",
-                "Accept-Language": LocalStore,
-            },
-            body: JSON.stringify({
-                day: value,
-                month: moment(date).format("M"),
-                year: moment(date).format("yy"),
-                "hour": 0,
-                "min": 1,
-                lat: 19.0759837,
-                lon: 72.8776559,
-                tzone: 5.5,
-            }),
-        };
-        const requestOptions2 = {
-            method: "POST",
-            headers: {
-                Authorization: "Basic " + btoa(userId + ":" + apiKey),
-                "Content-Type": "application/json",
-                "Accept-Language": LocalStore,
-            },
-            body: JSON.stringify({
-                day: value,
-                month: moment(date).format("M"),
-                year: moment(date).format("yy"),
-                hour: 0,
-                min: 1,
-                lat: latitude,
-                lon: longitude,
-                tzone: timezone,
-            }),
-        };
-        const bodyLoad1 = {
-            day: value,
-            month: moment(date).format("M"),
-            year: moment(date).format("yy"),
-            "hour": 0,
-            "min": 1,
-            lat: 19.0759837,
-            lon: 72.8776559,
-            tzone: 5.5,
-        }
-        const bodyLoad2 = {
-            day: value,
-            month: moment(date).format("M"),
-            year: moment(date).format("yy"),
-            hour: 0,
-            min: 1,
-            lat: latitude,
-            lon: longitude,
-            tzone: timezone,
-        }
-        if (place === "" || place === null) {
-            dispatch(advancePanchang(requestOptions1, bodyLoad1))
-            dispatch(panchangChartSunrise(requestOptions1))
-        } else {
-            dispatch(advancePanchang(requestOptions2, bodyLoad2))
-            dispatch(panchangChartSunrise(requestOptions2))
-        }
+    //     const requestOptions1 = {
+    //         method: "POST",
+    //         headers: {
+    //             Authorization: "Basic " + btoa(userId + ":" + apiKey),
+    //             "Content-Type": "application/json",
+    //             "Accept-Language": LocalStore,
+    //         },
+    //         body: JSON.stringify({
+    //             day: value,
+    //             month: moment(date).format("M"),
+    //             year: moment(date).format("yy"),
+    //             "hour": 0,
+    //             "min": 1,
+    //             lat: 19.0759837,
+    //             lon: 72.8776559,
+    //             tzone: 5.5,
+    //         }),
+    //     };
+    //     const requestOptions2 = {
+    //         method: "POST",
+    //         headers: {
+    //             Authorization: "Basic " + btoa(userId + ":" + apiKey),
+    //             "Content-Type": "application/json",
+    //             "Accept-Language": LocalStore,
+    //         },
+    //         body: JSON.stringify({
+    //             day: value,
+    //             month: moment(date).format("M"),
+    //             year: moment(date).format("yy"),
+    //             hour: 0,
+    //             min: 1,
+    //             lat: latitude,
+    //             lon: longitude,
+    //             tzone: timezone,
+    //         }),
+    //     };
+    //     const bodyLoad1 = {
+    //         day: value,
+    //         month: moment(date).format("M"),
+    //         year: moment(date).format("yy"),
+    //         "hour": 0,
+    //         "min": 1,
+    //         lat: 19.0759837,
+    //         lon: 72.8776559,
+    //         tzone: 5.5,
+    //     }
+    //     const bodyLoad2 = {
+    //         day: value,
+    //         month: moment(date).format("M"),
+    //         year: moment(date).format("yy"),
+    //         hour: 0,
+    //         min: 1,
+    //         lat: latitude,
+    //         lon: longitude,
+    //         tzone: timezone,
+    //     }
+    //     if (place === "" || place === null) {
+    //         dispatch(advancePanchang(requestOptions1, bodyLoad1))
+    //         dispatch(panchangChartSunrise(requestOptions1))
+    //     } else {
+    //         dispatch(advancePanchang(requestOptions2, bodyLoad2))
+    //         dispatch(panchangChartSunrise(requestOptions2))
+    //     }
 
-        setNewDate(
-            value +
-            " " +
-            moment(date).format("MMMM") +
-            " " +
-            moment(date).format("YYYY")
-        );
-        const dateStr = `${value} ${moment(date).format("MMMM")} ${moment(date).format("YYYY")}`;
-        // Debugging output
+    //     setNewDate(
+    //         value +
+    //         " " +
+    //         moment(date).format("MMMM") +
+    //         " " +
+    //         moment(date).format("YYYY")
+    //     );
+    //     const dateStr = `${value} ${moment(date).format("MMMM")} ${moment(date).format("YYYY")}`;
+    //     // Debugging output
 
-        // Parse the date string into a Date object
-        const parsedDate = moment(dateStr, "D MMMM YYYY");
+    //     // Parse the date string into a Date object
+    //     const parsedDate = moment(dateStr, "D MMMM YYYY");
 
-        // Check if the date is valid
-        if (!parsedDate.isValid()) {
+    //     // Check if the date is valid
+    //     if (!parsedDate.isValid()) {
 
-            console.error(`Invalid Date: ${dateStr}`);
-            return;
-        }
+    //         console.error(`Invalid Date: ${dateStr}`);
+    //         return;
+    //     }
 
-        // Get current time
-        const currentTime = moment();
+    //     // Get current time
+    //     const currentTime = moment();
 
-        // Combine parsed date with current time
-        parsedDate.hour(currentTime.hour());
-        parsedDate.minute(currentTime.minute());
-        parsedDate.second(currentTime.second());
+    //     // Combine parsed date with current time
+    //     parsedDate.hour(currentTime.hour());
+    //     parsedDate.minute(currentTime.minute());
+    //     parsedDate.second(currentTime.second());
 
-        // Format the date into the desired format including the fixed time zone name
-        const formatted = parsedDate.format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ') + ' (India Standard Time)';
-        function convertToDateObject(formatted) {
-            // Extract the date and time part before the timezone
-            const dateTimeString = formatted.split(' (')[0];
+    //     // Format the date into the desired format including the fixed time zone name
+    //     const formatted = parsedDate.format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ') + ' (India Standard Time)';
+    //     function convertToDateObject(formatted) {
+    //         // Extract the date and time part before the timezone
+    //         const dateTimeString = formatted.split(' (')[0];
 
-            // Extract individual components
-            const [dayOfWeek, month, day, year, time, timezone] = dateTimeString.split(' ');
+    //         // Extract individual components
+    //         const [dayOfWeek, month, day, year, time, timezone] = dateTimeString.split(' ');
 
-            // Construct a date string compatible with Date constructor
-            const validDateString = `${day} ${month} ${year} ${time} ${timezone}`;
+    //         // Construct a date string compatible with Date constructor
+    //         const validDateString = `${day} ${month} ${year} ${time} ${timezone}`;
 
-            // Create and return the Date object
-            return new Date(validDateString);
-        }
+    //         // Create and return the Date object
+    //         return new Date(validDateString);
+    //     }
 
         // Use the function to convert
-        const dateObject = convertToDateObject(formatted);
+    //     const dateObject = convertToDateObject(formatted);
 
 
-        setSelectedDate1(dateObject)
-        setDate(dateObject)
+    //     setSelectedDate1(dateObject)
+    //     setDate(dateObject)
 
-        // window.scrollTo({ top: 1500, left: 0, behavior: 'smooth' });
-        scrollToDiv(div1Ref)
-        // setOpen2(1);
-    };
+    //     // window.scrollTo({ top: 1500, left: 0, behavior: 'smooth' });
+    //     scrollToDiv(div1Ref)
+    //     // setOpen2(1);
+    // };
 
     const weekDays = [
         {
@@ -850,49 +850,49 @@ function Panchang() {
 
         return dateValueSelected;
     }
-    const getFestivalBlogId = (name) => {
-        // mixpanel.track('getFestivalBlogsClicked', { buttonName: 'getFestivalBlogsClicked' });
+    // const getFestivalBlogId = (name) => {
+    //     // mixpanel.track('getFestivalBlogsClicked', { buttonName: 'getFestivalBlogsClicked' });
 
-        // ------------------------------API CALL---------------------------
-        let LocalStore = localStorage.getItem('lng');
-        var url1;
-        if (LocalStore === "hi") {
+    //     // ------------------------------API CALL---------------------------
+    //     let LocalStore = localStorage.getItem('lng');
+    //     var url1;
+    //     if (LocalStore === "hi") {
 
-            url1 = `/article/get_blog_by_festivalName?festivalName=${name}&festivalStatus=false&articleType=PUBLISH&status=true`
-        }
-        else {
-            url1 = `/article/get_blog_by_festivalName?festivalName=${name}&festivalStatus=true&articleType=PUBLISH&status=true`
-        }
-        let OPTIONS = {
-            url: url1,
-            method: "get",
+    //         url1 = `/article/get_blog_by_festivalName?festivalName=${name}&festivalStatus=false&articleType=PUBLISH&status=true`
+    //     }
+    //     else {
+    //         url1 = `/article/get_blog_by_festivalName?festivalName=${name}&festivalStatus=true&articleType=PUBLISH&status=true`
+    //     }
+    //     let OPTIONS = {
+    //         url: url1,
+    //         method: "get",
 
-            headers: {
-                "content-type": "application/json",
-            },
-        };
-        axios(OPTIONS)
-            .then((res) => {
-                // 
+    //         headers: {
+    //             "content-type": "application/json",
+    //         },
+    //     };
+    //     axios(OPTIONS)
+    //         .then((res) => {
+    //             // 
 
-                if (res.data.data[0]?.articleId) {
-                    // mixpanel.track('getFestivalBlogsSuccess');
+    //             if (res.data.data[0]?.articleId) {
+    //                 // mixpanel.track('getFestivalBlogsSuccess');
 
-                    const win = window.open(`/Blog/${res.data.data[0]?.articleId}`, '_blank');
-                    if (win != null) {
-                        win.focus();
-                    }
-                } else {
-                    // mixpanel.track('getFestivalBlogsFailed');
-                    toast.error(t('No Blog Found'))
-                }
+    //                 const win = window.open(`/Blog/${res.data.data[0]?.articleId}`, '_blank');
+    //                 if (win != null) {
+    //                     win.focus();
+    //                 }
+    //             } else {
+    //                 // mixpanel.track('getFestivalBlogsFailed');
+    //                 toast.error(t('No Blog Found'))
+    //             }
 
 
-            })
-        // ---------------------------------API CALL END---------------------------
+    //         })
+    //     // ---------------------------------API CALL END---------------------------
       
 
-    }
+    // }
     // const laganTablePanchang = useSelector((state) => state?.PanchangReducer?.panchangChartRiseSun);
     const [loading, setLoading] = useState(true);
 
@@ -918,11 +918,11 @@ function Panchang() {
                                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
                                         <div className="image-container position-relative">
                                             <center>
-                                                <img
+                                                <Image
                                                     src={panchangYantra}
                                                     alt="Your "
                                                     className="img-fluid"
-                                                ></img>
+                                                ></Image>
                                             </center>
 
                                             <div className="permanent-text">
@@ -996,11 +996,11 @@ function Panchang() {
                                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 mt-5 ">
                                         <div className='mb-3'>
                                            <center className='flashing-button mb-2 '>
-                                                <NavLink target="_blank" exact to={`/Panchang/PanchangAdditional`} onClick={() => handleMixPanelClick("checkAdvancePanchangAccordingToDateAndTimeClicked")}>
+                                                {/* <NavLink target="_blank" exact to={`/Panchang/PanchangAdditional`} onClick={() => handleMixPanelClick("checkAdvancePanchangAccordingToDateAndTimeClicked")}>
                                                     <button type="button" className="btn btn-danger placeSearchButton" >~ {t('Check')} ~</button>
 
 
-                                                </NavLink>
+                                                </NavLink> */}
                                             </center>
                                         </div>
                                         <span>
@@ -1029,7 +1029,7 @@ function Panchang() {
                                                     showYearDropdown
                                                     dateFormat="dd/MM/yyyy"
                                                     dropdownMode="select"
-                                                    className='selectPanchangDate' selected={date} onChange={onChange}
+                                                    // className='selectPanchangDate' selected={date} onChange={onChange}
                                                 />
                                             </div>
                                             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-3     col-xl-3   mt-1">
@@ -1273,7 +1273,7 @@ function Panchang() {
                                 <div className='muhurat-items1 overFlowFes '>
                                     <h5 className='festival'>{t('Shubh Muhurat')}</h5>
 
-                                    <ul className='fest-name1 '>
+                                    {/* <ul className='fest-name1 '>
                                         <li><Link to='/Panchang/Muhurat/VivahMuhurat' target="_blank">
                                             {t('Wedding Muhurta')}
 
@@ -1296,7 +1296,7 @@ function Panchang() {
                                         <li><Link to='/Panchang/Muhurat/VehiclePurchase' target="_blank">
                                             {t('VehiclePurchase')}
                                         </Link></li>
-                                    </ul>
+                                    </ul> */}
 
                                 </div>
                                 <div className='muhurat-items2 overFlowFes'>
@@ -1307,7 +1307,7 @@ function Panchang() {
 
                                         {mainFestival.map(festival => (
                                             <li className='cursor-pointer' key={festival.id} onClick={() => getFestivalBlogId(festival.festival)}>
-                                               <Link> {festival.festival} : <br></br>{moment(festival.date).format('DD-MM-YYYY')}</Link>
+                                               {/* <Link> {festival.festival} : <br></br>{moment(festival.date).format('DD-MM-YYYY')}</Link> */}
                                             </li>
                                         ))}
 
@@ -1334,10 +1334,10 @@ function Panchang() {
                                         {moment(newDate).format('DD/MM/YY')}
 
                                     </b></h4>
-                                    {placeShow ? <div className="col-sm-12 dateAndTime">
+                                    {/* {placeShow ? <div className="col-sm-12 dateAndTime">
                                         {IdStore ? <h6>{userData.location}</h6> : <h6>Mumbai, Maharashtra, India</h6>}
 
-                                    </div> : null}
+                                    </div> : null} */}
                                     {show ? <div className="col-sm-12 dateAndTime">
                                         <h6> {newPlace}</h6>
                                     </div> : null}
@@ -1432,8 +1432,8 @@ function Panchang() {
                             <div className="col-sm-3"></div>
                             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 space-div">
                                 <center className='flashing-button'>
-                                    <NavLink exact to={`/Panchang/PanchangAdditional`} onClick={() => handleMixPanelClick("checkAdvancePanchangAccordingToDateAndTimeClicked")} target="_blank"> <button type="button" className="btn btn-danger placeSearchButton">~ {t('Check')} ~</button>
-                                    </NavLink>
+                                    {/* <NavLink exact to={`/Panchang/PanchangAdditional`} onClick={() => handleMixPanelClick("checkAdvancePanchangAccordingToDateAndTimeClicked")} target="_blank"> <button type="button" className="btn btn-danger placeSearchButton">~ {t('Check')} ~</button>
+                                    </NavLink> */}
                                 </center>
                             </div>
                             <div className="col-sm-3"></div>
@@ -2011,11 +2011,11 @@ function Panchang() {
                             <h5 className='festival'>{t('Upcoming Festivals')}</h5>
 
                             <ul className='fest-name overFlowFes1'>
-                                {festivals.map(festival => (
+                                {/* {festivals.map(festival => (
                                     <li className='cursor-pointer' key={festival.id} onClick={() => getFestivalBlogId(festival.festival)}>
                                         {festival.festival} : <div>{moment(festival.date).format('DD-MM-YYYY')}</div>
                                     </li>
-                                ))}
+                                ))} */}
                             </ul>
 
                             {/* <center className='mb-5'>
@@ -2030,7 +2030,7 @@ function Panchang() {
                             <div className='muhurat-items1  '>
                                     <h5 className='festival'>{t('Shubh Muhurat')}</h5>
 
-                                    <ul className='fest-name overFlowFes1 '>
+                                    {/* <ul className='fest-name overFlowFes1 '>
                                         <li><Link to='/Panchang/Muhurat/VivahMuhurat' target="_blank">
                                             {t('Wedding Muhurta')}
 
@@ -2055,7 +2055,7 @@ function Panchang() {
                                         </Link></li>
                                        
 
-                                    </ul>
+                                    </ul> */}
 
                                 </div>
                             <div className='muhurat-items2 '>
@@ -2066,7 +2066,7 @@ function Panchang() {
 
                                     {mainFestival.map(festival => (
                                         <li className='cursor-pointer' key={festival.id} onClick={() => getFestivalBlogId(festival.festival)}>
-                                          <Link>  {festival.festival} : <br></br>{moment(festival.date).format('DD-MM-YYYY')}</Link>
+                                          {/* <Link>  {festival.festival} : <br></br>{moment(festival.date).format('DD-MM-YYYY')}</Link> */}
                                         </li>
                                     ))}
 

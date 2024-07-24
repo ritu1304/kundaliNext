@@ -66,7 +66,7 @@ const Contact = () => {
         }
     }, [errors]);
     return (
-        <div className='container-fluid contactUsBg'>
+        <div className='container-fluid contactUsBg wrapper1'>
             {/* <ToastContainer /> */}
             <div className="container">
                 <div className="row">

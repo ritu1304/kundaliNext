@@ -11,7 +11,7 @@ const AboutUs = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <div className="container-fluid ">
+      <div className="container-fluid wrapper1">
         <div className="">
           <div className="inspirationBox">
                  {/* <div className="col-sm-1 col-md-1 mt-2"></div> */}

@@ -146,10 +146,15 @@ const Form = () => {
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <center>
-                      <button type="submit" className="btn btn-primary mt-4">
+                    
+                    <center className='btnLp btn control_for_btns text-white'>
+                
+                Get Your Free Kundli Now
+               
+              
+                      {/* <button type="submit" className=" btnLp btn control_for_btns text-white">
                         Get Your Free Kundali Now
-                      </button>
+                      </button> */}
                     </center>
                   </div>
                 </div>

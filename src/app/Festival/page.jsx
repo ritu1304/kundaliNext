@@ -354,12 +354,12 @@ function Festival(props) {
     }
      return (
         <div>
-            <div className="for_background" >
+            <div className="for_background wrapper1" >
                 <div className="container-fluid find_now">
                     <div className="container">
                         <div className='row'>
                             {/* <Common festival='a' show='a' /> */}
-                            <h1 className="heading-desc">FESTIVAL</h1>
+                            <center className="heading-desc">FESTIVAL</center>
                           <span>
                                 {/* <p className='for_paragraph textAlignment resText'>
                                     <ReactReadMoreReadLess

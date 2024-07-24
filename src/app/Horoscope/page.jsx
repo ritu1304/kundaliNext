@@ -79,7 +79,7 @@ var signID;
     }, []);
 
     return (
-        <div className={`container-fluid `}>
+        <div className={`container-fluid wrapper1`}>
             <div className="container">
                 <div className="row">
                     {/* <Common Horoscope='a' />

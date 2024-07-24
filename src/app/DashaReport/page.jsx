@@ -158,7 +158,7 @@ const Dasha = () => {
         setShow2(true);
     };
   return (
-    <div>
+    <div className='wrapper1'>
       <KundliNavbar />
       <h1>Dosha Report</h1>
       <p>This is Dosha Report Section</p>

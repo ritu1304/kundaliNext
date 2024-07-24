@@ -22,7 +22,7 @@ function Kundali(props) {
     var LocalStore = localStorage.getItem('lng');
     return (
         <div>
-            <div className='container-fluid find_now '>
+            <div className='container-fluid find_now wrapper1'>
                 <div className='container'>
                     {/* <Common Kundali='a' show='a' /> */}
                     <h1 className="heading-desc">Kundali</h1>

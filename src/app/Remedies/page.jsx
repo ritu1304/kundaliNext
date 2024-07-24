@@ -81,7 +81,7 @@ const Remedies = () => {
   return (
       <div>
 
-          <div div className="for_background">
+          <div div className="for_background wrapper1">
               <div className='container-fluid find_now  '>
                   <div className="container" >
 

@@ -130,7 +130,7 @@ const AnushthanFront = () => {
     };
 
     return (
-        <div className="for_background ">
+        <div className="for_background wrapper1">
 
             <div className="container-fluid find_now">
                 <div className="row">

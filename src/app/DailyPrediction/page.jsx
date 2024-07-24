@@ -56,7 +56,7 @@ const DailyPrediction = () => {
 console.log("Prediction daily", predictionDaily)
   return (
     <div>
-      <div className="for_background" style={{ backgroundImage: `url("imgs/Background/back.png")` }}>
+      <div className="for_background wrapper1" style={{ backgroundImage: `url("imgs/Background/back.png")` }}>
         <div className='container-fluid find_now'>
           <div className="container">
             <KundliNavbar />

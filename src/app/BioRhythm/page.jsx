@@ -65,7 +65,7 @@ const BioRhythm = () => {
 
 
   return (
-    <div className='container-fluid find_now'>
+    <div className='container-fluid find_now wrapper1'>
       <div className="container">
         <KundliNavbar />
         <br />
