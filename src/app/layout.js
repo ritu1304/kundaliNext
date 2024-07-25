@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { appWithTranslation } from 'next-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-//  import { appWithTranslation } from 'next-i18next';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,5 +24,4 @@ const RootLayout = ({ children }) => {
     </html>
   );
 }
-export default RootLayout
-// export default appWithTranslation(RootLayout)
+ export default appWithTranslation(RootLayout)
