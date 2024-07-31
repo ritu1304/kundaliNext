@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { appWithTranslation } from 'next-i18next';
+// import { appWithTranslation } from 'next-i18next';
+// import '../i18n'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,4 +25,5 @@ const RootLayout = ({ children }) => {
     </html>
   );
 }
- export default appWithTranslation(RootLayout)
+//  export default appWithTranslation(RootLayout)
+export default RootLayout;

@@ -1,26 +1,28 @@
+'use client';
 
 
 import Link from 'next/link';
 import SanatanLogo from '../../public/Headerlogo35kb.png'
 import GaneshaLogo from '../../public/Top ganesha icon  35 kb.png'
 import Image from 'next/image';
- import { useTranslation } from 'next-i18next';
+//  import { useTranslation } from 'next-i18next';
+//  import { useRouter } from 'next/router';
 
 const Header = () => {
   
-  const { i18n } = useTranslation();
-  const router = useRouter();
+  // const { i18n } = useTranslation();
+  // const router = useRouter();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    router.push(router.pathname, router.asPath, { locale: lng });
-  };
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  //   router.push(router.pathname, router.asPath, { locale: lng });
+  // };
 
   return (
     <div>
     <header className="header  centeredLp">
-    <button onClick={() => changeLanguage('en')}>English</button>
-    <button onClick={() => changeLanguage('hi')}>Hindi</button>
+    {/* <button onClick={() => changeLanguage('en')}>English</button>
+    <button onClick={() => changeLanguage('hi')}>Hindi</button> */}
       <Link  href="/" className="logo">
       <Image src={SanatanLogo} alt="" />
         </Link>

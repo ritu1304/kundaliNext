@@ -1,372 +1,110 @@
-"use client"
-import React, { useEffect, useState } from 'react'
-import { Link, } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-// import { getBlog, randomTopViewBlog, getPopularBlog, getCategory } from '../../Redux/Action/BlogAction'
-// import './Blog.css';
-import InfiniteScroll from "react-infinite-scroll-component";
-import { toast } from 'react-toastify';
-// import mixpanel from 'mixpanel-browser';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import { Navigation, Autoplay , Pagination} from 'swiper/modules';
-import pisces from '../../../public/KundaliImg.png'
-import Image from 'next/image';
-// import './CustomCarousel.css';
+import SwiperComponent from "@/components/BlogComponent/SwiperBlog";
+import CategoryTabs from "@/components/BlogComponent/BlogCategory";
 
-const Blog = () => {
-    useEffect(() => {
-        // mixpanel.track('blogsPageViewed');
-    }, []);
-    // ---------------------Infinite Scroll------------------------
-    const [posts, setPosts] = useState([])
-    const [pageNumber, setPageNumber] = useState(0)
-    // ---------------------Infinite Scroll------------------------
-    const [value, setValue] = useState(null)
-    const { t } = useTranslation();
-    const [toggleState, setToggleState] = useState(1);
-    const [allPosts, setAllPosts] = useState([])
-    //  const dispatch = useDispatch()
-    const [key, setKey] = useState("All")
-    const [page, setPage] = useState(0)
-    const [filterSearch, setFilterSearch] = useState('')
-    const [categories, setCategories] = useState('')
+const Blog = async () => {
+  let allPosts = [];
+  try {
+    const response = await fetch('https://apis.sanatanjyoti.com/article/get_All_Blogs?articleType=PUBLISH&festivalStatus=true&page=0&size=30&status=true');
+    const result = await response.json();
+    allPosts = result.data;
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
 
-    // const blogData = useSelector(state => state.blogReducer)
-    // -------------------------------------Blogs Category-------------------------
-    const optns = [
-        { value: "All", label: t('All') },
-        { value: "Other", label: t('Other') },
-        { value: "By Author", label: t('By Author') },
-        { value: "Vrat", label: t('Vrat') },
-        { value: "Shiv Shakti", label: t('Shiv Shakti') },
-        { value: "Shree Hari", label: t('Shree Hari') },
-        { value: "Ekadashi", label: t('Ekadashi') },
-        { value: "Astrology", label: t('Astrology') },
-        { value: "Festival", label: t('Festival') },
-        { value: "Jayanti", label: t('Jayanti') },
+  let posts = [];
+  try {
+    const response = await fetch('https://apis.sanatanjyoti.com/article/get_blogs?category=All&categoryName=&keyword=&articleType=PUBLISH&isDraftBlog=false&festivalStatus=true&status=true&page=0&size=5');
+    const result = await response.json();
+    posts = result.data;
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
 
-    ];
-    // ------------------------------------All blogs ---------------------------
-    let LocalStore = localStorage.getItem('lng');
+  let blogData = [];
+  try {
+    const response = await fetch('https://apis.sanatanjyoti.com/article/get_Top_Blogs');
+    const result = await response.json();
+    blogData = result.data;
+    console.log("=====", blogData)
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
+  
 
-    var language;
-    if (LocalStore == "hi") {
-        language = false;
-    }
-    else {
-        language = true;
-    }
-    useEffect(() => {
-        const fetchAllPosts = async () => {
-            let OPTIONS = {
-
-                url: `/article/get_All_Blogs?articleType=PUBLISH&festivalStatus=${language}&page=0&size=30&status=true`,
-                method: "get",
-                headers: {
-                    "content-type": "application/json",
-                },
-            };
-            axios(OPTIONS)
-                .then((res) => {
-
-                    setAllPosts(res.data.data)
+//   const handleSearch = (e) => {
+//     setPageNumber(0)
+//     setFilterSearch(e.target.value)
 
 
-                })
-        }
-        fetchAllPosts()
-    }, [])
-   
-    // ------------------------------------All blogs API End ---------------------------
+// }
 
-    useEffect(() => {
-        const data = {
-            keyword: filterSearch,
-            category: key,
-            changeCate: '',
-            page: page,
-        }
+//   const searchFilter = (e) => {
 
-        // dispatch(getBlog(data))
-        // dispatch(randomTopViewBlog())
-        // dispatch(getPopularBlog())
-        // dispatch(getCategory())
-    }, [page])
-    const toggleTab = (datas, index) => {
-        // mixpanel.track(datas, { buttonName: 'getBlogsByCategoryClicked' });
-
-        setToggleState(index);
-        setPageNumber(0)
-
-
-        if (datas == 'All') {
-            setCategories("")
-            const data = {
-                keyword: filterSearch,
-                category: 'All',
-                changeCate: '',
-                page: page,
-            }
-
-            // dispatch(getBlog(data))
-
-        } else {
-            setCategories(datas)
-            const data = {
-                keyword: filterSearch,
-                category: 'All',
-                changeCate: datas,
-                page: page,
-            }
-
-            // dispatch(getBlog(data))
-
-        }
-
-
-
-    };
-
-    // ================================content word reduce========================
-    const truncateContent = (str, num) => {
-        if (str?.length > num) {
-            return str.slice(0, num) + '.....';
-        } else {
-            return str;
-        }
-    };
-    // 
-    // ==================================================filtersearch ================================
-    const handleSearch = (e) => {
-        setPageNumber(0)
-        setFilterSearch(e.target.value)
-
-
-    }
-    const searchFilter = (e) => {
-
-        // mixpanel.track('getSearchedBlogClicked', { buttonName: 'getSearchedBlogClicked' });
-
-        e.preventDefault()
-        const data = {
-            keyword: filterSearch,
-            category: key
-        }
-
-        // dispatch(getBlog(data))
-
-    }
-    useEffect(() => {
-        if (filterSearch.length < 1) {
-
-            const data = {
-                keyword: filterSearch,
-                category: key,
-                changeCate: ''
-            }
-
-            // dispatch(getBlog(data))
-
-        } else {
-
-        }
-    }, [filterSearch])
-    // ---------------------Infinite Scroll------------------------
-    useEffect(() => {
-        const fetchApiPosts = async () => {
-            let OPTIONS = {
-                url: `/article/get_blogs?category=${key}&categoryName=${categories}&keyword=${filterSearch}&articleType=PUBLISH&isDraftBlog=false&festivalStatus=${language}&status=true&page=${pageNumber}&size=5`,
-                method: "get",
-                headers: {
-                    "content-type": "application/json",
-                },
-            };
-            axios(OPTIONS)
-                .then((res) => {
-                    setPosts(res.data.data)
-
-                    if (res.data.data.length >= 5) {
-                        setPageNumber(pageNumber + 1)
-                    }
-
-                })
-        }
-        fetchApiPosts()
-    }, [categories, filterSearch])
-    const fetchData = async () => {
-        if (posts.length >= 5) {
-
-            setPageNumber((prevPageNumber) => prevPageNumber + 1);
-            const fetchApiPosts = async () => {
-                let OPTIONS = {
-                    url: `/article/get_blogs?category=${key}&categoryName=${categories}&keyword=${filterSearch}&articleType=PUBLISH&isDraftBlog=false&festivalStatus=${language}&status=true&page=${pageNumber}&size=5`,
-                    method: "get",
-                    headers: {
-                        "content-type": "application/json",
-                    },
-                };
-                axios(OPTIONS)
-                    .then((res) => {
-                        setPosts(posts.concat(res.data.data))
-                    })
-            }
-            fetchApiPosts()
-        }
-    }
     
-    const anyFunction = (idArticle) => {
-        localStorage.setItem('idArticle', idArticle)
-        setValue(idArticle)
-    }
-    const userId = localStorage.getItem("id")
-    
-    const likeFunction = (idArticle) => {
-        localStorage.setItem('idArticle', idArticle)
-        // setValue(idArticle)
-        if (userId) {
-            let OPTIONS = {
+//     e.preventDefault()
+//     const data = {
+//         keyword: filterSearch,
+//         category: key
+//     }
 
-                url: `/article/like_ArticleOrDislike_Article`,
-                method: "POST",
-                data: {
-                    articleId: idArticle,
-                    userId: userId
-                },
-                headers: {
-                    "content-type": "application/json",
-                },
-            };
-            axios(OPTIONS)
-                .then((res) => {
-                    // alert("without parameter and like")
+//     // fetch blog API
 
+//   }
+const truncateContent = (str, num) => {
+  if (str?.length > num) {
+      return str.slice(0, num) + '.....';
+  } else {
+      return str;
+  }
+};
 
-                })
-            // againcall()
-        }
-        else {
-            toast.error("Please  Login")
-        }
+ 
 
-
-    }
-    const handleMixPanelClick = (linkName) => {
-        // mixpanel.track(linkName, { buttonName: linkName });
-
-    };
-    return (
-        <div className="for_background wrapper1">
+  return (
+    <div className="for_background wrapper1">
             <div className="container-fluid find_now">
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-12 marginResp">
                         <div className="blogBox my-3 text-center">
-                            <h2 style={{fontSize:'24px'}} className='fw-bold pt-2 textSize'>{t('Blog')}</h2>
+                            <h2 style={{fontSize:'24px'}} className='fw-bold pt-2 textSize'>Blog</h2>
                         </div>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="container mt-2">
+            {/* <div className="container">
+              <div className="container mt-2"> */}
+              <div>
+                <div>
                         <div className="row">
                             <h4 className='main_color fw-bold'>
-                                {t('Categories')}
+                                Categories
                             </h4>
-                            <div className="container">
-                                <div className="bloc-tabs">
-                                    <>  {
-                                        optns?.map((data, index) => {
-                                            return <>
-                                                <button
-                                                    className={toggleState === index + 1 ? "tabs active-tabs" : "tabs"}
-                                                    onClick={() => toggleTab(data.value, index + 1)}
-                                                >
-                                                    {data.label}
-                                                </button>
-                                            </>
-                                        })
-                                    }</>
-
-                                </div>
-                            </div>
+                            <CategoryTabs />
                         </div>
-                        {/* ---------------------------------------------Crousel------------------------------------- */}
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <div className="swiper-container">
-                                    <Swiper
-                                    className="custom-swiper"
-                                        modules={[Navigation, Autoplay, Pagination]}
-                                        // navigation
-                                        pagination={{ clickable: true }}
-                                        autoplay={{ delay: 3000 }} 
-                                        spaceBetween={30}
-                                        slidesPerView={1}
-                                        breakpoints={{
-                                        640: {
-                                            slidesPerView: 2,
-                                            spaceBetween: 5,
-                                        },
-                                        768: {
-                                            slidesPerView: 3,
-                                            spaceBetween: 10,
-                                        },
-                                        1024: {
-                                            slidesPerView: 4,
-                                            spaceBetween: 15,
-                                        },
-                                        }}
-                                    >
-                                        {/* {allPosts.map((item, index) => ( */}
-                                                <SwiperSlide >
-                                                    {/* <Link
-                                                    to={`${item?.articleId}`}
-                                                    onClick={() => handleMixPanelClick('getSingleBlogClicked')}
-                                                    
-                                                    > */}
-                                                    <div className="carousel-card">
-                                                        {/* <img src={item?.imageUrl} alt={item?.title} /> */}
-                                                        <Image
-                                                            src={pisces}
-                                                            alt= 'pisces'
-                                                            width="100px"
-                                                            height="100px"
-                                                        />
-                                                        <div className="textCarousel">
-                                                        <h5><b>
-                                                            {/* {item?.title} */}
-                                                            Shivratri
-                                                            </b></h5>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    {/* </Link> */}
-                                                </SwiperSlide>
-                                         {/* ))} */}
-                                </Swiper>
-                                </div>
-                            </div>
+                
+                      <div className="row">
+                        <div className="col-sm-12">
+                          {allPosts.length > 0 ? (
+                            <SwiperComponent allPosts={allPosts} />
+                          ) : (
+                            <p>No posts available</p>
+                          )}
                         </div>
-                        {/* ---------------------------------------------Crousel End------------------------------------- */}
-                        <hr />
-                        <div className='row' >
+                      </div>
+                      <div className='row' >
                             <div className='col-sm-12 col-md-9 col-lg-9 ' >
                                 <div className="row " style={{alignItems:"center"}}>
                                     <div className='col-sm-12 col-md-3 col-lg-3 ' >
-                                        {/* <Link to={``}> */}
-                                        <h5 className='main_color'>{t('Latest Posts')} </h5>
-                                        {/* </Link> */}
+                                        <h5 className='main_color'>Latest Posts </h5>
                                         <hr className='main_color w-25 hr_main ' />
                                     </div>
                                     <div className='col-sm-12 col-md-6 col-lg-6  ' >
-                                        <form onSubmit={searchFilter}>
+                                        <form                                        
+                                        //  onSubmit={searchFilter}
+                                        >
                                             <div className="icon-input">
                                                 <input className="icon-input__text-field  px-4 w-100 " required type="text"
-                                                    value={filterSearch} onChange={(e) => handleSearch(e)} />
+                                                    //  value={filterSearch} onChange={(e) => handleSearch(e)} 
+                                                    />
                                                 <button className="fas fa-search icon-input__icon material-icons  " type="submit"></button>
                                             </div>
                                         </form>
@@ -379,12 +117,12 @@ const Blog = () => {
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-3">
                                 <div className="">
-                                    <InfiniteScroll
+                                    {/* <InfiniteScroll
                                         dataLength={posts.length}
                                         next={fetchData}
                                         hasMore={true}
                                         loader={<h4 style={{paddingTop:'6px'}}>{t('No more blogs')}</h4>}
-                                    >
+                                    > */}
                                         {posts?.map((data, index) => {
                                             return (<>
                                                 <div key={index} >
@@ -393,7 +131,9 @@ const Blog = () => {
                                                         <div className="card-header text-light popularHeader">
                                                             <center>
                                                                 <h4><b className=' mt-2  '>
-                                                                    {truncateContent(`${data.title}`, 70)} </b></h4>
+                                                                    {truncateContent(`${data.title}`, 70)} 
+                                                                    {data.title}
+                                                                    </b></h4>
                                                             </center>
                                                         </div>
 
@@ -401,14 +141,15 @@ const Blog = () => {
                                                             <img className=' img-fluid imageMain shadow '
                                                                 src={data.imageUrl} alt={data.imageName} />
                                                             <p className='blogParaP mt-2'
-                                                                dangerouslySetInnerHTML={{ __html: truncateContent(`${data.subject}`, 300) }} />
+                                                                dangerouslySetInnerHTML={{ __html: truncateContent(`${data.subject}`, 300) }} 
+                                                                />
                                                           
                                                             <div className='readMore '>
                                                                 <div>
-                                                                    <Link to={`${data.articleId}`} onClick={() => handleMixPanelClick("getSingleBlogClicked")} >
-                                                                        <h6 className='fw-bold readMoreText'>{t('Read More')}..</h6>
+                                                                    {/* <Link to={`${data.articleId}`} onClick={() => handleMixPanelClick("getSingleBlogClicked")} > */}
+                                                                        <h6 className='fw-bold readMoreText'>Read More..</h6>
                                                                         <hr className='hr_main main_color' />
-                                                                    </Link>
+                                                                    {/* </Link> */}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -417,7 +158,7 @@ const Blog = () => {
                                                 </div>
                                             </>)
                                         })}
-                                    </InfiniteScroll>
+                                    {/* </InfiniteScroll> */}
                                 </div>
                             </div>
                             {/* <div className='col-sm-1 col-md-1 col-lg-1  '> </div> */}
@@ -426,12 +167,12 @@ const Blog = () => {
                                 <div className="card popularBox stickyDiv">
                                     <div className="card-header text-light popularHeader">
                                         <center>
-                                            <h4 className='pt-2'>{t('Popular Posts')}</h4>
+                                            <h4 className='pt-2' >Popular Posts</h4>
                                         </center>
                                     </div>
                                     <div className="card-body hiddenScroll">
                                         <div className="scrollableCards ">
-                                            {/* {blogData?.popularBlog?.map((data) => {
+                                             {blogData?.map((data) => {
                                                 return <>
                                                     <img className=' img-fluid imageThumbnail shadow '
                                                         src={data.imageUrl} alt={data.imageName} />
@@ -442,15 +183,15 @@ const Blog = () => {
                                                     />
                                                     <div className='readMore '>
                                                         <div>
-                                                            <Link to={`${data.articleId}`} onClick={() => handleMixPanelClick("readPopularBlogClicked")}>
-                                                                <h6 className='fw-bold readMoreText'>{t('Read More')}..</h6>
+                                                            {/* <Link to={`${data.articleId}`} onClick={() => handleMixPanelClick("readPopularBlogClicked")}> */}
+                                                                <h6 className='fw-bold readMoreText'>Read More..</h6>
                                                                 <hr className='hr_main main_color' />
-                                                            </Link>
+                                                            {/* </Link> */}
                                                         </div>
                                                     </div>
                                                     <hr />
                                                 </>
-                                            })} */}
+                                            })} 
                                         </div>
                                     </div>
                                     <div className="card-footer">
@@ -458,10 +199,14 @@ const Blog = () => {
                                 </div>
                             </div>
                         </div>
-                    </div><br /><br />
-                </div >
-            </div>
-        </div>
-    )
-}
-export default Blog
+                </div>
+              </div>
+              {/* </div>
+            </div> */}
+    </div>
+    </div>
+    
+  );
+};
+
+export default Blog;
