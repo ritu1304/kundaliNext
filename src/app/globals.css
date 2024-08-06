@@ -1489,6 +1489,7 @@ hr:not([size]) {
   }
 }
 
+
 /* Contact css */
 .last_om_for_margin img {
   margin-left: 45%;
@@ -10601,4 +10602,699 @@ body {
 
 .custom-swiper1 .swiper-pagination-bullet-active {
   background-color: orangered !important; 
+}
+
+/* Login New CSS */
+.fa-envelope {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.big-otp-input {
+  font-size: 40px;
+  /* Set the font size as per your requirement */
+}
+
+.pullLogin {
+  font-size: 21px;
+  background-color: #8E2E0F !important;
+  border-radius: 13px;
+  height: 55px;
+  width: 100%;
+  color: white !important;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.otpVerifyButton {
+  font-size: 18px;
+  background-color: #8E2E0F !important;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  /* margin-left: 57px !important; */
+  margin-top: 16px;
+  padding: 9px;
+  height: 43px;
+}
+
+.modal_bg_color {
+  /* background: linear-gradient(to right, #ffe552, #ffee80); */
+  background-color: #FFFAE2 !important;
+  border-radius: 15px;
+}
+
+.text_signin {
+  font-size: 12px;
+}
+
+.sanatan_logo_signin {
+  margin-top: -5px;
+}
+
+.input_text_color {
+  /* background-color: #F29726; */
+  border-radius: 15px;
+  height: 50x;
+}
+
+.email_btm {
+  margin-top: 0px;
+  font-size: 18px;
+  background-color: #F29726 !important;
+  border-radius: 30px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  color: white !important;
+  border-radius: 40%;
+}
+
+.verify_email_btn {
+  margin-top: 19px;
+  background-color: #F29726 !important;
+  border-radius: 20px;
+  color: white !important;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+
+}
+
+/* a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: white!important;
+  text-decoration: none;
+} */
+
+
+/* a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: white!important;
+  text-decoration: none;
+  background: #f29726;
+} */
+
+.cross {
+  float: right;
+
+  margin-top: -12px;
+
+}
+
+.backArrow {
+  float: left;
+
+  margin-top: -12px;
+
+}
+
+.tacbox {
+  display: block;
+  padding: 1em;
+  margin: 2em;
+  border: 3px solid #ddd;
+  background-color: #eee;
+  max-width: 800px;
+}
+
+.tacbox input {
+  height: 2em;
+  width: 2em;
+  vertical-align: middle;
+}
+
+/* .react-tel-input .form-control{
+  width: auto !important;
+  height: 33px !important;
+  margin-top: 1px !important;
+} */
+.SignUPButton {
+  font-size: 18px;
+  background-color: #8E2E0F !important;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  /* margin-left: 57px !important; */
+  margin-top: 16px;
+  width: 100%;
+  height: 43px;
+}
+
+.loginLabels {
+  margin-right: 255px !important;
+}
+
+.textforForgot {
+  cursor: pointer;
+
+}
+
+/* .modalbody{
+  height: 70vh;
+  overflow-y: auto;
+} */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #8E2E0F;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 5;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .responsiveModalBox {
+      width: 89% !important;
+      /* margin-top: -18% !important; */
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .responsiveModalBox {
+      width: 89% !important;
+      /* margin-top: -18% !important; */
+  }
+}
+
+.modalScroll {
+  max-height: 80vh;
+  overflow-y: auto;
+
+}
+
+.error-input {
+  border: 2px solid red;
+}
+
+/* Profiles */
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: linear-gradient(to bottom, #FFD690, #EC9200);
+  margin-top: 8%;
+  min-height: 620px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: linear-gradient(to bottom, #FFD690, #EC9200);
+  min-height: 620px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+
+}
+
+.dashboard-stat,
+.portlet {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.portlet {
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.portlet.bordered {
+  border-left: 2px solid #e6e9ec !important;
+}
+
+.portlet.light {
+  padding: 12px 20px 15px;
+  /* background-color: #fff; */
+}
+
+.portlet.light.bordered {
+  border: 1px solid #e7ecf1 !important;
+}
+
+.list-separated {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.profile-stat {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-stat-title {
+  color: #7f90a4;
+  font-size: 25px;
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.profile-stat-text {
+  color: #5b9bd1;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.profile-desc-title {
+  color: #7f90a4;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.profile-desc-text {
+  color: #7e8c9e;
+  font-size: 14px;
+}
+
+.margin-top-20 {
+  margin-top: 20px !important;
+}
+
+
+
+.profile-desc-link i {
+  width: 22px;
+  font-size: 19px;
+  color: #abb6c4;
+  margin-right: 5px;
+}
+
+.containerColor {
+  /* background: linear-gradient(to right, #ffe552, #ffee80); */
+  margin-top: -18px;
+  margin-bottom: -20px;
+}
+
+.matchProfile {
+  /* height: 82px; */
+  background-image: linear-gradient(to left, #C2D780, #F2BB74);
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.updateUserDetails {
+  margin-left: 10px;
+}
+
+.updateIcon {
+  float: right;
+}
+
+.sidebarButton {
+  margin-top: 80%;
+}
+
+.headerKProfile {
+  background-color: #8e2e0f;
+}
+
+.bodyKProfile {
+  background: linear-gradient(to bottom, #f5e16b 0%, #FFB345 100%);
+}
+
+.profileCard {
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+  background-image: linear-gradient(to left, #C2D780, #F2BB74);
+  border: 0;
+}
+
+.profHead {
+  color: #8e2e0f;
+}
+
+
+
+.kundliProfilesCard {
+  background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileKundli.png");
+  /* background: linear-gradient(to top, #FA7754, #ffff66); */
+  background-repeat: no-repeat;
+  /* height: 326px;
+  width: 100%; */
+  border-radius: 27px;
+  background-size: cover;
+  /* box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%); */
+}
+
+.matchProfilesCard {
+  background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileMatch.png");
+  /* background: linear-gradient(to top, #FA7754, #ffff66); */
+  background-repeat: no-repeat;
+  /* height: 326px;
+  width: 100%; */
+  border-radius: 27px;
+  background-size: cover;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+
+}
+
+@media screen and (max-width: 1400px) {
+  .kundliProfilesCard {
+    /* background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileKundli.png"); */
+    background: linear-gradient(to top, #FA7754, #ffff66);
+
+  }
+
+  .matchProfilesCard {
+    /* background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileMatch.png"); */
+    background: linear-gradient(to top, #FA7754, #ffff66);
+
+  }
+
+  .kundliList {
+    margin-left: 0% !important;
+  }
+
+  .matchList {
+    margin-right: 0% !important;
+  }
+}
+
+.buttonRow {
+  margin-top: 49px;
+
+}
+
+.profilesCardManage {
+  margin-right: 197px;
+  margin-top: 7px;
+}
+
+.kundliList {
+  margin-left: -58%;
+}
+
+.kundliList h1 {
+  font-size: 85px;
+  color: #8e2e0f;
+}
+
+.matchList {
+  margin-right: 55%;
+}
+
+.matchList h1 {
+  font-size: 85px;
+  color: #8e2e0f;
+}
+
+.cardsList {
+  color: #8e2e0f;
+}
+
+.clickToView {
+  color: green;
+  cursor: pointer;
+  float: right;
+}
+
+.profileName {
+  /* background-color: radial-gradient(left #FF5407 (45%), center #FFC53D (60% ), right #FF5407 (60% )); */
+  background: radial-gradient(circle at 10% 20%, rgb(255, 197, 61) 0%, rgb(255, 94, 7) 90%);
+}
+
+.profiles {
+  color: green;
+  margin-top: 1%;
+  position: absolute;
+  margin-left: -17px;
+}
+
+.profileNameHeading {
+  color: #8e2e0f;
+  margin-bottom: -14px;
+}
+
+.proUnderline {
+  background-color: #8e2e0f;
+  height: 2px;
+  width: 25%;
+}
+
+.saved {
+  color: #8e2e0f;
+}
+
+.scrollableKundliList {
+  height: 25vh;
+  overflow-y: auto;
+}
+
+.profileImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+/* ------------------------------------Profile Pic ---------------------------------------- */
+.profile-pic-wrapper {
+  /* height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.pic-holder {
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pic-holder .pic {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.pic-holder .upload-file-block,
+.pic-holder .upload-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(90, 92, 105, 0.7);
+  color: #f8f9fc;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pic-holder .upload-file-block {
+  cursor: pointer;
+}
+
+.pic-holder:hover .upload-file-block,
+.uploadProfileInput:focus~.upload-file-block {
+  opacity: 1;
+}
+
+.pic-holder.uploadInProgress .upload-file-block {
+  display: none;
+}
+
+.pic-holder.uploadInProgress .upload-loader {
+  opacity: 1;
+}
+
+/* Snackbar css */
+.snackbar {
+  visibility: hidden;
+  /* min-width: 250px; */
+
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  transform: translateX(-50%);
+}
+
+.snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }

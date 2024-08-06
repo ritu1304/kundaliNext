@@ -1,16 +1,16 @@
-"use client"
-import React, { useEffect, useState } from 'react'
- import CommonCalendar from "../components/CommonCalender"
+// "use client"
+// import React, { useEffect, useState } from 'react'
+import CommonCalendar from '../components/FestivalComponent/CommonCalender'
  import IndianZodiac from '../components/IndianZodiac';
 // import "react-datepicker/dist/react-datepicker.css";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 // import { useDispatch, useSelector } from 'react-redux';
 // import { additionalPanchang } from "../../Redux/Action/PanchangAction"
-import moment from 'moment';
-import axios from 'axios';
-import { Link } from 'react-router-dom'
-import { CModal, CModalBody, CModalHeader } from '@coreui/react';
-import ReactReadMoreReadLess from "react-read-more-read-less";
+// import moment from 'moment';
+// import axios from 'axios';
+// import { Link } from 'react-router-dom'
+//  import { CModal, CModalBody, CModalHeader } from '@coreui/react';
+// import ReactReadMoreReadLess from "react-read-more-read-less";
 // import { register } from 'swiper/element/bundle';
 // import { NavLink } from "react-router-dom";
 import guruGeetaEng from '../../public/guru geeta ad photo english.jpg'
@@ -50,145 +50,145 @@ import Image from 'next/image';
 // import '../Home/Home.css' //changes
 // import mixpanel from 'mixpanel-browser';
 // import LocationComponent from './LocationComponent';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
+// import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 // import '../Blogs/CustomCarousel.css'
 
 const HomePage =  () => {
-  useEffect(() => {
-    // mixpanel.track('homePageViewed');
-  }, []);
-  const [allPosts, setAllPosts] = useState([])
-  const [date, setDate] = useState(new Date());
-  const [show, setShow] = React.useState(0)
-  const userId = process.env.NEXT_PUBLIC_SANTAN_USER_ID;
-  const apiKey = process.env.NEXT_PUBLIC_SANTAN_API_KEY;
+  // useEffect(() => {
+  //   // mixpanel.track('homePageViewed');
+  // }, []);
+  // const [allPosts, setAllPosts] = useState([])
+  // const [date, setDate] = useState(new Date());
+  // const [show, setShow] = React.useState(0)
+  // const userId = process.env.NEXT_PUBLIC_SANTAN_USER_ID;
+  // const apiKey = process.env.NEXT_PUBLIC_SANTAN_API_KEY;
   // const advancePanchangData = useSelector((state) => state.PanchangReducer.AdditionalPanchang.data);
  
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   // register();
-  var LocalStore = localStorage.getItem('lng');
-  var languageForApi;
-  if (LocalStore === null) {
-    languageForApi = "en"
-  } else {
-    languageForApi = LocalStore;
-  }
+  // var LocalStore = localStorage.getItem('lng');
+  // var languageForApi;
+  // if (LocalStore === null) {
+  //   languageForApi = "en"
+  // } else {
+  //   languageForApi = LocalStore;
+  // }
   // -----------------------------------------------Western Modal-------------------------------------
-  const [showStickyNote, setShowStickyNote] = useState(true);
-  const [open, setOpen] = React.useState(false);
-  const [name, setName] = useState("")
-  const [image, setImage] = useState("")
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const [visible, setVisible] = useState(false)
-  const [StoreResp, setStoreResp] = useState("")
-  var today = new Date();
-  var date1 = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-  var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-  var formattedDate = today.toLocaleDateString('en-IN', options).replace(/\//g, '/');
+  // const [showStickyNote, setShowStickyNote] = useState(true);
+  // const [open, setOpen] = React.useState(false);
+  // const [name, setName] = useState("")
+  // const [image, setImage] = useState("")
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
+  // const [visible, setVisible] = useState(false)
+  // const [StoreResp, setStoreResp] = useState("")
+  // var today = new Date();
+  // var date1 = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+  // var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+  // var formattedDate = today.toLocaleDateString('en-IN', options).replace(/\//g, '/');
   // const dispatch = useDispatch()
 
   const zodiacSignConstant = [
     {
-      name: t('Aries'),
+      name: 'Aries',
       label: "Aries",
       image: aries,
       value: "aries",
       id: 1,
-      date: t('aries date1')
+      date: 'aries date1'
     },
     {
-      name: t('Taurus'),
+      name: 'Taurus',
       label: "Taurus",
       image: taurus,
       value: "taurus",
       id: 2,
-      date: t('taurus date1')
+      date: 'taurus date1'
     },
     {
-      name: t('Gemini'),
+      name: 'Gemini',
       label: "Gemini",
       image: gemini,
       value: "gemini",
       id: 3,
-      date: t('Gemini date1')
+      date: 'Gemini date1'
     },
     {
-      name: t('Cancer'),
+      name: 'Cancer',
       label: "Cancer",
       image: cancer,
       value: "cancer",
       id: 4,
-      date: t('cancer date1')
+      date: 'cancer date1'
     },
     {
-      name: t('Leo'),
+      name: 'Leo',
       label: "Leo",
       image: leo,
       value: "leo",
       id: 5,
-      date: t('leo date1')
+      date: 'leo date1'
     },
     {
-      name: t('Virgo'),
+      name: 'Virgo',
       label: "Virgo",
       image: virgo,
       value: "gemini",
       id: 6,
-      date: t('Virgo date1')
+      date: 'Virgo date1'
     },
     {
-      name: t('Libra'),
+      name: 'Libra',
       label: "Libra",
       image: libra,
       value: "libra",
       id: 7,
-      date: t('libra date1')
+      date: 'libra date1'
     },
     {
-      name: t('Scorpio'),
+      name: 'Scorpio',
       label: "Scorpio",
       image: scropio,
       value: "scorpio",
       id: 8,
-      date: t('scorpio date1')
+      date: 'scorpio date1'
     },
     {
-      name: t('Sagittarius'),
+      name: 'Sagittarius',
       label: "Sagittarius",
       image: saggitarius,
       value: "sagittarius",
       id: 9,
-      date: t('Sagittarius date1')
+      date: 'Sagittarius date1'
     },
     {
-      name: t('Capricorn'),
+      name: 'Capricorn',
       label: "Capricorn",
       image: capricorn,
       value: "capricorn",
       id: 10,
-      date: t('capricorn date1')
+      date: 'capricorn date1'
     },
     {
-      name: t('Aquarius'),
+      name: 'Aquarius',
       label: "Aquarius",
       image: aquarius,
       value: "aquarius",
       id: 11,
-      date: t('Aquarius date1')
+      date: 'Aquarius date1'
     },
     {
-      name: t('Pisces'),
+      name: 'Pisces',
       label: "Pisces",
       image: pisces,
       value: "pisces",
       id: 12,
-      date: t('Pisces date1')
+      date: 'Pisces date1'
     },
 
   ]
@@ -208,161 +208,167 @@ const HomePage =  () => {
    
   ]
   // ----------------------------Profile Data------------------------
-  var IdStore = localStorage.getItem("id")
-  useEffect(() => {
-    if (IdStore) {
-      const url = `/api/get_User_By_Id?userId=${IdStore}`
-      axios.get(url)
-        .then((res) => {
-          localStorage.setItem('firstName', res.data.data.firstName);
-          localStorage.setItem('lastName', res.data.data.lastName);
-          localStorage.setItem('location', res.data.data.location);
+  // var IdStore = localStorage.getItem("id")
+  // useEffect(() => {
+  //   if (IdStore) {
+  //     const url = `/api/get_User_By_Id?userId=${IdStore}`
+  //     axios.get(url)
+  //       .then((res) => {
+  //         localStorage.setItem('firstName', res.data.data.firstName);
+  //         localStorage.setItem('lastName', res.data.data.lastName);
+  //         localStorage.setItem('location', res.data.data.location);
 
-          const requestOptions = {
-            method: 'POST',
-            headers: {
-              'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-              'Content-Type': 'application/json',
-              'Accept-Language': languageForApi
-            },
-            body: JSON.stringify(
-              {
-                "day": moment(date).format('DD'),
-                "month": moment(date).format('M'),
-                "year": moment(date).format('yy'),
-                "hour": 0,
-                "min": 1,
-                "lat": res?.data?.data.lat || 19.0759837,
-                "lon": res?.data?.data.lon || 72.8776559,
-                "tzone": res?.data?.data.tzone || 5.5
-              })
-          };
-          dispatch(additionalPanchang(requestOptions))
+  //         const requestOptions = {
+  //           method: 'POST',
+  //           headers: {
+  //             'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+  //             'Content-Type': 'application/json',
+  //             'Accept-Language': languageForApi
+  //           },
+  //           body: JSON.stringify(
+  //             {
+  //               "day": moment(date).format('DD'),
+  //               "month": moment(date).format('M'),
+  //               "year": moment(date).format('yy'),
+  //               "hour": 0,
+  //               "min": 1,
+  //               "lat": res?.data?.data.lat || 19.0759837,
+  //               "lon": res?.data?.data.lon || 72.8776559,
+  //               "tzone": res?.data?.data.tzone || 5.5
+  //             })
+  //         };
+  //         dispatch(additionalPanchang(requestOptions))
 
-        })
-    } else {
-      const requestOptions = {
-        method: 'POST',
-        headers: {
-          'Authorization': "Basic " + btoa(userId + ":" + apiKey),
-          'Content-Type': 'application/json',
-          'Accept-Language': languageForApi
-        },
-        body: JSON.stringify(
-          {
-            "day": moment(date).format('DD'),
-            "month": moment(date).format('M'),
-            "year": moment(date).format('yy'),
-            "hour": 0,
-            "min": 1,
-            "lat": 19.0759837,
-            "lon": 72.8776559,
-            "tzone": 5.5
-          })
-      };
-      dispatch(additionalPanchang(requestOptions))
-    }
+  //       })
+  //   } else {
+  //     const requestOptions = {
+  //       method: 'POST',
+  //       headers: {
+  //         'Authorization': "Basic " + btoa(userId + ":" + apiKey),
+  //         'Content-Type': 'application/json',
+  //         'Accept-Language': languageForApi
+  //       },
+  //       body: JSON.stringify(
+  //         {
+  //           "day": moment(date).format('DD'),
+  //           "month": moment(date).format('M'),
+  //           "year": moment(date).format('yy'),
+  //           "hour": 0,
+  //           "min": 1,
+  //           "lat": 19.0759837,
+  //           "lon": 72.8776559,
+  //           "tzone": 5.5
+  //         })
+  //     };
+  //     dispatch(additionalPanchang(requestOptions))
+  //   }
 
-  }, [])
+  // }, [])
   // ----------------------------Panchang api-------------------------------
-  var language;
-  if (LocalStore == "hi") {
-    language = false;
-  }
-  else {
-    language = true;
-  }
-  useEffect(() => {
-    const fetchAllPosts = async () => {
-      let OPTIONS = {
+  // var language;
+  // if (LocalStore == "hi") {
+  //   language = false;
+  // }
+  // else {
+  //   language = true;
+  // }
+  // useEffect(() => {
+  //   const fetchAllPosts = async () => {
+  //     let OPTIONS = {
 
-        url: `/article/get_All_Blogs?articleType=PUBLISH&festivalStatus=${language}&page=0&size=30&status=true`,
-        method: "get",
-        headers: {
-          "content-type": "application/json",
-        },
-      };
-      axios(OPTIONS)
-        .then((res) => {
+  //       url: `/article/get_All_Blogs?articleType=PUBLISH&festivalStatus=${language}&page=0&size=30&status=true`,
+  //       method: "get",
+  //       headers: {
+  //         "content-type": "application/json",
+  //       },
+  //     };
+  //     axios(OPTIONS)
+  //       .then((res) => {
 
-          setAllPosts(res.data.data)
+  //         setAllPosts(res.data.data)
 
-        })
-    }
-    fetchAllPosts()
-  }, [])
+  //       })
+  //   }
+  //   fetchAllPosts()
+  // }, [])
 
   // -------------------------------------------------western Horoscope-------------------------
-  const onSubmit = async (e, value) => {
-    mixpanel.track('getWesternHoroscopeClicked', { buttonName: 'getWesternHoroscopeClicked' });
-    e.preventDefault()
-    setName(value.name)
-    setImage(value.image)
-    let OPTIONS = {
-      url: `/api/sun_sign_prediction/daily/${value.value}/${languageForApi}`,
-      method: "Post",
-      headers: {
-        "content-type": "application/json",
-      },
-    };
-    axios(OPTIONS)
-      .then((res) => {
-        mixpanel.track('getWesternHoroscopeSuccess', { success: true });
-        setStoreResp(res.data)
-        setVisible(!visible)
-        handleOpen()
-      })
-      .catch((error) => {
-        mixpanel.track('getWesternHoroscopeFailed', { success: false });
-      })
-  }
+  // const onSubmit = async (e, value) => {
+  //   mixpanel.track('getWesternHoroscopeClicked', { buttonName: 'getWesternHoroscopeClicked' });
+  //   e.preventDefault()
+  //   setName(value.name)
+  //   setImage(value.image)
+  //   let OPTIONS = {
+  //     url: `/api/sun_sign_prediction/daily/${value.value}/${languageForApi}`,
+  //     method: "Post",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //   };
+  //   axios(OPTIONS)
+  //     .then((res) => {
+  //       mixpanel.track('getWesternHoroscopeSuccess', { success: true });
+  //       setStoreResp(res.data)
+  //       setVisible(!visible)
+  //       handleOpen()
+  //     })
+  //     .catch((error) => {
+  //       mixpanel.track('getWesternHoroscopeFailed', { success: false });
+  //     })
+  // }
   // -------------------------------------------------western Horoscope End-------------------------
 
-  useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, []);
-  const [isTextClosed, setIsTextClosed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  
+  // const [isTextClosed, setIsTextClosed] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Set breakpoint for mobile screens
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth <= 768); // Set breakpoint for mobile screens
+  //   };
 
-    // Listen for window resize events to determine screen size
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Call initially to set the initial screen size
+  //   // Listen for window resize events to determine screen size
+  //   window.addEventListener('resize', handleResize);
+  //   handleResize(); // Call initially to set the initial screen size
 
-    return () => {
-      window.removeEventListener('resize', handleResize); // Cleanup on unmount
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize); // Cleanup on unmount
+  //   };
+  // }, []);
   const handleCloseText = () => {
-    setIsTextClosed(!isTextClosed); // Toggle the state
+    isTextClosed = !isTextClosed; // Toggle the state
 
   };
-
+  var show = 0;
+  const handleClickOne = () => {
+    show = 1;
+  }
+  const handleClickZero = () => {
+    show = 0;
+  }
+  var isTextClosed = false;
+  var isMobile= false;
   const handleImageClick = () => {
     if (isTextClosed) {
       // If the text is closed, open it
-      setIsTextClosed(false);
+      iTextClosed = false;
       window.open('http://www.youtube.com/@sanatanjyoti2895', '_blank');
-      mixpanel.track('youtubeLinkClicked', { buttonName: 'youtubeLinkClicked' });
+      // mixpanel.track('youtubeLinkClicked', { buttonName: 'youtubeLinkClicked' });
     }
     if (isMobile) {
       window.open('http://www.youtube.com/@sanatanjyoti2895', '_blank');  // Navigate to another link on mobile
-      mixpanel.track('youtubeLinkClicked', { buttonName: 'youtubeLinkClicked' });
+      // mixpanel.track('youtubeLinkClicked', { buttonName: 'youtubeLinkClicked' });
     } else {
-      setIsTextClosed(!isTextClosed); // Toggle the visibility of text on desktop
+      isTextClosed = !isTextClosed; // Toggle the visibility of text on desktop
     }
   };
-  // const handleMixPanelClick = (linkName) => {
-  //   mixpanel.track(linkName, { buttonName: linkName });
+  // // const handleMixPanelClick = (linkName) => {
+  // //   mixpanel.track(linkName, { buttonName: linkName });
 
-  // };
+  // // };
+  var showStickyNote = true;
   const onClose = () => {
-    setShowStickyNote(false);
+    showStickyNote= false;
   };
   const colors = [
     '#FF0000', // Red
@@ -374,7 +380,7 @@ const HomePage =  () => {
     '#8B00FF'  // Violet
   ];
   
-  const text = t('Exclusive');
+  const text = 'Exclusive';
   return (
     <div className='landingPageMain wrapper1'>
       {/* <LocationComponent /> */}
@@ -389,11 +395,13 @@ const HomePage =  () => {
                 {/* {t('Advance Panchang is our exclusive feature')}  */}
                 Advance Panchang is our exclusive feature where you can check Panchang according to Date And Time
                 </h4>
-              <button className="close-button" onClick={onClose}>
+              <button className="close-button" 
+              // onClick={onClose}
+              >
                 &#10006;
               </button>
             </div>
-          )}
+           )} 
         </div>
         <div className="col-sm-12 col-md-8 col-lg-9 col-xl-8">
           <div className="exText">
@@ -406,8 +414,10 @@ const HomePage =  () => {
             ))}
           </center>
           <center className="text-stroke" >
+          <div className="elementor-heading-title" style={{ color: "orange" }}>~ CHECK ADVANCE PANCHANG ~ </div>
+           
              {/* <NavLink className="text-deco" exact to={`/Panchang/PanchangAdditional`} target="_blank" onClick={() => handleMixPanelClick("checkAdvancePanchangAccordingToDateAndTimeClicked")}> */}
-              <div className={LocalStore === "hi" ? "elementor-heading-title1" : "elementor-heading-title"} style={{ color: "orange" }}>~ {t('CHECK ADVANCE PANCHANG')} ~ </div>
+              {/* <div className={LocalStore === "hi" ? "elementor-heading-title1" : "elementor-heading-title"} style={{ color: "orange" }}>~ CHECK ADVANCE PANCHANG ~ </div> */}
             {/* </NavLink>  */}
           </center>
           </div>          
@@ -416,24 +426,35 @@ const HomePage =  () => {
       <div class="centeredLp">
         <div className="container">
           <section className="hero">
-            {(LocalStore == 'en') || (LocalStore == null) ?
+            {/* {(LocalStore == 'en') || (LocalStore == null) ?
               <Image src={guruGeetaEng} alt="" onClick={handleImageClick} /> :
               <Image src={guruGeetaHin} alt="" onClick={handleImageClick} />
-            }
+            } */}
+              <Image src={guruGeetaEng} alt=""
+              //  onClick={handleImageClick}
+                />
 
             <div className={`text ${isTextClosed ? 'closed' : ''}`}>
-              <h1 className='headingLp'>{t('Latest Video')}</h1>
+              <h1 className='headingLp'>Latest Video</h1>
               <ul className='ulLp'>
-                <li><a href="http://www.youtube.com/@sanatanjyoti2895" target="_blank" rel="noreferrer" onClick={() => handleMixPanelClick("youtubeLinkClicked")} ><Image src={youtube} alt="" /></a></li>
-                <li><a href="https://www.instagram.com/sanatan.jyoti?igsh=aWpvMW02dHpqc2xl" target="_blank" rel="noreferrer" onClick={() => handleMixPanelClick("instagramLinkClicked")}><Image src={instagram} alt="" /></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100080094303765&mibextid=ZbWKwL" target="_blank" rel="noreferrer" onClick={() => handleMixPanelClick("facebookLinkClicked")}><Image src={facebook} alt="" /></a></li>
+                <li><a href="http://www.youtube.com/@sanatanjyoti2895" target="_blank" rel="noreferrer"
+                //  onClick={() => handleMixPanelClick("youtubeLinkClicked")}
+                  ><Image src={youtube} alt="" /></a></li>
+                <li><a href="https://www.instagram.com/sanatan.jyoti?igsh=aWpvMW02dHpqc2xl" target="_blank" rel="noreferrer"
+                //  onClick={() => handleMixPanelClick("instagramLinkClicked")}
+                 ><Image src={instagram} alt="" /></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100080094303765&mibextid=ZbWKwL" target="_blank" rel="noreferrer" 
+                // onClick={() => handleMixPanelClick("facebookLinkClicked")}
+                ><Image src={facebook} alt="" /></a></li>
 
               </ul>
 
-              <a href="/Home" className="subscribe">{t('Subscribe our channel')}</a>
+              <a href="/Home" className="subscribe">Subscribe our channel</a>
             </div>
             {!isTextClosed && (
-              <div className="link imageTxt" onClick={handleCloseText}>
+              <div className="link imageTxt" 
+              // onClick={handleCloseText}
+              >
                 {/* <Image src="images/hero-devaider.png" alt="" /> */}
               </div>
             )}
@@ -444,25 +465,28 @@ const HomePage =  () => {
           {/* <!-- text sec start --> */}
           <div class="textSec">
             <h2 className='headingLp'>
-              {(LocalStore == 'en') || (LocalStore == null) ?
+              {/* {(LocalStore == 'en') || (LocalStore == null) ?
                 <img src={santanTextEng} alt="Sanatan" /> :
                 <img src={sanatantextHin} alt="Sanatan" />
-              }
+              } */}
+                <img src={santanTextEng} alt="Sanatan" /> 
             </h2>
 
-            <p><ReactReadMoreReadLess
+            <p>
+              {/* <ReactReadMoreReadLess
               charLimit={400}
-              readMoreText={t('Read more ▼')}
-              readLessText={t('Read less ▼')}
-            >
+              readMoreText='Read more ▼'
+              readLessText='Read less ▼'
+            > */}
               The meaning of 'Sanatan' is that which has no beginning or end, it is eternal. In Sanatan, all the qualities of creation are encompassed; scientists have been researching in their respective fields since ancient times and have unraveled the mysteries hidden in this creation. Their influence affects all living beings. Scientists of the eternal era and astronomers have discovered the secrets of the universe. It is a mystery that they had the resources to explore because their calculations were absolutely accurate. They have accurately calculated the influence of the sun, moon, planets, and 28 constellations on all living beings on Earth.In our modern era, various kinds of research are being conducted that have completely transformed our lives. However, it does not mean that we should forget the research of scientists from the ancient era, as it forms the foundation of our modern times. They extensively studied the influence of all planets and stars on all living beings and developed the process of creating astrological charts. Astrology explains the qualities and characteristics of individuals based on their birth charts. Just as we use modern calendars today, in ancient times, the creation of a Panchang (traditional Almanac) was based on the movement of the moon, and it is still in use today and holds great significance. Furthermore, from the ancient era, we have gained extensive knowledge about the impact of different elements of the Earth on our lives, which greatly influence our daily lives. Sanatan Jyoti is an initiative through which we can utilize the knowledge obtained from ancient research in our modern lives. For example, we can use astrology charts, Kundali matching, Panchang for success in business and career, and incorporate ancient stories and knowledge to bring happiness into our lives. We can also seek insights into future events, enabling us to make informed decisions that yield positive outcomes in the future. There is no sectarianism in Sanatan Dharma. It is associated with human values. Sanatan allows everyone the freedom to choose their own faith based on human principles. Sanatan Jyoti is an initiative for the welfare of humanity.The teachings passed down by our ancestors are not connected to any specific sect. It grants every individual the freedom to choose and perform actions according to their own thoughts. Sanatan Dharma teaches the art of living, shows the structure of society, and guides us on how our family should be organized to bring happiness into our lives. It explains the abstract Brahman as easily as the manifest forms and leaves it to the individual to decide their path.The ancient scriptures and folk tales written in ancient times still show us the way in our lives. Even today, amidst the worries of our fast-paced life, those same old mythological stories provide us relief. The aim of Sanatan Jyoti is to bring solace to society from the anxieties prevalent in today's hectic life. I urge all of you to come together for the welfare of society and become a part of it.
-            </ReactReadMoreReadLess></p>
+            {/* </ReactReadMoreReadLess> */}
+            </p>
           </div>
           {/* <!-- text sec end --> */}
 
           {/* <!-- panchang sec start --> */}
           <div class="panchangSec">
-            <h2 className='headingLp'>{t('Today Panchang')}</h2>
+            <h2 className='headingLp'>Today Panchang</h2>
 
 
             <div class="date">
@@ -474,49 +498,49 @@ const HomePage =  () => {
                 <div class="icon">
                   <Image src={sunrise} alt="" />
                 </div>
-                {t('Sunrise')} 
+                Sunrise
                 {/* : {advancePanchangData ? advancePanchangData?.sunrise : "Empty Data"} */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={sunset} alt="" />
                 </div>
-                {t('Sunset')} 
+                Sunset
                 {/* : {advancePanchangData ? advancePanchangData?.sunset : "Empty Data"} */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={moonrise} alt="" />
                 </div>
-                {t('Moonrise')}
+                Moonrise
                  {/* : {advancePanchangData ? advancePanchangData?.moonrise : "Empty Data"} */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={moonset} alt="" />
                 </div>
-                {t('Moonset')} 
+                Moonset 
                 {/* : {advancePanchangData ? advancePanchangData?.moonset : "Empty Data"} */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={rahukaal} alt="" />
                 </div>
-                {t('Rahu kalm')}
+                Rahu kalm
                  {/* : {advancePanchangData ? advancePanchangData?.rahukaal?.start : 'Empty Data'}  | {advancePanchangData ? advancePanchangData?.rahukaal?.end : 'Empty Data'} */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={nakshatra} alt="" />
                 </div>
-                {t('Nakshatra')} 
+                Nakshatra 
                 {/* : {advancePanchangData ? advancePanchangData?.nakshatra?.details?.nak_name : 'Empty Data'} {advancePanchangData ? advancePanchangData?.nakshatra?.end_time?.hour : 'Empty Data'}:{advancePanchangData ? advancePanchangData?.nakshatra?.end_time?.minute : 'Empty Data'}:{advancePanchangData ? advancePanchangData?.nakshatra?.end_time?.second : 'Empty Data'} ({t('Till')}) */}
               </li>
               <li>
                 <div class="icon">
                   <Image src={tithi} alt="" />
                 </div>
-                {t('Tithi')} 
+                Tithi
                 {/* : {advancePanchangData ? advancePanchangData?.tithi?.details?.tithi_name : 'Empty Data'} {advancePanchangData ? advancePanchangData?.tithi?.end_time?.hour : 'Empty Data'}:{advancePanchangData ? advancePanchangData?.tithi?.end_time?.minute : 'Empty Data'}:{advancePanchangData ? advancePanchangData?.tithi?.end_time?.second : 'Empty Data'} ({t('Till')}) */}
               </li>
             </ul>
@@ -533,7 +557,7 @@ const HomePage =  () => {
             {show === 0 ?
               <div>
                 <div className="row">
-                  <h2 className='headingLp'>{t('Western Zodiac')} </h2>
+                  <h2 className='headingLp'>Western Zodiac</h2>
                 </div>
                 <div className="row">
                   <div className="col-sm-12 col-md-4">
@@ -545,11 +569,15 @@ const HomePage =  () => {
 
                         <div className="dropdown set_dropdown ">
                           <div id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <h6>{t('See Indian Zodiac')}<i className="fa-solid fa-pencil " ></i> </h6>
+                            <h6>See Indian Zodiac<i className="fa-solid fa-pencil " ></i> </h6>
                           </div>
                           <ul className="dropdown-menu" >
-                            <li><span className="dropdown-item" href="#" onClick={() => setShow(0)}>{t('Western')}</span></li>
-                            <li><span className="dropdown-item" href="#" onClick={() => setShow(1)}>{t('Indian')}</span></li>
+                            <li><span className="dropdown-item" href="#"
+                            //  onClick={handleClickZero}
+                             >Western</span></li>
+                            <li><span className="dropdown-item" href="#"
+                            //  onClick={handleClickOne}
+                             >Indian</span></li>
                           </ul>
                         </div>
                       </div>
@@ -568,7 +596,9 @@ const HomePage =  () => {
                     return (
                       <div className="col-sm-12 col-md-2 col-lg-2 col-xl-2 planImgBoxRows ">
                         <center>
-                          <div className="img zoom cursor-pointer"><Image src={item.image} alt='hii' width="90px" onClick={e => onSubmit(e, item)} /></div>
+                          <div className="img zoom cursor-pointer"><Image src={item.image} alt='hii' width="90px" 
+                          // onClick={e => onSubmit(e, item)} 
+                          /></div>
                           <h4>{item.name}</h4>
                           <div className="date" >{item.date}</div>
                         </center>
@@ -578,7 +608,7 @@ const HomePage =  () => {
                 </div>
                 <div className="row zodiacSignCrousel">
                    <div className="swiper-container">
-                   <Swiper 
+                   {/* <Swiper 
                                         className="custom-swiper"
                                         modules={[Navigation, Pagination, Autoplay]}
                                         pagination={{ clickable: true }}
@@ -614,7 +644,7 @@ const HomePage =  () => {
  
                       )
                     })}
-                  </Swiper>
+                  </Swiper> */}
                   </div>
                 </div>
               </div>
@@ -623,7 +653,7 @@ const HomePage =  () => {
             {show === 1 ? <>
               <div className="mt-2">
                 <div className="row">
-                  <h5 className="card-title  text-center" ><b className='homeCardsHeading'>{t('Indian Zodiac')}</b></h5>
+                  <h5 className="card-title  text-center" ><b className='homeCardsHeading'>Indian Zodiac</b></h5>
                 </div>
                 <div className="row">
                   <div className="col-sm-12 col-md-4 ">
@@ -633,11 +663,15 @@ const HomePage =  () => {
                       <div className="div pencilSign text-center">
                         <div className="dropdown set_dropdown ">
                           <div id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <h6>{t('See Western Zodiac')}<i className="fa-solid fa-pencil " ></i> </h6>
+                            <h6>See Western Zodiac<i className="fa-solid fa-pencil " ></i> </h6>
                           </div>
                           <ul className="dropdown-menu" >
-                            <li><span className="dropdown-item" href="#" onClick={() => setShow(0)}>{t('Western')}</span></li>
-                            <li><span className="dropdown-item" href="#" onClick={() => setShow(1)}>{t('Indian')}</span></li>
+                            <li><span className="dropdown-item" href="#"
+                            //  onClick={handleClickZero}
+                             >Western</span></li>
+                            <li><span className="dropdown-item" href="#" 
+                            // onClick={handleClickOne}
+                            >Indian</span></li>
                           </ul>
                         </div>
                       </div>
@@ -662,19 +696,21 @@ const HomePage =  () => {
       <div className="container-fluid">
         {/* <!-- blog sec start --> */}
         <div class="blogSec centeredLp">
-          <h2 className='headingLp'>{t('Our Blogs')}</h2>
+          <h2 className='headingLp'>Our Blogs</h2>
 
-          <p className='card-text text-center'> <ReactReadMoreReadLess
+          <p className='card-text text-center'>
+             {/* <ReactReadMoreReadLess
             charLimit={200}
-            readMoreText={t('Read more ▼')}
-            readLessText={t('Read less ▼')}
-          >
+            readMoreText='Read more ▼'
+            readLessText='Read less ▼'
+          > */}
             {/* {t('BlogDesc')} */}
             The ancient tradition (Sanatan tradition) of India, a vital aspect of Indian culture and civilization, has been passed down through generations for centuries. It is based on teachings found in the Vedas, Upanishads, Puranas, and religious scriptures. These teachings contain messages of rules, education, and guidance for every aspect of life, helping our society to prosper, stay balanced, and continuously develop.In ancient times, sages and monks conducted various experiments and research through their meditation and efforts, leading to many discoveries. Some of these discoveries are still beyond the scope of modern science today. The traditions followed by these ancient sages and ascetics still appear important for the welfare, health, and prosperity of our society today. Due to the advancement of modernization over generations, many beneficial teachings for human welfare, mentioned in the Vedas, Upanishads, and Puranas, have been somewhat overlooked within the ancient tradition (Sanatan tradition).
-          </ReactReadMoreReadLess></p>
+          {/* </ReactReadMoreReadLess> */}
+          </p>
         
           <div className="swiper-container">
-                       <Swiper
+                       {/* <Swiper
                        className="custom-swiper"
                                         modules={[Navigation, Pagination, Autoplay]}
                                         pagination={{ clickable: true }}
@@ -705,7 +741,7 @@ const HomePage =  () => {
                                                     </Link>
                                                 </SwiperSlide>
                                          ))}
-                                </Swiper>
+                                </Swiper> */}
                                 </div>    
         </div>
         
@@ -718,15 +754,17 @@ const HomePage =  () => {
           {/* <!-- content sec start --> */}
           <div class="contentSec">
             <div class="text">
-              <h2 className='headingLp'>{t('Kundli')}</h2>
-              <p> <ReactReadMoreReadLess
+              <h2 className='headingLp'>Kundli</h2>
+              <p>
+                 {/* <ReactReadMoreReadLess
                 charLimit={200}
-                readMoreText={t('Read more ▼')}
-                readLessText={t('Read less ▼')}
-              >
+                readMoreText='Read more ▼'
+                readLessText='Read less ▼'
+              > */}
                 {/* {t('kundliDes')} */}
                 The science of making Kundli (Astrological chart) and reading Horoscope is called Astrology. Astrology is also called Jyoti Shastra, Jyoti means light and the scripture which illuminates our life is called Jyotish Shastra. When a newborn baby is born, the map of the sky is called a horoscope, at that time which planet is where, all these are described in the horoscope. The human body is formed by the effects of these planets only. And the activities in his life are the result of a complex action of his karma and the movements of the planets. Kundli describes a person from birth to death.
-              </ReactReadMoreReadLess></p>
+              {/* </ReactReadMoreReadLess> */}
+              </p>
               <center className='btnLp btn control_for_btns text-white'>
                 {/* <Link className='btnLp btn control_for_btns text-white' onClick={() => handleMixPanelClick("getYourFreeKundliNowClicked")} to="/Kundali"> */}
                 {/* {t('kundliNow')} */}
@@ -736,18 +774,20 @@ const HomePage =  () => {
             </div>
 
             <div class="text">
-              <h2 className='headingLp'>{t('Match Making')}</h2>
-              <p><ReactReadMoreReadLess
+              <h2 className='headingLp'>Match Making</h2>
+              <p>
+                {/* <ReactReadMoreReadLess
                 charLimit={200}
-                readMoreText={t('Read more ▼')}
-                readLessText={t('Read less ▼')}
-              >
+                readMoreText='Read more ▼'
+                readLessText='Read less ▼'
+              > */}
                 {/* {t('MatchDesc')} */}
                 Horoscope matching is the actually matching of human qualities. Every human has its own qualities, which are divided into 36 types in astrology. The more qualities a boy and a girl have, the closer they can be. The matching of these 36 qualities of a boy and a girl is called Kundli Matching. The more qualities a boy and a girl get, the more likely their pair will remain in love. The marriage is not approved by astrologers if qualities of Boy-Girl matches less than 18. Some types of defects are also taken care of in horoscope matching like Nadi Dosha,Mangal Dosha etc. It is the endeavor of SanatanJyoti to match the Kundli of the boy and the girl in the right way which is flawless so that they can spend their married life very lovingly
-              </ReactReadMoreReadLess></p>
+              {/* </ReactReadMoreReadLess> */}
+              </p>
               <center className='btnLp  btn control_for_btns text-white'>
                  {/* <Link className='btnLp  btn control_for_btns text-white' onClick={() => handleMixPanelClick("getYourFreeMatchingDetailsClicked")} to="/MatchMaking"> */}
-                {t('Get Your Matching Details Now')}
+                Get Your Matching Details Now
                  {/* </Link>  */}
               </center>
             </div>
@@ -760,14 +800,14 @@ const HomePage =  () => {
 
               <div class="img one">
                  {/* <Link onClick={() => handleMixPanelClick("anushthanImageClicked")} to="/AnusthanFront"><Image src={laghuRudra} alt="" /> */}
-                  <h5 className='headingLp' >{t('Laghu Rudra Anushthan')} </h5>
+                  <h5 className='headingLp' >Laghu Rudra Anushthan </h5>
                 {/* </Link>  */}
               </div>
               <div class="img two">
                  {/* <Link onClick={() => handleMixPanelClick("anushthanImageClicked")} to="/AnusthanFront"> */}
                   <Image src={vishnuSahas} alt="" />
 
-                  <h5 className='headingLp' >{t('Vishnu Sahastranaam')}</h5>
+                  <h5 className='headingLp' >Vishnu Sahastranaam</h5>
                 {/* </Link>  */}
 
               </div>
@@ -775,7 +815,7 @@ const HomePage =  () => {
                  {/* <Link onClick={() => handleMixPanelClick("anushthanImageClicked")} to="/AnusthanFront"> */}
                   <Image src={rudrabhishek} alt="" />
 
-                  <h5 className='headingLp' >{t('Rudrabhishek')}</h5>
+                  <h5 className='headingLp' >Rudrabhishek</h5>
                 {/* </Link>  */}
 
               </div>
@@ -783,7 +823,7 @@ const HomePage =  () => {
                  {/* <Link onClick={() => handleMixPanelClick("anushthanImageClicked")} to="/AnusthanFront"> */}
                   <Image src={sriSuktam} alt="" />
 
-                  <h5 className='headingLp' >{t('Sri Suktam')}</h5>
+                  <h5 className='headingLp' >Sri Suktam</h5>
                 {/* </Link> */}
 
               </div>
@@ -791,7 +831,7 @@ const HomePage =  () => {
                  {/* <Link onClick={() => handleMixPanelClick("anushthanImageClicked")} to="/AnusthanFront"> */}
                   <Image src={kanakaDhara} alt="" />
 
-                  <h5 className='headingLp' >{t('Kanaka Dhara Stotram')}</h5>
+                  <h5 className='headingLp' >Kanaka Dhara Stotram</h5>
                 {/* </Link>  */}
 
               </div>
@@ -799,22 +839,24 @@ const HomePage =  () => {
                 {/* <Link to="/AnusthanFront" onClick={() => handleMixPanelClick("anushthanImageClicked")}> */}
                   <Image src={atiRudra} alt="" />
 
-                  <h5 className='headingLp' >{t('Ati Rudra Anushthan')}</h5>
+                  <h5 className='headingLp' >Ati Rudra Anushthan</h5>
                 {/* </Link> */}
 
               </div>
             </div>
 
             <div class="rightLp">
-              <h2 className='headingLp'>{t('Anushthan')}</h2>
-              <p><ReactReadMoreReadLess
+              <h2 className='headingLp'>Anushthan</h2>
+              <p>
+                {/* <ReactReadMoreReadLess
                 charLimit={200}
-                readMoreText={t('Read more ▼')}
-                readLessText={t('Read less ▼')}
-              >
+                readMoreText='Read more ▼'
+                readLessText='Read less ▼'
+              > */}
                 The literal meaning of 'Anushthan' is a ritualistic practice aimed at achieving desired results, and it involves performing auspicious actions and worshiping divine elements for success and fruitful outcomes.An 'Anushthan' assists in reducing physical ailments, mental unrest, pain, fear, and obstacles encountered in life. Many people face domestic troubles, harmful effects of unfavorable planets, legal issues, continuous losses in business, incurable diseases, fear of untimely death, etc. In such situations, Anushthan undoubtedly helps alleviate the fear of these upheavals in a person's life. Therefore, Anushthan provides maximum relief to individuals by addressing various problems, fears, stress, etc., in their lives. However, Anushthan is akin to awakening divine elements to attain one's desired outcome (blessing). Therefore, performing this ritual under the guidance of Vedic rituals and proficient Acharyas ensures complete benefits. If the Anushthan ritual is not conducted according to Vedic rituals or if errors occur in it, it certainly has adverse effects. Particularly in Sanatan Dharma, Anushthan rituals are conducted by proficient Acharyas trained in Gurukuls, who are skilled and proficient in performing Anushthan through Vedic rituals.There are different types of rituals for different problems which you can know in detail below:-
                 {/* {t('What is Anushthan')} */}
-              </ReactReadMoreReadLess></p>
+              {/* </ReactReadMoreReadLess> */}
+              </p>
 
               {/* <Link class="btnLp  btn control_for_btns text-white" onClick={() => handleMixPanelClick("bookNowAnushthanClicked")} to="/AnusthanFront">{t('Book Now')}</Link> */}
              </div>
@@ -826,13 +868,13 @@ const HomePage =  () => {
       <div className="container-fluid">
         {/* <!-- review sec start --> */}
         <div class="reviewSec centeredLp">
-          <h2 className='headingLp'>{t('Customer Reviews')}</h2>
+          <h2 className='headingLp'>Customer Reviews</h2>
 
 
-          <p className='card-text text-center'>{t('client review')}</p>
+          <p className='card-text text-center'>Client review</p>
           
              <div className="swiper-container">
-                                    <Swiper
+                                    {/* <Swiper
                                         modules={[Navigation, Pagination, Autoplay]}
                                         pagination={{ clickable: true }}
                                         // navigation
@@ -877,22 +919,24 @@ const HomePage =  () => {
                         </div>
                       </div>
 
-                      <p> <ReactReadMoreReadLess
-                        charLimit={100}
-                        readMoreText={t('Read more ▼')}
-                        readLessText={t('Read less ▼')}
-                      >
+                      <p>
+                      //    <ReactReadMoreReadLess
+                      //   charLimit={100}
+                      //   readMoreText='Read more ▼'
+                      //   readLessText='Read less ▼'
+                      // > 
                         {option.review}
-                      </ReactReadMoreReadLess></p>
+                      </ReactReadMoreReadLess>
+                      </p>
                     </div>
                   </div>
 
-                  </SwiperSlide>
+                  </SwiperSlide> 
                 </>
               })}
               
-            {/* </Carousel> */}
-            </Swiper>
+            
+            </Swiper>*/}
           </div>
 
 
@@ -904,15 +948,17 @@ const HomePage =  () => {
           {/* <!-- fastival sec start --> */}
           <div class="fastivalSec">
             <div class="block">
-              <h2 className='headingLp'>{t('Festival')}, 2024</h2>
-              <p className='card-text text-center'> <ReactReadMoreReadLess
+              <h2 className='headingLp'>Festival, 2024</h2>
+              <p className='card-text text-center'>
+                 {/* <ReactReadMoreReadLess
                 charLimit={200}
-                readMoreText={t('Read more ▼')}
-                readLessText={t('Read less ▼')}
-              >
+                readMoreText='Read more ▼'
+                readLessText='Read less ▼'
+              > */}
                 {/* {t('FestivalDescription')} */}
                 Festivals are very important in Sanatan Samaj.Festivals fill new energy in our life with joy and gaiety. Irrespective of the period, the importance of ancient or modern festivals is the same. It gives us a break from the routine of everyday life,inspires us to spend some time with our friends and family.Sanatan Samaj believes that no moment should be wasted and social reform and religious work should continue parallel to our daily work. For the same joy and happiness in Sanatan society,festivals have been made in such a way that every person spends some time in charity, religion and social work, so that he gets peace of mind which is the ultimate happiness. It has been saidin the scriptures that Karma, Artha, Dharma,Moksha is the goal of a human being. There is no progress of man without salvation, that's why our festivals are made in such a way that we do religious work and get this supreme happiness.The health of body, mind and intellect has also been taken care of in the festivals of Sanatan Samaj. For this, many types of fasts such as Ekadashi, Pradosh, Navratri etc., so that our daily routine also continues and the health of body and mind is also maintained.In Sanatan Samaj, taking the name of God or remembering Him always is paramount. Sanatan Samaj believes that God is in every element, Hehas no shape, He is above all properties and characteristics. That's why we should celebrate festivals in one way or the other, so that there will  always be ultimate joy in our life. Sanatan Jyoti endeavors that you should know and take advantage of all the festivals of Sanatan Samaj.
-              </ReactReadMoreReadLess></p>
+              {/* </ReactReadMoreReadLess> */}
+              </p>
             </div>
 
 
@@ -924,7 +970,7 @@ const HomePage =  () => {
       </div>
 
       <div className='row '>
-        <CModal className='zodiacModal  zodiacModal_for_width' fullscreen="sm" scrollable visible={visible} onClose={() => setVisible(false)}>
+        {/* <CModal className='zodiacModal  zodiacModal_for_width' fullscreen="sm" scrollable visible={visible} onClose={() => setVisible(false)}>
           
           <CModalHeader className='cModalHeaderCSS'>
 
@@ -937,43 +983,43 @@ const HomePage =  () => {
           <CModalBody className='HoroscopeModalBody'>
             <div className="row borderBottom">
               <div className="col-sm-6 modalData1">
-                <h5 className='text-center  mt-1 horoHeadingColor'><b>  {t('Personal Life')}</b> </h5>
-                {/* <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.personal_life : "Empty"} </p> */}
+                <h5 className='text-center  mt-1 horoHeadingColor'><b>  Personal Life</b> </h5>
+                //  <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.personal_life : "Empty"} </p>
                 <p className=''>{StoreResp?.prediction?.personal_life}</p>
               </div>
               <div className="col-sm-6">
-                <h5 className='text-center  mt-1 horoHeadingColor'><b>{t('Health')}</b></h5>
-                {/* <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.health : "Empty"}</p> */}
+                <h5 className='text-center  mt-1 horoHeadingColor'><b>Health</b></h5>
+               comment <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.health : "Empty"}</p>
                 <p className=''>{StoreResp?.prediction?.health}</p>
               </div>
             </div>
-            {/* <hr className='for_lineModal'></hr> */}
+            //  <hr className='for_lineModal'></hr> 
             <div className="row borderBottom">
               <div className="col-sm-6 modalData1">
-                <h5 className='text-center  mt-1 horoHeadingColor'><b>  {t('Travel')}</b></h5>
-                {/* <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit..{StoreResp ? StoreResp.data.prediction.travel : "Empty"}</p> */}
+                <h5 className='text-center  mt-1 horoHeadingColor'><b>  Travel</b></h5>
+               comment <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit..{StoreResp ? StoreResp.data.prediction.travel : "Empty"}</p>
                 <p className=''>{StoreResp?.prediction?.travel}</p>
               </div>
               <div className="col-sm-6">
-                <h5 className='text-center  mt-1 horoHeadingColor'><b>  {t('Luck')}</b></h5>
-                {/* <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit..{StoreResp ? StoreResp.data.prediction.luck : "Empty"}</p> */}
+                <h5 className='text-center  mt-1 horoHeadingColor'><b>  Luck</b></h5>
+               comment <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit..{StoreResp ? StoreResp.data.prediction.luck : "Empty"}</p>
                 <p className=''>{StoreResp?.prediction?.luck}</p>
               </div>
             </div>
-            {/* <hr className='for_lineModal'></hr> */}
+            //  <hr className='for_lineModal'></hr> 
             <div className="row">
               <div className="col-sm-6 modalData1">
-                <h5 className='text-center  mt-1 horoHeadingColor'><b>  {t('Emotions')}</b></h5>
-                {/* <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.emotions : "Empty"}</p> */}
+                <h5 className='text-center  mt-1 horoHeadingColor'><b>  Emotions</b></h5>
+                comment <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. .{StoreResp ? StoreResp.data.prediction.emotions : "Empty"}</p> 
                 <p className=''>{StoreResp?.prediction?.emotions}</p>
               </div>
               <div className="col-sm-6">
-                <h5 className='text-center mt-1 horoHeadingColor'><b>{t('Profession')} </b></h5>
+                <h5 className='text-center mt-1 horoHeadingColor'><b>Profession</b></h5>
                 <p className=''>{StoreResp?.prediction?.profession}</p>
               </div>
             </div>
           </CModalBody>
-        </CModal>
+        </CModal> */}
       </div>
     </div>
   )

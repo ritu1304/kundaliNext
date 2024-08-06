@@ -1,7 +1,7 @@
 
 import React from 'react';
 import moment from 'moment';
-import FestivalCategory from '@/components/FestivalCategory';
+import FestivalCategory from '@/components/FestivalComponent/FestivalCategory';
 
 
 const Festival = async () => {

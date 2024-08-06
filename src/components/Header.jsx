@@ -1,57 +1,124 @@
 'use client';
 
-
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import SanatanLogo from '../../public/Headerlogo35kb.png'
-import GaneshaLogo from '../../public/Top ganesha icon  35 kb.png'
+import { useRouter } from 'next/navigation'; // Import useRouter
+import SanatanLogo from '../../public/Headerlogo35kb.png';
+import GaneshaLogo from '../../public/Top ganesha icon  35 kb.png';
 import Image from 'next/image';
-//  import { useTranslation } from 'next-i18next';
-//  import { useRouter } from 'next/router';
+import LoginNew from './LoginNew';
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
+import axios from 'axios';
+import toast from 'react-toastify'; // Assuming you have toast for notifications
 
 const Header = () => {
-  
-  // const { i18n } = useTranslation();
-  // const router = useRouter();
+  const [fullNames, setFullNames] = useState(null);
+  const [idStore, setIdStore] = useState(null);
+  const router = useRouter(); // Initialize the router
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
-  //   router.push(router.pathname, router.asPath, { locale: lng });
-  // };
+  useEffect(() => {
+    setFullNames(localStorage.getItem('FullName'));
+    setIdStore(localStorage.getItem('id'));
+  }, []);
+
+  const handleAnushthanOrders = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get(`https://apis.sanatanjyoti.com/api/getScheduledAnushthanByUserId?userId=${idStore}`);
+      if (res.data.data.length > 0) {
+        router.push('AnushthanOrders'); // Navigate using router.push
+      } else {
+        toast.error('No Scheduled Anushthans');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
+
+  const panditMeetings = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get(`https://apis.sanatanjyoti.com/api/get-MeetingLinks_ByUser?page=0&size=10&userId=${idStore}`);
+      if (res?.data?.data?.content?.length > 0) {
+        router.push('/PanditMeetings'); // Navigate using router.push
+      } else {
+        toast.error("No Scheduled Meetings");
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
+
+  const PaymentsList = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get(`https://apis.sanatanjyoti.com/api/get_Transactions?page=0&size=10&userId=${idStore}`);
+      if (res?.data?.data?.content.length > 0) {
+        router.push('/PaymentsList'); // Navigate using router.push
+      } else {
+        toast.error("No Payments Found!");
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('FullName');
+    localStorage.removeItem('id');
+    setFullNames(null);
+    setIdStore(null);
+    router.push('/'); // Optionally redirect to home page or login page after logout
+  };
 
   return (
     <div>
-    <header className="header  centeredLp">
-    {/* <button onClick={() => changeLanguage('en')}>English</button>
-    <button onClick={() => changeLanguage('hi')}>Hindi</button> */}
-      <Link  href="/" className="logo">
-      <Image src={SanatanLogo} alt="" />
+      <header className="header centeredLp">
+        <Link href="/" className="logo">
+          <Image src={SanatanLogo} alt="Sanatan Logo" />
         </Link>
-        {/* <div className="mainMenu"> */}
-        {/* <ul className="menu ulLp"> */}
-        {/* <div className="center">
+        <div className="center">
           <div className="topLp">
-
+            <div>
+              {idStore ? (
+                <Dropdown>
+                  <DropdownTrigger>
+                    <Button variant="solid" style={{ background: "#8e2e0f", borderRadius: "10px" }}>
+                      {fullNames === "null" ? "User" : <>{fullNames}▼</>}
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Static Actions" className='flex-profile'>
+                    <DropdownItem key="profile" href='/Profile'>Profile</DropdownItem>
+                    <DropdownItem key="anushthan" onClick={handleAnushthanOrders}>Anushthan</DropdownItem>
+                    <DropdownItem key="meeting" onClick={panditMeetings}>Meeting Links</DropdownItem>
+                    <DropdownItem key="payment" onClick={PaymentsList}>Payment</DropdownItem>
+                    <DropdownItem key="logout" className="text-danger" color="danger" onClick={handleLogout}>
+                      Logout
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              ) : (
+                <LoginNew />
+              )}
+            </div>
           </div>
-        </div> */}
-        <nav className='nav '>
-        <ul className="menu ulLp">
-        {/* <div className="mainMenu">
-        <ul className="menu ulLp"> */}
-          <li><Link className="nav-link" href="/" activeClassName="active">Home</Link></li>
-          <li><Link className="nav-link" href="/Horoscope" activeClassName="active">Horoscope</Link></li>
-          <li><Link className="nav-link" href="/Panchang" activeClassName="active">Panchang</Link></li>
-          <li><Link className="nav-link" href="/Kundali" activeClassName="active">Kundali</Link></li>
-          <li><Link className="nav-link" href="/MatchMaking" activeClassName="active">Match Making</Link></li>
-          <li><Link className="nav-link" href="/AnushthanFront" activeClassName="active">Anushthan</Link></li>
-          <li><Link className="nav-link" href="/Festival" activeClassName="active">Festival</Link></li>
-          <li><Link className="nav-link" href="/Blog" activeClassName="active">Blog</Link></li>
-          <li><Link className="nav-link" href="/AboutUs" activeClassName="active">About Us</Link></li>
-          <li><Link className="nav-link" href="/ContactUs" activeClassName="active">Contact Us</Link></li>
-        </ul>
-      </nav>
-     
-      <div className="ganesha"><Image src={GaneshaLogo} alt="" /></div>
-    </header>
+        </div>
+        <nav className="nav">
+          <ul className="menu ulLp">
+            <li><Link className="nav-link" href="/" activeClassName="active">Home</Link></li>
+            <li><Link className="nav-link" href="/Horoscope" activeClassName="active">Horoscope</Link></li>
+            <li><Link className="nav-link" href="/Panchang" activeClassName="active">Panchang</Link></li>
+            <li><Link className="nav-link" href="/Kundali" activeClassName="active">Kundali</Link></li>
+            <li><Link className="nav-link" href="/MatchMaking" activeClassName="active">Match Making</Link></li>
+            <li><Link className="nav-link" href="/AnushthanFront" activeClassName="active">Anushthan</Link></li>
+            <li><Link className="nav-link" href="/Festival" activeClassName="active">Festival</Link></li>
+            <li><Link className="nav-link" href="/Blog" activeClassName="active">Blog</Link></li>
+            <li><Link className="nav-link" href="/AboutUs" activeClassName="active">About Us</Link></li>
+            <li><Link className="nav-link" href="/ContactUs" activeClassName="active">Contact Us</Link></li>
+          </ul>
+        </nav>
+        <div className="ganesha"><Image src={GaneshaLogo} alt="Ganesha Logo" /></div>
+      </header>
     </div>
   );
 };

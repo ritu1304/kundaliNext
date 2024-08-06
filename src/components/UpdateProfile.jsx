@@ -1,6 +1,6 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-phone-input-2/lib/style.css';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +10,9 @@ import Modal from '@mui/material/Modal';
 // import '../Login/Login.css';
 // import GoogleSearchPlace from '../SearchPlace/GoogleSearchPlace';
 // import mixpanel from 'mixpanel-browser';
+import { FaEdit } from 'react-icons/fa'; // Font Awesome icons
+import { MdEdit } from 'react-icons/md'; // Material Design icons
+import { AiFillEdit } from 'react-icons/ai'; // Ant Design icons
 
 const style_modal = {
   position: 'absolute',
@@ -124,7 +127,7 @@ const UpdateProfile = (props) => {
       };
 
       let OPTIONS = {
-        url: `/api/update_user`,
+        url: `https://apis.sanatanjyoti.com/api/update_user`,
         method: 'PUT',
         data: dataUpdate,
         headers: {
@@ -236,7 +239,7 @@ const UpdateProfile = (props) => {
     formData.append('file', selectedPic);
     formData.append('userId', userID);
 
-    axios('/api/user/image/upload', {
+    axios('https://apis.sanatanjyoti.com/api/user/image/upload', {
       method: 'POST',
       data: formData, 
     })
@@ -257,7 +260,12 @@ const UpdateProfile = (props) => {
   return (
     <div>
       <button onClick={handleOpen} className="btn  homeButtonsHeader">
-        {(props.btName == "rep") ? t('Talk to representative') : (props.btName == "pandit") ? t('Talk to Pandit Ji') : (props.btName == "bookNow") ? t('Book Now') : <i class="fas fa-edit"></i>}
+        {(props.btName == "rep") ? t('Talk to representative') : (props.btName == "pandit") ? t('Talk to Pandit Ji') : (props.btName == "bookNow") ? t('Book Now') : 
+        // <i class="fas fa-edit"></i>
+        <FaEdit size={24} color="#8e2e0f" />
+        // <AiFillEdit size={24} color="red" />
+        // <MdEdit size={24} color="green" />
+        }
 
       </button>
       <Modal scrollable open={open} onClose={handleClose}>
@@ -336,7 +344,7 @@ const UpdateProfile = (props) => {
                         <label htmlFor="place" className="label_form">
                           {t('Select Location')}
                         </label>
-                        <GoogleSearchPlace parentCallback={callbackFunction} locationName={location} />
+                        {/* <GoogleSearchPlace parentCallback={callbackFunction} locationName={location} /> */}
                       </div>
                     </div>
                     <div className="col-sm-6">
