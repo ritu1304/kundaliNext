@@ -153,10 +153,10 @@ const Profiles = () => {
         }
     }
     return (
-        <div className='wrapper1 mt-14'>
+        <div className='wrapper1 mt-14 '>
             <div className="container-fluid containerColor find_now">
-                <div className="container ">
-                    <div className="row profile">
+                <div className="">
+                    <div className="row profile ">
 
                         <div className="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
                         <div className="col-sm-12 col-md-12 col-lg-10 col-xl-10">
@@ -310,12 +310,12 @@ const Profiles = () => {
                                                     <div className="row buttonRow ">
                                                         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2">
                                                             <center>
-                                                                <button className='btn  profilesButton' onClick={onSubmitKundli} >{t('Add Kundli Details')}</button>
+                                                                <button className='btn  control_for_btns text-white' onClick={onSubmitKundli} >{t('Add Kundli Details')}</button>
                                                             </center>
                                                         </div>
                                                         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2">
                                                             <center>
-                                                                <button className='btn  profilesButton' onClick={kundli} >{t('Saved Kundli')}</button>
+                                                                <button className='btn  control_for_btns text-white' onClick={kundli} >{t('Saved Kundli')}</button>
                                                             </center>
                                                         </div>
                                                     </div>
@@ -342,12 +342,12 @@ const Profiles = () => {
                                                     <div className="row buttonRow">
                                                         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2">
                                                             <center>
-                                                                <button className='btn profilesButton' onClick={onSubmit} >{t('Add Match Details')}</button>
+                                                                <button className='btn control_for_btns text-white' onClick={onSubmit} >{t('Add Match Details')}</button>
                                                             </center>
                                                         </div>
                                                         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-2">
                                                             <center>
-                                                                <button className='btn profilesButton' onClick={match} >{t('Saved Matches')}</button>
+                                                                <button className='btn control_for_btns text-white' onClick={match} >{t('Saved Matches')}</button>
                                                             </center>
                                                         </div>
                                                     </div>

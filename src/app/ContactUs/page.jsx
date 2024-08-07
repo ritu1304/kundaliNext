@@ -120,7 +120,7 @@ const Contact = () => {
                                         <center>
                                             <h5 className='messageHeading mb-2 mt-2'><b>Send a Message</b></h5>
                                         </center>
-                                        <input type='text' className='form-control contect_us_form_control ' placeholder="Enter Name" name='name' value={name} onChange={(e) => setName(e.target.value)} />
+                                        <input type='text' className='form-control contect_us_form_control '  placeholder="Enter Name" name='name' value={name} onChange={(e) => setName(e.target.value)} />
                                         {errors.name && (<p className='errors'>{errors.name}</p>)}
                                         <input type='text' className='form-control contect_us_form_control' placeholder='Enter Your Email' value={email} name='email' onChange={(e) => setEmail(e.target.value)} />
                                         {errors.email && (<p className='errors'>{errors.email}</p>)}

@@ -92,7 +92,7 @@ const Feedback = () => {
     return (
         <div>
 
-            <button onClick={handleOpen} className="btn  logoutButton"  >{t('Feedback')}</button>
+            <button onClick={handleOpen} className="btn  control_for_btns text-white"  >{t('Feedback')}</button>
 
             <Modal
                 open={open}

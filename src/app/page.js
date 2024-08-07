@@ -10,7 +10,7 @@ import CommonCalendar from '../components/FestivalComponent/CommonCalender'
 // import axios from 'axios';
 // import { Link } from 'react-router-dom'
 //  import { CModal, CModalBody, CModalHeader } from '@coreui/react';
-// import ReactReadMoreReadLess from "react-read-more-read-less";
+//  import ReactReadMoreReadLess from "react-read-more-read-less";
 // import { register } from 'swiper/element/bundle';
 // import { NavLink } from "react-router-dom";
 import guruGeetaEng from '../../public/guru geeta ad photo english.jpg'
@@ -469,7 +469,7 @@ const HomePage =  () => {
                 <img src={santanTextEng} alt="Sanatan" /> :
                 <img src={sanatantextHin} alt="Sanatan" />
               } */}
-                <img src={santanTextEng} alt="Sanatan" /> 
+                <Image src={santanTextEng} alt="Sanatan" /> 
             </h2>
 
             <p>

@@ -9,7 +9,7 @@ const TermsConditions = () => {
         // mixpanel.track('termsAndConditionsViewed');
     }, []);
     return (
-        <div>
+        <div className='wrapper1'>
 
             <div className="container-fluid SanatanHomeStyles">
                 <div className='container'>

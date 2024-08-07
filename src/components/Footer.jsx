@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 // import './landing.css';
-import { Link} from 'next/link'
+import Link from 'next/link'
 import { useTranslation } from "react-i18next";
 import Feedback from './Feedback';
 // import mixpanel from 'mixpanel-browser';
@@ -59,19 +59,19 @@ const Footer = () => {
 
           <ul className="link ulLp">
             <li> 
-               {/* <Link href="/TermsConditions"> */}
+               <Link href="/TermsConditions">
                <h5 className='' onClick={() => handleMixPanelClick("termsAndConditionsClicked")}>{t('Terms and Conditions')}</h5>
-               {/* </Link> */}
+               </Link>
             </li>
             <li>
-                {/* <Link href="/PrivacyPolicy"> */}
+                <Link href="/PrivacyPolicy">
                 <h5 className='' onClick={() => handleMixPanelClick("privacyPolicyClicked")}>{t('Privacy Policy')}</h5>
-                {/* </Link> */}
+                </Link>
             </li>
             <li>  
-                {/* <Link href="/PaymentPolicies"> */}
+                <Link href="/PaymentPolicies">
                 <h5 className='' onClick={() => handleMixPanelClick("paymentPolicyClicked")}>{t('Payment Policy')}</h5>
-                {/* </Link> */}
+                </Link>
             </li>
 
 

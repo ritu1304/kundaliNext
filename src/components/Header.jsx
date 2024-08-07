@@ -2,24 +2,30 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // Import useRouter
+import { useRouter } from 'next/navigation'; 
 import SanatanLogo from '../../public/Headerlogo35kb.png';
 import GaneshaLogo from '../../public/Top ganesha icon  35 kb.png';
 import Image from 'next/image';
 import LoginNew from './LoginNew';
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import axios from 'axios';
-import toast from 'react-toastify'; // Assuming you have toast for notifications
+import toast from 'react-toastify'; 
 
 const Header = () => {
   const [fullNames, setFullNames] = useState(null);
   const [idStore, setIdStore] = useState(null);
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     setFullNames(localStorage.getItem('FullName'));
     setIdStore(localStorage.getItem('id'));
   }, []);
+  const handleMobileMenuClick = (e) => {
+    e.preventDefault();
+    setIsMenuOpen(!isMenuOpen);
+
+  };
 
   const handleAnushthanOrders = async (e) => {
     e.preventDefault();
@@ -101,9 +107,10 @@ const Header = () => {
                 <LoginNew />
               )}
             </div>
+            <a href="#" className={isMenuOpen ? 'mobileMenu is-active' : 'mobileMenu'} onClick={handleMobileMenuClick}><span></span></a>
           </div>
-        </div>
-        <nav className="nav">
+        
+          <div className="mainMenu" style={{display:"block !important"}}>
           <ul className="menu ulLp">
             <li><Link className="nav-link" href="/" activeClassName="active">Home</Link></li>
             <li><Link className="nav-link" href="/Horoscope" activeClassName="active">Horoscope</Link></li>
@@ -116,7 +123,8 @@ const Header = () => {
             <li><Link className="nav-link" href="/AboutUs" activeClassName="active">About Us</Link></li>
             <li><Link className="nav-link" href="/ContactUs" activeClassName="active">Contact Us</Link></li>
           </ul>
-        </nav>
+        </div>
+        </div>
         <div className="ganesha"><Image src={GaneshaLogo} alt="Ganesha Logo" /></div>
       </header>
     </div>

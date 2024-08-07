@@ -149,7 +149,7 @@ body {
 
 button {
   display: block;
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   border: none;
   background-color: #d9534f;
@@ -204,11 +204,16 @@ button[type="button"] {
 }
 
 .tableHeadBirth {
-  text-align: center;
-  background-color: #9C4018;
-  color: white;
-  font-weight: bold;
+  text-align: center !important;
+  background-color: #9C4018 !important;
+  color: white !important;
+  font-weight: bold !important;
 }
+input::placeholder {
+  color: #ff0000; /* Change this to your desired color */
+  opacity: 1; /* Ensures full opacity */
+}
+
 /* HOroscope */
 
 
@@ -553,6 +558,9 @@ div.content {
 
 .newformdiv .react-tel-input .form-control {
   width: 100% !important;
+}
+.form-control::placeholder {
+  color: rgb(105, 105, 105) !important; 
 }
 
 /* .frm-ctrl{
@@ -1499,6 +1507,9 @@ hr:not([size]) {
   margin-bottom: 2%;
 
 }
+/* .contect_us_form_control::placeholder {
+  color: rgb(105, 105, 105) !important; 
+} */
 
 .flexx{
   display: flex;
@@ -1512,11 +1523,11 @@ hr:not([size]) {
 }
 
 .contect_us_submit_btn {
-  background-color: #8E2E0F;
-  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
-  border-radius: 5px;
-  width: 100%;
-  color: white;
+  background-color: #8E2E0F !important;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%) !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+  color: white !important;
   /* margin-left: -6px; */
 
 }
@@ -4571,7 +4582,7 @@ p a:hover {
     width: 100%;
     height: calc(100vh - 100px);
     overflow-y: auto;
-    display: none;
+    display: none !important;
     background: #fc9f28;
   }
 
@@ -4727,8 +4738,8 @@ p a:hover {
 
 .close-button {
   position: absolute;
-  top: -22px;
-  left: 128px;
+  top: 4px;
+  right: 7px;
   background: none;
   border: none;
   cursor: pointer;
@@ -4865,6 +4876,8 @@ p a:hover {
  
   .close-button{
     font-size: 16px;
+    /* top: -2px;
+    left: 108px; */
   }
   .wrapper-sticky-note{
     display: flex;
@@ -4903,6 +4916,8 @@ p a:hover {
 }
   .close-button{
     font-size: 16px;
+    /* top: -2px;
+    left: 108px; */
   }
   .wrapper-sticky-note{
     display: flex;
@@ -4937,6 +4952,8 @@ p a:hover {
  
   .close-button{
     font-size: 16px;
+    /* top: -2px;
+    left: 108px; */
   }
   .wrapper-sticky-note{
     display: flex;
@@ -4979,6 +4996,8 @@ p a:hover {
 }
   .close-button{
     font-size: 14px;
+    /* top: -2px; */
+    /* margin-left: 100px; */
   }
   .wrapper-sticky-note{
     display: flex;
@@ -6228,6 +6247,9 @@ body {
 }
 
 /* Profile css */
+/* .proCard{
+  width: 1220px !important;
+} */
 /* Profile container */
 .profile {
   margin: 20px 0;
@@ -6466,13 +6488,10 @@ body {
 
 .kundliProfilesCard {
   background-image: url("https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/profileKundli.png");
-  /* background: linear-gradient(to top, #FA7754, #ffff66); */
-  background-repeat: no-repeat;
-  /* height: 326px;
-  width: 100%; */
-  border-radius: 27px;
-  background-size: cover;
-  /* box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%); */
+ background-repeat: no-repeat !important;
+  border-radius: 27px !important;
+  background-size: cover !important;
+ 
 }
 
 .matchProfilesCard {
