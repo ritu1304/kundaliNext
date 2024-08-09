@@ -7,11 +7,14 @@ const Festival = async() => {
 
     const date = new Date();
 
+    var mon = moment(date).format('M');
 
+        var yea = moment(date).format('yy')
+        
 
     let fes = [];
     try {
-      const response = await fetch('https://apis.sanatanjyoti.com/api/get_festival?month=7&year=2024');
+      const response = await fetch(`https://apis.sanatanjyoti.com/api/get_festival?month=${mon}&year=${yea}`);
       const result = await response.json();
       fes = result.data;
     } catch (error) {
@@ -146,7 +149,7 @@ const Festival = async() => {
                                             <br /><br /><br />
                                         </div>
                                     </div>
-                                    {/* <div className="row homeFestivalSmall" >
+                                    <div className="row homeFestivalSmall" >
                                         <div className="card p-3 calenderFestival">
                                             <div className="card-body">
                                                 <center>
@@ -165,7 +168,7 @@ const Festival = async() => {
 
                                             </div>
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                                 <div className="row mt-5">
                                     <div className="col-sm-12">

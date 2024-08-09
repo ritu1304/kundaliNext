@@ -6,6 +6,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Common from '@/components/Common';
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -78,7 +79,8 @@ const Contact = () => {
             <div className="container">
                 <div className="row">
                     <div className="card contactBg mt-2 mb-2 border">
-                        <h1 className="heading-desc">CONTACT US</h1>
+                    <Common contact='a' show='a' />
+                        {/* <h1 className="heading-desc">CONTACT US</h1> */}
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-sm-12 col-md-12 col-lg-6 mt-4">

@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Autoplay , Pagination} from 'swiper/modules';
+import Common from '../Common';
 
 const FestivalCategory = () => {
     const [year, setYear] = useState("");
@@ -15,6 +16,7 @@ const FestivalCategory = () => {
     const [show, setShow] = useState(false)
     const [showCategory, setShowCategory] = useState(false)
     const [festivalCategory, setFestivalCategory] = useState("")
+    
 
     const festivalByCategory = [
 
@@ -104,12 +106,12 @@ const FestivalCategory = () => {
             <div className="container-fluid find_now">
                 <div className="container">
                      <div className="row FestivalCardsCrousel">
-                        <div className='row'>
+                        {/* <div className='row'>
                             <center>
-                            <center className="heading-desc" style={{marginBottom:"30px"}}>Category</center>
+                            <Common fesByCategory='a' show='a' />
                             </center>
 
-                        </div>
+                        </div> */}
                         {/* <div className="swiper-container">
                                 <Swiper
                                     className="custom-swiper"
@@ -159,11 +161,11 @@ const FestivalCategory = () => {
                         </div> */}
                     </div> 
                     <div className="">
-                        <div className="festivalsection">
+                        <div className="festivalsection mt-4">
 
 
-                            <div className='row'>
-                                {/* <Common fesByCategory='a' show='a' /> */}
+                            <div className='row mt-4'>
+                                <Common fesByCategory='a' show='a' />
                             </div>
 
                             {/* ------------------------------------------CATEGORY CARDS---------------------------------------- */}
@@ -216,12 +218,12 @@ const FestivalCategory = () => {
                                     <div className='col-sm-12 col-md-12 col-lg-12 col-xl-2'>
                                         <div className="row mt-5">
                                             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                                                {/* <select name="year" id="year" className="dropdown-toggle calSearchYear" onChange={(e) => setCategoryYear(e.target.value)}>
+                                                <select name="year" id="year" className="dropdown-toggle calSearchYear" onChange={(e) => setCategoryYear(e.target.value)}>
 
                                                     <option value="2022">2022</option>
                                                     <option value="2023">2023</option>
                                                     <option selected value="2024">2024</option>
-                                                </select> */}
+                                                </select>
 
                                             </div>
                                             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">

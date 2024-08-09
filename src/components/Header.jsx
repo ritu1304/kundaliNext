@@ -89,8 +89,8 @@ const Header = () => {
               {idStore ? (
                 <Dropdown>
                   <DropdownTrigger>
-                    <Button variant="solid" style={{ background: "#8e2e0f", borderRadius: "10px" }}>
-                      {fullNames === "null" ? "User" : <>{fullNames}▼</>}
+                    <Button variant="solid" className="btn logoutButton dropdown-toggle " >
+                      {fullNames === "null" ? "User" : <>{fullNames}</>}
                     </Button>
                   </DropdownTrigger>
                   <DropdownMenu aria-label="Static Actions" className='flex-profile'>
@@ -110,7 +110,7 @@ const Header = () => {
             <a href="#" className={isMenuOpen ? 'mobileMenu is-active' : 'mobileMenu'} onClick={handleMobileMenuClick}><span></span></a>
           </div>
         
-          <div className="mainMenu" style={{display:"block !important"}}>
+          <div className="mainMenu" style={isMenuOpen ? {display: "block"} : {}}>
           <ul className="menu ulLp">
             <li><Link className="nav-link" href="/" activeClassName="active">Home</Link></li>
             <li><Link className="nav-link" href="/Horoscope" activeClassName="active">Horoscope</Link></li>

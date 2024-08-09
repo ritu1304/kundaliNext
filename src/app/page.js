@@ -46,6 +46,8 @@ import atiRudra from '../../public/Ati Rudra Anushthan.png'
 import kanakaDhara from '../../public/Kanaka Dhara Stotram.png'
 import sriSuktam from '../../public/Sri suktam.png'
 import Image from 'next/image';
+import Link from 'next/link';
+import ReadMoreReadLess from '@/components/ReadMoreReadLess';
 
 // import '../Home/Home.css' //changes
 // import mixpanel from 'mixpanel-browser';
@@ -207,6 +209,13 @@ const HomePage =  () => {
     { image: "https://sanatanapi-files.s3.ap-south-1.amazonaws.com/static-images/review3.jpg", name: "Satish Kumar Narayanan, Resident-  Pune , Maharastra", date: "13/04/2024", review: "This Anushthan was journey of the positive vibration and spirituality for all the days….  Wonderful, ‘atma’, touching experience while the Vedic recitations were recited by the Panditji…  The orange and the yellow flowers blossomed my spirit. The Panchaamrit process upgraded my spirit…  I felt enhanced by the names of all the Gods…said in my presence, even though I was sitting so far.  What a holy, clean mind and heart absorbing of positivity….  I did it late, but experience was beyond words with the help of ‘Sanatan Jyoti’. Thanks to the team of Sanatan Jyoti, to make me live this experience!!" },
    
   ]
+  const SanatanText = "The meaning of 'Sanatan' is that which has no beginning or end, it is eternal. In Sanatan, all the qualities of creation are encompassed; scientists have been researching in their respective fields since ancient times and have unraveled the mysteries hidden in this creation. Their influence affects all living beings. Scientists of the eternal era and astronomers have discovered the secrets of the universe. It is a mystery that they had the resources to explore because their calculations were absolutely accurate. They have accurately calculated the influence of the sun, moon, planets, and 28 constellations on all living beings on Earth.In our modern era, various kinds of research are being conducted that have completely transformed our lives. However, it does not mean that we should forget the research of scientists from the ancient era, as it forms the foundation of our modern times. They extensively studied the influence of all planets and stars on all living beings and developed the process of creating astrological charts. Astrology explains the qualities and characteristics of individuals based on their birth charts. Just as we use modern calendars today, in ancient times, the creation of a Panchang (traditional Almanac) was based on the movement of the moon, and it is still in use today and holds great significance. Furthermore, from the ancient era, we have gained extensive knowledge about the impact of different elements of the Earth on our lives, which greatly influence our daily lives. Sanatan Jyoti is an initiative through which we can utilize the knowledge obtained from ancient research in our modern lives. For example, we can use astrology charts, Kundali matching, Panchang for success in business and career, and incorporate ancient stories and knowledge to bring happiness into our lives. We can also seek insights into future events, enabling us to make informed decisions that yield positive outcomes in the future. There is no sectarianism in Sanatan Dharma. It is associated with human values. Sanatan allows everyone the freedom to choose their own faith based on human principles. Sanatan Jyoti is an initiative for the welfare of humanity.The teachings passed down by our ancestors are not connected to any specific sect. It grants every individual the freedom to choose and perform actions according to their own thoughts. Sanatan Dharma teaches the art of living, shows the structure of society, and guides us on how our family should be organized to bring happiness into our lives. It explains the abstract Brahman as easily as the manifest forms and leaves it to the individual to decide their path.The ancient scriptures and folk tales written in ancient times still show us the way in our lives. Even today, amidst the worries of our fast-paced life, those same old mythological stories provide us relief. The aim of Sanatan Jyoti is to bring solace to society from the anxieties prevalent in today's hectic life. I urge all of you to come together for the welfare of society and become a part of it."
+  const BlogText = "The ancient tradition (Sanatan tradition) of India, a vital aspect of Indian culture and civilization, has been passed down through generations for centuries. It is based on teachings found in the Vedas, Upanishads, Puranas, and religious scriptures. These teachings contain messages of rules, education, and guidance for every aspect of life, helping our society to prosper, stay balanced, and continuously develop.In ancient times, sages and monks conducted various experiments and research through their meditation and efforts, leading to many discoveries. Some of these discoveries are still beyond the scope of modern science today. The traditions followed by these ancient sages and ascetics still appear important for the welfare, health, and prosperity of our society today. Due to the advancement of modernization over generations, many beneficial teachings for human welfare, mentioned in the Vedas, Upanishads, and Puranas, have been somewhat overlooked within the ancient tradition (Sanatan tradition). ";
+  const KundaliText = "The science of making Kundli (Astrological chart) and reading Horoscope is called Astrology. Astrology is also called Jyoti Shastra, Jyoti means light and the scripture which illuminates our life is called Jyotish Shastra. When a newborn baby is born, the map of the sky is called a horoscope, at that time which planet is where, all these are described in the horoscope. The human body is formed by the effects of these planets only. And the activities in his life are the result of a complex action of his karma and the movements of the planets. Kundli describes a person from birth to death.";
+  const MatchMakingText = "Horoscope matching is the actually matching of human qualities. Every human has its own qualities, which are divided into 36 types in astrology. The more qualities a boy and a girl have, the closer they can be. The matching of these 36 qualities of a boy and a girl is called Kundli Matching. The more qualities a boy and a girl get, the more likely their pair will remain in love. The marriage is not approved by astrologers if qualities of Boy-Girl matches less than 18. Some types of defects are also taken care of in horoscope matching like Nadi Dosha,Mangal Dosha etc. It is the endeavor of SanatanJyoti to match the Kundli of the boy and the girl in the right way which is flawless so that they can spend their married life very lovingly.";
+  const AnushthanText = "The literal meaning of 'Anushthan' is a ritualistic practice aimed at achieving desired results, and it involves performing auspicious actions and worshiping divine elements for success and fruitful outcomes.An 'Anushthan' assists in reducing physical ailments, mental unrest, pain, fear, and obstacles encountered in life. Many people face domestic troubles, harmful effects of unfavorable planets, legal issues, continuous losses in business, incurable diseases, fear of untimely death, etc. In such situations, Anushthan undoubtedly helps alleviate the fear of these upheavals in a person's life. Therefore, Anushthan provides maximum relief to individuals by addressing various problems, fears, stress, etc., in their lives. However, Anushthan is akin to awakening divine elements to attain one's desired outcome (blessing). Therefore, performing this ritual under the guidance of Vedic rituals and proficient Acharyas ensures complete benefits. If the Anushthan ritual is not conducted according to Vedic rituals or if errors occur in it, it certainly has adverse effects. Particularly in Sanatan Dharma, Anushthan rituals are conducted by proficient Acharyas trained in Gurukuls, who are skilled and proficient in performing Anushthan through Vedic rituals.There are different types of rituals for different problems which you can know in detail below:-";
+  const FestivalText = "Festivals are very important in Sanatan Samaj.Festivals fill new energy in our life with joy and gaiety. Irrespective of the period, the importance of ancient or modern festivals is the same. It gives us a break from the routine of everyday life,inspires us to spend some time with our friends and family.Sanatan Samaj believes that no moment should be wasted and social reform and religious work should continue parallel to our daily work. For the same joy and happiness in Sanatan society,festivals have been made in such a way that every person spends some time in charity, religion and social work, so that he gets peace of mind which is the ultimate happiness. It has been saidin the scriptures that Karma, Artha, Dharma,Moksha is the goal of a human being. There is no progress of man without salvation, that's why our festivals are made in such a way that we do religious work and get this supreme happiness.The health of body, mind and intellect has also been taken care of in the festivals of Sanatan Samaj. For this, many types of fasts such as Ekadashi, Pradosh, Navratri etc., so that our daily routine also continues and the health of body and mind is also maintained.In Sanatan Samaj, taking the name of God or remembering Him always is paramount. Sanatan Samaj believes that God is in every element, Hehas no shape, He is above all properties and characteristics. That's why we should celebrate festivals in one way or the other, so that there will always be ultimate joy in our life. Sanatan Jyoti endeavors that you should know and take advantage of all the festivals of Sanatan Samaj."
+  
   // ----------------------------Profile Data------------------------
   // var IdStore = localStorage.getItem("id")
   // useEffect(() => {
@@ -472,15 +481,10 @@ const HomePage =  () => {
                 <Image src={santanTextEng} alt="Sanatan" /> 
             </h2>
 
-            <p>
-              {/* <ReactReadMoreReadLess
-              charLimit={400}
-              readMoreText='Read more ▼'
-              readLessText='Read less ▼'
-            > */}
-              The meaning of 'Sanatan' is that which has no beginning or end, it is eternal. In Sanatan, all the qualities of creation are encompassed; scientists have been researching in their respective fields since ancient times and have unraveled the mysteries hidden in this creation. Their influence affects all living beings. Scientists of the eternal era and astronomers have discovered the secrets of the universe. It is a mystery that they had the resources to explore because their calculations were absolutely accurate. They have accurately calculated the influence of the sun, moon, planets, and 28 constellations on all living beings on Earth.In our modern era, various kinds of research are being conducted that have completely transformed our lives. However, it does not mean that we should forget the research of scientists from the ancient era, as it forms the foundation of our modern times. They extensively studied the influence of all planets and stars on all living beings and developed the process of creating astrological charts. Astrology explains the qualities and characteristics of individuals based on their birth charts. Just as we use modern calendars today, in ancient times, the creation of a Panchang (traditional Almanac) was based on the movement of the moon, and it is still in use today and holds great significance. Furthermore, from the ancient era, we have gained extensive knowledge about the impact of different elements of the Earth on our lives, which greatly influence our daily lives. Sanatan Jyoti is an initiative through which we can utilize the knowledge obtained from ancient research in our modern lives. For example, we can use astrology charts, Kundali matching, Panchang for success in business and career, and incorporate ancient stories and knowledge to bring happiness into our lives. We can also seek insights into future events, enabling us to make informed decisions that yield positive outcomes in the future. There is no sectarianism in Sanatan Dharma. It is associated with human values. Sanatan allows everyone the freedom to choose their own faith based on human principles. Sanatan Jyoti is an initiative for the welfare of humanity.The teachings passed down by our ancestors are not connected to any specific sect. It grants every individual the freedom to choose and perform actions according to their own thoughts. Sanatan Dharma teaches the art of living, shows the structure of society, and guides us on how our family should be organized to bring happiness into our lives. It explains the abstract Brahman as easily as the manifest forms and leaves it to the individual to decide their path.The ancient scriptures and folk tales written in ancient times still show us the way in our lives. Even today, amidst the worries of our fast-paced life, those same old mythological stories provide us relief. The aim of Sanatan Jyoti is to bring solace to society from the anxieties prevalent in today's hectic life. I urge all of you to come together for the welfare of society and become a part of it.
-            {/* </ReactReadMoreReadLess> */}
-            </p>
+            {/* <p> */}
+             
+            <ReadMoreReadLess text={SanatanText} maxLength={300} />
+            {/* </p> */}
           </div>
           {/* <!-- text sec end --> */}
 
@@ -546,7 +550,9 @@ const HomePage =  () => {
             </ul>
             <div className='mt-4'>
               <center>
-                {/* <Link className='btnLp btn control_for_btns text-white' to="/Panchang" onClick={() => handleMixPanelClick("seePanchangInDetailClicked")} >{t('See Panchang in Detail')}</Link> */}
+                <Link className='btnLp btn control_for_btns text-white' href="/Panchang" 
+                // onClick={() => handleMixPanelClick("seePanchangInDetailClicked")} 
+                >See Panchang in Detail</Link>
               </center>
             </div>
           </div>
@@ -698,16 +704,10 @@ const HomePage =  () => {
         <div class="blogSec centeredLp">
           <h2 className='headingLp'>Our Blogs</h2>
 
-          <p className='card-text text-center'>
-             {/* <ReactReadMoreReadLess
-            charLimit={200}
-            readMoreText='Read more ▼'
-            readLessText='Read less ▼'
-          > */}
-            {/* {t('BlogDesc')} */}
-            The ancient tradition (Sanatan tradition) of India, a vital aspect of Indian culture and civilization, has been passed down through generations for centuries. It is based on teachings found in the Vedas, Upanishads, Puranas, and religious scriptures. These teachings contain messages of rules, education, and guidance for every aspect of life, helping our society to prosper, stay balanced, and continuously develop.In ancient times, sages and monks conducted various experiments and research through their meditation and efforts, leading to many discoveries. Some of these discoveries are still beyond the scope of modern science today. The traditions followed by these ancient sages and ascetics still appear important for the welfare, health, and prosperity of our society today. Due to the advancement of modernization over generations, many beneficial teachings for human welfare, mentioned in the Vedas, Upanishads, and Puranas, have been somewhat overlooked within the ancient tradition (Sanatan tradition).
-          {/* </ReactReadMoreReadLess> */}
-          </p>
+          {/* <p className='card-text text-center'> */}
+            
+          <ReadMoreReadLess text={BlogText} maxLength={300} />
+          {/* </p> */}
         
           <div className="swiper-container">
                        {/* <Swiper
@@ -755,16 +755,9 @@ const HomePage =  () => {
           <div class="contentSec">
             <div class="text">
               <h2 className='headingLp'>Kundli</h2>
-              <p>
-                 {/* <ReactReadMoreReadLess
-                charLimit={200}
-                readMoreText='Read more ▼'
-                readLessText='Read less ▼'
-              > */}
-                {/* {t('kundliDes')} */}
-                The science of making Kundli (Astrological chart) and reading Horoscope is called Astrology. Astrology is also called Jyoti Shastra, Jyoti means light and the scripture which illuminates our life is called Jyotish Shastra. When a newborn baby is born, the map of the sky is called a horoscope, at that time which planet is where, all these are described in the horoscope. The human body is formed by the effects of these planets only. And the activities in his life are the result of a complex action of his karma and the movements of the planets. Kundli describes a person from birth to death.
-              {/* </ReactReadMoreReadLess> */}
-              </p>
+              {/* <p> */}
+              <ReadMoreReadLess text={KundaliText} maxLength={300} />
+              {/* </p> */}
               <center className='btnLp btn control_for_btns text-white'>
                 {/* <Link className='btnLp btn control_for_btns text-white' onClick={() => handleMixPanelClick("getYourFreeKundliNowClicked")} to="/Kundali"> */}
                 {/* {t('kundliNow')} */}
@@ -775,16 +768,9 @@ const HomePage =  () => {
 
             <div class="text">
               <h2 className='headingLp'>Match Making</h2>
-              <p>
-                {/* <ReactReadMoreReadLess
-                charLimit={200}
-                readMoreText='Read more ▼'
-                readLessText='Read less ▼'
-              > */}
-                {/* {t('MatchDesc')} */}
-                Horoscope matching is the actually matching of human qualities. Every human has its own qualities, which are divided into 36 types in astrology. The more qualities a boy and a girl have, the closer they can be. The matching of these 36 qualities of a boy and a girl is called Kundli Matching. The more qualities a boy and a girl get, the more likely their pair will remain in love. The marriage is not approved by astrologers if qualities of Boy-Girl matches less than 18. Some types of defects are also taken care of in horoscope matching like Nadi Dosha,Mangal Dosha etc. It is the endeavor of SanatanJyoti to match the Kundli of the boy and the girl in the right way which is flawless so that they can spend their married life very lovingly
-              {/* </ReactReadMoreReadLess> */}
-              </p>
+              {/* <p> */}
+              <ReadMoreReadLess text={MatchMakingText} maxLength={300} />
+              {/* </p> */}
               <center className='btnLp  btn control_for_btns text-white'>
                  {/* <Link className='btnLp  btn control_for_btns text-white' onClick={() => handleMixPanelClick("getYourFreeMatchingDetailsClicked")} to="/MatchMaking"> */}
                 Get Your Matching Details Now
@@ -847,16 +833,9 @@ const HomePage =  () => {
 
             <div class="rightLp">
               <h2 className='headingLp'>Anushthan</h2>
-              <p>
-                {/* <ReactReadMoreReadLess
-                charLimit={200}
-                readMoreText='Read more ▼'
-                readLessText='Read less ▼'
-              > */}
-                The literal meaning of 'Anushthan' is a ritualistic practice aimed at achieving desired results, and it involves performing auspicious actions and worshiping divine elements for success and fruitful outcomes.An 'Anushthan' assists in reducing physical ailments, mental unrest, pain, fear, and obstacles encountered in life. Many people face domestic troubles, harmful effects of unfavorable planets, legal issues, continuous losses in business, incurable diseases, fear of untimely death, etc. In such situations, Anushthan undoubtedly helps alleviate the fear of these upheavals in a person's life. Therefore, Anushthan provides maximum relief to individuals by addressing various problems, fears, stress, etc., in their lives. However, Anushthan is akin to awakening divine elements to attain one's desired outcome (blessing). Therefore, performing this ritual under the guidance of Vedic rituals and proficient Acharyas ensures complete benefits. If the Anushthan ritual is not conducted according to Vedic rituals or if errors occur in it, it certainly has adverse effects. Particularly in Sanatan Dharma, Anushthan rituals are conducted by proficient Acharyas trained in Gurukuls, who are skilled and proficient in performing Anushthan through Vedic rituals.There are different types of rituals for different problems which you can know in detail below:-
-                {/* {t('What is Anushthan')} */}
-              {/* </ReactReadMoreReadLess> */}
-              </p>
+              {/* <p> */}
+              <ReadMoreReadLess text={AnushthanText} maxLength={300} />
+              {/* </p> */}
 
               {/* <Link class="btnLp  btn control_for_btns text-white" onClick={() => handleMixPanelClick("bookNowAnushthanClicked")} to="/AnusthanFront">{t('Book Now')}</Link> */}
              </div>
@@ -949,16 +928,9 @@ const HomePage =  () => {
           <div class="fastivalSec">
             <div class="block">
               <h2 className='headingLp'>Festival, 2024</h2>
-              <p className='card-text text-center'>
-                 {/* <ReactReadMoreReadLess
-                charLimit={200}
-                readMoreText='Read more ▼'
-                readLessText='Read less ▼'
-              > */}
-                {/* {t('FestivalDescription')} */}
-                Festivals are very important in Sanatan Samaj.Festivals fill new energy in our life with joy and gaiety. Irrespective of the period, the importance of ancient or modern festivals is the same. It gives us a break from the routine of everyday life,inspires us to spend some time with our friends and family.Sanatan Samaj believes that no moment should be wasted and social reform and religious work should continue parallel to our daily work. For the same joy and happiness in Sanatan society,festivals have been made in such a way that every person spends some time in charity, religion and social work, so that he gets peace of mind which is the ultimate happiness. It has been saidin the scriptures that Karma, Artha, Dharma,Moksha is the goal of a human being. There is no progress of man without salvation, that's why our festivals are made in such a way that we do religious work and get this supreme happiness.The health of body, mind and intellect has also been taken care of in the festivals of Sanatan Samaj. For this, many types of fasts such as Ekadashi, Pradosh, Navratri etc., so that our daily routine also continues and the health of body and mind is also maintained.In Sanatan Samaj, taking the name of God or remembering Him always is paramount. Sanatan Samaj believes that God is in every element, Hehas no shape, He is above all properties and characteristics. That's why we should celebrate festivals in one way or the other, so that there will  always be ultimate joy in our life. Sanatan Jyoti endeavors that you should know and take advantage of all the festivals of Sanatan Samaj.
-              {/* </ReactReadMoreReadLess> */}
-              </p>
+              {/* <p className='card-text text-center'> */}
+              <ReadMoreReadLess text={FestivalText} maxLength={300} />
+              {/* </p> */}
             </div>
 
 

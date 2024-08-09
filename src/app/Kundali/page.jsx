@@ -2,9 +2,7 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from "react-i18next";
 import Kunda from '../../components/Form';
-// import Common from '../Common/Common';
 import "react-datepicker/dist/react-datepicker.css";
-// import './Kundali.css';
 // import KundliList from '../Profiles/KundliList';
 import ReadMoreReact from 'read-more-react';
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -12,6 +10,7 @@ import ReactReadMoreReadLess from "react-read-more-read-less";
 import kundaliEng from '../../../public/Kundli image english 38 kb.png'
 import kundaliHin from '../../../public/Kundli image Hindi 38 kb.png'
 import Image from 'next/image';
+import Common from '@/components/Common';
 
 function Kundali(props) {
     useEffect(() => {
@@ -24,8 +23,7 @@ function Kundali(props) {
         <div>
             <div className='container-fluid find_now wrapper1'>
                 <div className='container'>
-                    {/* <Common Kundali='a' show='a' /> */}
-                    <h1 className="heading-desc">Kundali</h1>
+                    <Common Kundali='a' show='a' />
                     <div className='row mt-1 textAlignment'>
                         
                         <span>

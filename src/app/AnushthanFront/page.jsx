@@ -144,7 +144,7 @@ const AnushthanFront = async () => {
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-12 marginResp">
                         <div className="blogBox my-3 text-center">
-                        <h2 style={{fontSize:'20px'}} className='fw-bold pt-2 textSize'>Anusthannnnnnnnnnnn</h2>
+                        <h2 style={{fontSize:'20px'}} className='fw-bold pt-2 textSize'>Anusthan</h2>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import GooglePlace from "./GooglePlace";
 import { NavLink } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
-// import Common from '../Common/Common';
+import Common from '@/components/Common';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 // import mixpanel from 'mixpanel-browser';
 import { Link } from 'react-router-dom'
@@ -28,6 +28,7 @@ import panchangYantra from '../../../public/Panchang small 200KB.png'
 import sunrise from '../../../public/Sunrise.png'
 import sunset from '../../../public/Sunset.png'
 import sanatanLogo from '../../../public/Headerlogo35kb.png'
+
 
 function Panchang() {
     useEffect(() => {
@@ -907,13 +908,13 @@ function Panchang() {
 
     return (
         <div>
-            <div className="" >
+            <div className="wrapper1" >
                 <div className="container-fluid find_now">
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                {/* <Common panchang='a' show='a' /> */}
-                                <h1 className="heading-desc">Panchang</h1>
+                                <Common panchang='a' show='a' />
+                                
                                 <div className="row">
                                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 mt-3">
                                         <div className="image-container position-relative">

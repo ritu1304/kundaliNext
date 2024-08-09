@@ -36,6 +36,25 @@ body {
   align-items: center;
   padding: 20px;
 }
+/* globals.css */
+
+::-webkit-scrollbar {
+  width: 12px !important;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;  /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888 !important;  /* Scrollbar color */
+  border-radius: 10px !important;  /* Roundness of the scrollbar */
+  border: 3px solid #f1f1f1 !important;  /* Space around the scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8e2e0f !important;  /* Scrollbar color on hover */
+}
 
 .description {
   margin-bottom: 20px;
@@ -147,9 +166,9 @@ body {
 }
 
 
-button {
+/* button {
   display: block;
-  /* width: 100%; */
+  width: 100%;
   padding: 10px;
   border: none;
   background-color: #d9534f;
@@ -157,10 +176,12 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-}
+} */
 
 button[type="button"] {
-  background-color: #5bc0de;
+  background-color:  #8E2E0F;
+  padding: 6px 20px !important;
+  color: white !important;
 }
 .button_Prev {
   color: white;
@@ -217,6 +238,128 @@ input::placeholder {
 /* HOroscope */
 
 
+/* styles/Home.module.css */
+.scrollableFestivalList {
+  height: 57vh;
+  overflow-y: auto;
+}
+.scrollableFestivalList ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey !important;
+  border-radius: 10px !important;
+}
+
+/* Handle */
+.scrollableFestivalList ::-webkit-scrollbar-thumb {
+  background: #8E2E0F !important;
+  border-radius: 10px !important;
+}
+
+/* Handle on hover */
+.scrollableFestivalList ::-webkit-scrollbar-thumb:hover {
+  background: #8E2E0F !important;
+}
+
+.SanatanHomeStyles {
+  background-color: #fff;
+}
+
+.sanatanJyotiLogo {
+  width: 22%;
+}
+
+.cardBg {
+  background-color: #FFFAE2;
+  height: 100%
+}
+
+.react-tel-input .form-control {
+  width: inherit;
+
+}
+
+.descriptionAlignment {
+  text-align: justify;
+}
+
+.rowsPaddingPanchang {
+  /* padding: 25px; */
+}
+
+.zodiacSignCrousel {
+  display: none;
+}
+
+.homezoom {
+  margin: 25px;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.homezoom:hover {
+  transform: scale(1.2);
+}
+
+.react-read-more-read-less-more {
+  color: #8E2E0F !important;
+}
+
+.react-read-more-read-less {
+  color: #8E2E0F !important;
+}
+
+.homeCardsHeading {
+  /* border-bottom: 3px solid; */
+  color: #8e2e0f;
+}
+
+
+@media screen and (max-width: 650px) {
+  .planDataPan {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .WesternZodiacSignsImages {
+    display: none;
+  }
+
+  .homKunImage {
+    display: none;
+  }
+
+  .zodiacSignCrousel {
+    display: contents;
+  }
+
+  .sanatanJyotiLogo {
+    width: 90%;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  width: 100%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+.button {
+  color: #8E2E0F !important;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+
 .chartsHeadName {
   color: #9C4018;
   font-weight: bold;
@@ -230,19 +373,19 @@ input::placeholder {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+  box-shadow: inset 0 0 5px grey !important;
+  border-radius: 10px !important;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #8E2E0F;
-  border-radius: 10px;
+  background: #8E2E0F !important;
+  border-radius: 10px !important;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #8E2E0F;
+  background: #8E2E0F !important;
 }
 
 .for_row th {
@@ -261,6 +404,7 @@ input::placeholder {
   border: black;
   box-shadow: rgb(76 97 120) 0px 1px 9px 0px;
 }
+
 
 /* ---------------new by siddharth---------------- */
 .topHeading {
@@ -3713,7 +3857,7 @@ p a:hover {
 }
 
 .header .mainMenu {
-  width: 100%;
+  width: 100% !important;
 }
 
 .header .ganesha {
@@ -3759,10 +3903,11 @@ p a:hover {
 }
 
 .header .mobileMenu {
-  position: relative;
-  width: 30px;
+  position: relative ;
+  width: 30px ;
   height: 30px;
-  display: none;
+  display: none; /* dont mark this important */
+  
 }
 
 .header .mobileMenu span {
@@ -4575,15 +4720,15 @@ p a:hover {
   }
 
   .header .mainMenu {
-    padding: 20px;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: calc(100vh - 100px);
-    overflow-y: auto;
-    display: none !important;
-    background: #fc9f28;
+    padding: 20px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 100% !important;
+    width: 100% !important;
+    height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    display: none;
+    background: #fc9f28 !important;
   }
 
   .header .menu {
@@ -4738,13 +4883,14 @@ p a:hover {
 
 .close-button {
   position: absolute;
-  top: 4px;
+  top: 0px;
   right: 7px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 20px;
   color: white;
+  padding:5px !important;
 }
 
 .close-button:hover {
@@ -5062,7 +5208,7 @@ p a:hover {
   }
 
   .header .mainMenu {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 80px) !important;
   }
 
   .hero {
@@ -5643,14 +5789,14 @@ body {
 
 .calenderFestival {
   /* background-image: url("../images/festival.png"); */
-  border-radius: 20px;
-  margin-top: 3%;
-  border: 3px solid orange;
-  background: linear-gradient(45deg, #C6D480, #F3BB73);
-  height: inherit;
-  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
-  background-color: #FFFFAA;
-  background-repeat: no-repeat;
+  border-radius: 20px !important;
+  margin-top: 3% !important;
+  border: 3px solid orange !important;
+  background: linear-gradient(45deg, #C6D480, #F3BB73) !important;
+  height: inherit !important;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%) !important;
+  background-color: #FFFFAA !important;
+  background-repeat: no-repeat !important;
   /* background-size: 1115px 921px; */
 }
 
@@ -5868,7 +6014,7 @@ body {
 .homeFestivalBig {}
 
 .homeFestivalSmall {
-  display: none;
+  display: none !important;
 }
 
 @media (min-width: 1201px) {}
@@ -5887,11 +6033,11 @@ body {
   }
 
   .homeFestivalBig {
-     display: none;
+     display: none !important;
   }
 
   .homeFestivalSmall {
-     display: block;
+     display: block !important;
   }
 }
 
@@ -5985,11 +6131,11 @@ body {
   }
 
   .homeFestivalBig {
-     display: none;
+     display: none !important;
   }
 
   .homeFestivalSmall {
-     display: block;
+     display: block !important;
   }
 
 }
@@ -6084,11 +6230,11 @@ body {
   }
 
   .homeFestivalBig {
-     display: none;
+     display: none !important;
   }
 
   .homeFestivalSmall {
-     display: block;
+     display: block !important;
   }
 
   .resFontMob {
@@ -6190,11 +6336,11 @@ body {
   }
 
   .homeFestivalBig {
-     display: none;
+     display: none !important;
   }
 
   .homeFestivalSmall {
-     display: block;
+     display: block !important;
   }
 }
 
@@ -7272,6 +7418,7 @@ a :hover {
   background-color: #f9e771;
   margin-left: 23px;
 }
+
 
 .h1_color {
   color: #fa8a00;
@@ -9351,6 +9498,13 @@ teCardMonthly h6 {
 
 
 }
+@media (min-width:950px) {
+  .h1_color {
+    margin-bottom: 35px !important;
+  }
+  
+}
+
 
 @media (min-width: 555px) and (max-width: 650px) {
 
@@ -10247,8 +10401,16 @@ body {
       overflow-y: hidden;
   }
 }
+.flex-hora{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 @media screen and (max-width: 575px) {
+  .flex-hora{
+    display: flex;
+    flex-direction: column;
+  }
 
   .match-score{
           margin-top: 12%;
@@ -11316,4 +11478,48 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
+}
+
+
+/* Common */
+@media screen and (max-width:950px){
+  .main-header-margin{
+      margin-top: -20px !important;
+      margin-bottom: 12px;
+  }
+}
+
+.kunHead{
+  margin-left: 15%;
+  
+}
+
+.control_for_btn {
+  font-size: 20px;
+  background-color: #F29726;
+  border-radius: 25px;
+  box-shadow: 3px 5px 5px 2px rgb(0 0 0 / 20%);
+
+  
+  margin-left: 70px !important;
+  margin-top: 16px;
+;
+}
+.om-icon{
+  width: 150px;
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+
+.paraAlign{
+  text-align: justify;
+}
+.logoSanatanAbout{
+  margin: 8% 0 0 -16%;
+}
+.imageMargin{
+  margin-top: 7% !important;
+}
+.contactText{
+  text-align: justify;
 }

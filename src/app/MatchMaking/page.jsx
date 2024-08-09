@@ -15,7 +15,7 @@ import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 // import MatchList from '../Profiles/MatchList';
 import 'react-toastify/dist/ReactToastify.css';
-// import Common from '../Common/Common';
+import Common from '@/components/Common';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 // import mixpanel from 'mixpanel-browser';
 import matchGroup from '../../../public/Match-Making small 200kb.png'
@@ -214,8 +214,8 @@ const MatchMaking = (props) => {
                         <div className='matchingkundli'>
                             <div className='container '>
                                 <div className="row">
-                                    {/* <Common Match_Making='a' show='a' /> */}
-                                    <h1 className="heading-desc">Match Making</h1>
+                                    <Common Match_Making='a' show='a' />
+                                    
                                 </div>
 
 

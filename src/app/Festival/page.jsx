@@ -1,22 +1,32 @@
 
-import React from 'react';
+"use client"
+import { useEffect, useState } from 'react';
 import moment from 'moment';
 import FestivalCategory from '@/components/FestivalComponent/FestivalCategory';
 
+const Festival = () => {
+  const [festivals, setFestivals] = useState([]);
+  const [error, setError] = useState(null);
+  const [date, setDate] = useState(new Date());
 
-const Festival = async () => {
-    const date = new Date();
+  useEffect(() => {
+    const fetchFestivals = async () => {
+      const date = new Date();
+      const mon = moment(date).format('M');
+      const yea = moment(date).format('yy');
 
+      try {
+        const response = await fetch(`https://apis.sanatanjyoti.com/api/get_festival?month=${mon}&year=${yea}`);
+        const result = await response.json();
+        setFestivals(result.data);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        setError("Failed to load festivals");
+      }
+    };
 
-
-  let festivals = [];
-  try {
-    const response = await fetch('https://apis.sanatanjyoti.com/api/get_festival?month=7&year=2024');
-    const result = await response.json();
-    festivals = result.data;
-  } catch (error) {
-    console.error("Failed to fetch data:", error);
-  }
+    fetchFestivals();
+  }, []);
 
 
   var dateValue;
