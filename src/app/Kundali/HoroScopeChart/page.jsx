@@ -1,11 +1,11 @@
 import React from 'react';
-import KundliNavbar from '../../components/KundaliNavBar';
-import LagnaChart from '../../components/LagnaChart.jsx';
- import SunChart from '../../components/SunChart.jsx';
+import KundliNavbar from '../../../components/KundaliNavBar';
+import LagnaChart from '../../../components/LagnaChart.jsx.jsx';
+ import SunChart from '../../../components/SunChart.jsx.jsx';
 
-import ChalitChart from '../../components/ChalitChart.jsx';
-import NavmanshaChart from '../../components/NavmanshaChart.jsx';
-import MoonChart from '../../components/MoonChart.jsx';
+import ChalitChart from '../../../components/ChalitChart.jsx.jsx';
+import NavmanshaChart from '../../../components/NavmanshaChart.jsx.jsx';
+import MoonChart from '../../../components/MoonChart.jsx.jsx';
 const HoroscopeCharts = (props) => {
    
     return (

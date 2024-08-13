@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import moment from 'moment';
-import KundliNavbar from '../../components/KundaliNavBar';
+import KundliNavbar from '../../../components/KundaliNavBar';
 
 const Dasha = () => {
     const [kundliForm, setKundliForm] = useState(null);

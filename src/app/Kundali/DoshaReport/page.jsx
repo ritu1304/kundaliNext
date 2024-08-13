@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import KundliNavbar from '../../components/KundaliNavBar';
+import KundliNavbar from '../../../components/KundaliNavBar';
 
 const Dosha = () => {
   const [kundliForm, setKundliForm] = useState(null);

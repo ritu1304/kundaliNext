@@ -5,16 +5,16 @@ const Navbar = () => {
   return (
     <nav className="kundliNvRow ">
       <ul className="navbar-nav kundliSubNav">
-        <li className="nav-item1 p-1  linksTab"><Link href="/BasicDetails" className="nav-link1" activeClassName="nav_link1"><p>Basic Details</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/AshtakVarga" className="nav-link1" activeClassName="nav_link1"><p>Ashtak Varga</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/BioRhythm" className="nav-link1" activeClassName="nav_link1"><p>BioRhythm</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/DailyPrediction" className="nav-link1" activeClassName="nav_link1"><p>Daily Prediction</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/DashaReport" className="nav-link1" activeClassName="nav_link1"><p>Dasha Report</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/DoshaReport" className="nav-link1" activeClassName="nav_link1"><p>Dosha Report</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/HoroScopeChart" className="nav-link1" activeClassName="nav_link1"><p>HoroScope Chart</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/LifeReport" className="nav-link1" activeClassName="nav_link1"><p>Life Report</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/PlanetaryDetails" className="nav-link1" activeClassName="nav_link1"><p>Planetary Details</p></Link></li>
-        <li className="nav-item1 p-1  linksTab"><Link href="/Remedies" className="nav-link1" activeClassName="nav_link1"><p>Remedies</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/BasicDetails" className="nav-link1" activeClassName="nav_link1"><p>Basic Details</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/AshtakVarga" className="nav-link1" activeClassName="nav_link1"><p>Ashtak Varga</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/BioRhythm" className="nav-link1" activeClassName="nav_link1"><p>BioRhythm</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/DailyPrediction" className="nav-link1" activeClassName="nav_link1"><p>Daily Prediction</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/DashaReport" className="nav-link1" activeClassName="nav_link1"><p>Dasha Report</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/DoshaReport" className="nav-link1" activeClassName="nav_link1"><p>Dosha Report</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/HoroScopeChart" className="nav-link1" activeClassName="nav_link1"><p>HoroScope Chart</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/LifeReport" className="nav-link1" activeClassName="nav_link1"><p>Life Report</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/PlanetaryDetails" className="nav-link1" activeClassName="nav_link1"><p>Planetary Details</p></Link></li>
+        <li className="nav-item1 p-1  linksTab"><Link href="/Kundali/Remedies" className="nav-link1" activeClassName="nav_link1"><p>Remedies</p></Link></li>
       </ul>
     </nav>
   );

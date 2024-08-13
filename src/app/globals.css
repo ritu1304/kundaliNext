@@ -9984,10 +9984,10 @@ teCardMonthly h6 {
 }
 
 .tableHeadBirth {
-  text-align: center;
-  background-color: #9C4018;
-  color: white;
-  font-weight: bold;
+  text-align: center !important;
+  background-color: #9C4018 !important;
+  color: white !important;
+  font-weight: bold !important;
 }
 
 .birthtableimg {

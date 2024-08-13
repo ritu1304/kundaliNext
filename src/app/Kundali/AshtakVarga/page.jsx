@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap'
 import { bindActionCreators } from 'redux';
 import { useDispatch, useSelector } from 'react-redux'
 import { connect } from 'react-redux';
-import KundliNavbar from '../../components/KundaliNavBar';
+import KundliNavbar from '../../../components/KundaliNavBar';
 
 const AshtakVarga = () => {
     let LocalStore = localStorage.getItem('lng');

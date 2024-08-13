@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import KundliNavbar from '../../components/KundaliNavBar';
+import KundliNavbar from '../../../components/KundaliNavBar';
 
 const DailyPrediction = () => {
   const [predictionDaily, setPredictionDaily] = useState(null);

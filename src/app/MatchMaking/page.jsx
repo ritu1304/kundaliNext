@@ -2,7 +2,7 @@
 import React, { Fragment, useEffect } from 'react'
 // import './MatchMaking.css'
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useDispatch } from 'react-redux';
 // import {
 //     matchFormData
@@ -32,7 +32,7 @@ const MatchMaking = (props) => {
     // const dispatch = useDispatch()
     const [open, setOpen] = React.useState(true);
     const [login, setLogin] = React.useState(false);
-    // const navigate = useNavigate();
+    const router = useRouter();
     const [date, setDate] = useState(new Date());
     const [dateFemale, setDateFemale] = useState(new Date());
     const [time, setTime] = useState('10:10');
@@ -47,10 +47,10 @@ const MatchMaking = (props) => {
     const [longitude, setLongitude] = useState("")
     const [timezone, setTimezone] = useState("")
     const [place, setPlace] = useState("");
-    const [latitudeFemale, setLatitudeFemale] = useState("")
-    const [longitudeFemale, setLongitudeFemale] = useState("")
-    const [timezoneFemale, setTimezoneFemale] = useState("")
-    const [placeFemale, setPlaceFemale] = useState("");
+    const [latitudeFemale, setLatitudeFemale] = useState(28.7041)
+    const [longitudeFemale, setLongitudeFemale] = useState(77.1025)
+    const [timezoneFemale, setTimezoneFemale] = useState(19.0760)
+    const [placeFemale, setPlaceFemale] = useState(72.8777);
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSaveSubmitting, setIsSaveSubmitting] = useState(false)
     const [errors, setErrors] = useState({})
@@ -156,7 +156,7 @@ const MatchMaking = (props) => {
     useEffect(() => {
         if (place && placeFemale && isSubmitting) {
             // dispatch(matchFormData(matchmakingData))
-            // navigate('/MatchMaking/MatchMakingHome')
+           router.push('/MatchMaking/MatchMakingHome')
             sessionStorage.setItem('form', JSON.stringify(form));
         }
     }, [errors])
@@ -171,7 +171,7 @@ const MatchMaking = (props) => {
         if (place && placeFemale && isSaveSubmitting) {
             // dispatch(MatchProfileAction(dataMatchProfile))
             // dispatch(matchFormData(matchmakingData))
-            // navigate('/MatchMaking/MatchMakingHome')
+            router.push('/MatchMaking/MatchMakingHome')
             sessionStorage.setItem('form', JSON.stringify(form));
         }
     }, [errors])
@@ -354,9 +354,9 @@ const MatchMaking = (props) => {
                                                 </div>
 
                                                 <div className="row mt-2 mb-2 matchFormPlace">
-                                                    <label className='label_form' >{t('Select Birth Place')}</label>
+                                                    {/* <label className='label_form' >{t('Select Birth Place')}</label> */}
                                                     {/* <GoogleSearchPlace parentCallback={callbackFunctionFemale} /> */}
-                                                    {errors.placeFemale && (<p className='error'>{errors.placeFemale}</p>)}
+                                                    {/* {errors.placeFemale && (<p className='error'>{errors.placeFemale}</p>)} */}
                                                 </div>
                                             </div>
                                         </div>
