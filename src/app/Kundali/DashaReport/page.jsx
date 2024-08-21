@@ -104,7 +104,7 @@ const Dasha = () => {
         
 
         try {
-            const response = await fetch(`http://172.31.11.181:5001/kundali/majorVdasha_details/en`, OPTIONS);
+            const response = await fetch(`https://json.astrologyapi.com/v1/major_vdasha`, OPTIONS);
             const data = await response.json();
             console.log("=====", data)
             setmajorDasha(data);
