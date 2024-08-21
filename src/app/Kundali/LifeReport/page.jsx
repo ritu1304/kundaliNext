@@ -32,7 +32,7 @@ const LifeReports = () => {
                     year: kundliForm.year,
                     hour: kundliForm.hour,
                     min: kundliForm.min,
-                    place: kundliForm.place,
+                    place: kundliForm?.place || "Kota, Rajasthan, India",
                     lat: kundliForm.lat,
                     lon: kundliForm.lon,
                     tzone: kundliForm.tzone,
@@ -44,7 +44,7 @@ const LifeReports = () => {
                 },
             };
 
-            fetch(`${base_URL}/general_ascendant_report`, AscendantData)
+            fetch(`https://json.astrologyapi.com/v1/general_ascendant_report`, AscendantData)
                 .then(response => response.json())
                 .then(data => {
                     setAscendantReportData(data);

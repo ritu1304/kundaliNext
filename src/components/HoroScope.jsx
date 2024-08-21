@@ -18,7 +18,7 @@ import capricorn from '../../public/Capricorn1.png'
 import aquarius from '../../public/Aquarius1.png'
 import pisces from '../../public/Pisces1.png'
 import Image from 'next/image';
-import KundaliForm from './Form'
+import KundaliForm from './Kundali/Form'
 const Horoscope = () => {
     const [open1, setOpen1] = useState(false);
     const [show, setShow] = useState(false);
