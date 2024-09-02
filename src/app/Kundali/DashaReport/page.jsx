@@ -25,7 +25,7 @@ const Dasha = () => {
     const [majorCharDasha, setmajorCharDasha] = useState([])
     const [antardasha, setantardasha] = useState([])
     const [pratyantarDasha, setpratyantarDasha] = useState([])
-    const [sookshmaDasha, setsookshmaDasha] = useState([])
+    const [sookshmaDasha, setSookshmaDasha] = useState([])
     
     
     let LocalStore = localStorage.getItem('lng');
@@ -132,11 +132,14 @@ const Dasha = () => {
       const fetchAntarDasha = async (planet) => {
         try {
           const response = await fetch(
-            `https://json.astrologyapi.com/v1/kundali/sub_vdasha_details/${planet}/${language}`,
+            `http://172.31.11.181:5001/kundali/sub_vdasha_details/KETU/en`,
+            // `https://json.astrologyapi.com/v1/kundali/sub_vdasha_details/${planet}/${language}`,
             OPTIONS
           );
           const data = await response.json();
-          setAntardasha(data);
+          setShow(true)
+          setantardasha(data)
+          console.log("=========================", antarDasha)
         } catch (error) {
           console.error("Error fetching Antar Dasha:", error);
         }
@@ -145,11 +148,13 @@ const Dasha = () => {
       const fetchPratyantarDasha = async (planet, mahaPlanet) => {
         try {
           const response = await fetch(
-            `https://json.astrologyapi.com/v1/kundali/sub_sub_vdasha_details/${mahaPlanet}/${planet}/${language}`,
+            // `https://json.astrologyapi.com/v1/kundali/sub_sub_vdasha_details/${mahaPlanet}/${planet}/${language}`,
+            `http://172.31.11.181:5001/kundali/sub_sub_vdasha_details/venus/${planet}/en`,
             OPTIONS
           );
           const data = await response.json();
-          setPratyantarDasha(data);
+          setpratyantarDasha(data);
+          console.log("=====pratyantar========", pratyantDasha)
         } catch (error) {
           console.error("Error fetching Pratyantar Dasha:", error);
         }
@@ -158,7 +163,8 @@ const Dasha = () => {
       const fetchSookshmaDasha = async (planet, mahaPlanet, antarPlanet) => {
         try {
           const response = await fetch(
-            `https://json.astrologyapi.com/v1/kundali/sub_sub_sub_vdasha_details/${mahaPlanet}/${antarPlanet}/${planet}/${language}`,
+            `http://172.31.11.181:5001/kundali/sub_sub_sub_vdasha_details/sun/${antarPlanet}/${planet}/en`,
+            // `https://json.astrologyapi.com/v1/kundali/sub_sub_sub_vdasha_details/${mahaPlanet}/${antarPlanet}/${planet}/${language}`,
             OPTIONS
           );
           const data = await response.json();
@@ -178,6 +184,7 @@ const Dasha = () => {
         setShow1(false);
         setShow2(false);
         setMahaPlanet(planet);
+        console.log("===mahaplanet======",planet)
         setMahaPlanetShow(planetShow);
       };
     
@@ -206,10 +213,8 @@ const Dasha = () => {
     }, []);
 
 
-
-
     return (
-        <div style={{marginTop:"150px"}}>
+        <div>
             <div div className="for_background" >
                 <div className='container-fluid find_now '>
                     <div className="container" >
@@ -304,7 +309,7 @@ const Dasha = () => {
                                         </tr>
                                     </thead>
                                     <tbody className='ktableBody'>
-                                        {pratyantarDasha && pratyantarDasha?.map((mVdas, index) => (
+                                        {Array.isArray(pratyantarDasha) && pratyantarDasha?.map((mVdas, index) => (
                                             <tr className='cursorStyle' data-index={index} onClick={() => sookshmDasha(mVdas.hindiPlanet, mVdas.planet)}
                                                 style={{
                                                     background: `${(((moment(todayDate, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(todayDate, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
@@ -312,8 +317,7 @@ const Dasha = () => {
                                                 <td>{mahaPlanetShow}-{antarPlanetShow}-{mVdas.planet}</td>
                                                 <td>  {mVdas.start} </td>
                                                 <td> {mVdas.end}  </td>
-                                                {/* <td onClick={() => sookshmDasha(mVdas.planet)} className="arrowSelect"  ><b>{t('Sookshma Dasha')}</b>  <i className="fas fa-chevron-circle-down" aria-hidden="true" ></i></td> */}
-                                            </tr>
+                                             </tr>
                                         ))}
                                     </tbody>
                                 </Table>
@@ -336,7 +340,7 @@ const Dasha = () => {
                                             </tr>
                                         </thead>
                                         <tbody className='ktableBody'>
-                                            {sookshmaDasha && sookshmaDasha?.map((mVdas, index) => (
+                                            {Array.isArray(sookshmaDasha) && sookshmaDasha?.map((mVdas, index) => (
                                                 <tr className='cursorStyle' data-index={index}
                                                     style={{
                                                         background: `${(((moment(mVdas.today, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(mVdas.today, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
@@ -353,7 +357,7 @@ const Dasha = () => {
                                         <div className="row">
                                             <div className="col-sm-11"></div>
                                             <div className="col-sm-1"><button
-                                                type="button"
+                                                // type="button"
                                                 onClick={() => goUp()}
                                                 className="btn btn-danger btn-floating btn-lg goUpButton"
                                                 id="btn-back-to-top"
@@ -569,3 +573,365 @@ const Dasha = () => {
 }
 
 export default Dasha;
+
+//     return (
+//         <div style={{marginTop:"150px"}}>
+//             <div div className="for_background" >
+//                 <div className='container-fluid find_now '>
+//                     <div className="container" >
+//                         <KundliNavbar />
+//                         <br />
+//                         <br />
+//                     </div>
+//                     <div className="container">
+//                         <div className='row basic '>
+
+//                             {/* <div className='col-sm-1  mb-1'></div>   */}
+
+//                             {/* ------------------------Maha Dasha-------------------- */}
+//                             <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3 mb-4'>
+//                                 <Table className='for_css kmanage_table table-responsive  table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{t('mahadasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('planet')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+
+//                                         </tr>
+//                                     </thead>
+
+//                                     <tbody className='ktableBody'>
+//                                         {majorDasha?.map((mVdas, index) => (
+//                                             <tr className='cursorStyle' data-index={index} onClick={() => antarDasha(mVdas.hindiPlanet, mVdas.planet)}
+//                                                 style={{
+//                                                     background: `${(((moment(mVdas.today, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(mVdas.today, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
+//                                                 }}
+//                                             >
+//                                                 <td>
+//                                                     {mVdas.planet}</td>
+//                                                 <td >  {mVdas.start} </td>
+//                                                 <td>  {mVdas.end}  </td>
+
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
+//                                 </Table>
+//                                 {/* ---------------------------------Antar Dasha------------------------- */}
+//                             </div>
+//                             {show ? <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3  mb-2  '>
+//                                 <Table className='for_css kmanage_table table-responsive  table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{mahaPlanetShow} - {t('Antar Dasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('planet')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+//                                             {/* <td>{t('Select')}</td> */}
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody className='ktableBody'>
+
+//                                         {antardasha && antardasha?.map((mVdas, index) => (
+//                                             <tr className='cursorStyle' data-index={index} onClick={() => pratyantDasha(mVdas.hindiPlanet, mVdas.planet)}
+//                                                 style={{
+//                                                     background: `${(((moment(mVdas.today, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(mVdas.today, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
+//                                                 }}>
+//                                                 <td>{mahaPlanetShow}-{mVdas.planet}</td>
+//                                                 <td>  {mVdas.start}  </td>
+//                                                 <td>  {mVdas.end} </td>
+
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
+//                                 </Table>
+//                             </div> : null}
+//                             {show1 ? <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3">
+//                                 <Table className='for_css kmanage_table table-responsive table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{mahaPlanetShow} - {antarPlanetShow} - {t('Pratyantar Dasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('planet')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+//                                             {/* <td>{t('Select')}</td> */}
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody className='ktableBody'>
+//                                         {pratyantarDasha && pratyantarDasha?.map((mVdas, index) => (
+//                                             <tr className='cursorStyle' data-index={index} onClick={() => sookshmDasha(mVdas.hindiPlanet, mVdas.planet)}
+//                                                 style={{
+//                                                     background: `${(((moment(todayDate, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(todayDate, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
+//                                                 }}>
+//                                                 <td>{mahaPlanetShow}-{antarPlanetShow}-{mVdas.planet}</td>
+//                                                 <td>  {mVdas.start} </td>
+//                                                 <td> {mVdas.end}  </td>
+//                                                 {/* <td onClick={() => sookshmDasha(mVdas.planet)} className="arrowSelect"  ><b>{t('Sookshma Dasha')}</b>  <i className="fas fa-chevron-circle-down" aria-hidden="true" ></i></td> */}
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
+//                                 </Table>
+
+//                             </div> : null}
+//                             {show2 ?
+//                                 <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3">
+//                                     {/* ----------------------------Sookshma Dasha-------------------------------------- */}
+//                                     <div><Table className='for_css kmanage_table table-responsive  table-striped fontSize' bordered hover>
+//                                         <thead className='tableHeadBirth'>
+//                                             <tr>
+//                                                 <th colspan="4"><h5 className='headingTab'><b>{mahaPlanetShow} - {antarPlanetShow} - {pratyantarPlanetShow} - {t('Sookshma Dasha')}</b></h5></th>
+//                                             </tr>
+//                                         </thead>
+//                                         <thead className='ktableHead'>
+//                                             <tr className='fontHead'>
+//                                                 <td>{t('planet')}</td>
+//                                                 <td>{t('Start Date')}</td>
+//                                                 <td>{t('End Date')}</td>
+//                                             </tr>
+//                                         </thead>
+//                                         <tbody className='ktableBody'>
+//                                             {sookshmaDasha && sookshmaDasha?.map((mVdas, index) => (
+//                                                 <tr className='cursorStyle' data-index={index}
+//                                                     style={{
+//                                                         background: `${(((moment(mVdas.today, 'MM-DD-YYYY HH:mm') > moment(mVdas.start, 'DD-MM-YYYY HH:mm')) && (moment(mVdas.today, 'MM-DD-YYYY HH:mm') < moment(mVdas.end, 'DD-MM-YYYY HH:mm'))) ? 'orange' : '')}`
+//                                                     }}>
+//                                                     <td>{mahaPlanetShow}-{antarPlanetShow}-{pratyantarPlanetShow}-{mVdas.planet}</td>
+//                                                     <td> {mVdas.start} </td>
+//                                                     <td>  {mVdas.end}  </td>
+//                                                 </tr>
+//                                             ))}
+//                                         </tbody>
+
+//                                     </Table>
+//                                         {/* <button onClick={() => goUp()}>Go Up<i className="fas fa-chevron-circle-up" aria-hidden="true" ></i></button> */}
+//                                         <div className="row">
+//                                             <div className="col-sm-11"></div>
+//                                             <div className="col-sm-1"><button
+//                                                 type="button"
+//                                                 onClick={() => goUp()}
+//                                                 className="btn btn-danger btn-floating btn-lg goUpButton"
+//                                                 id="btn-back-to-top"
+//                                             >
+//                                                 <i className="fas fa-arrow-up"></i>
+//                                             </button></div>
+//                                         </div>
+
+//                                     </div>
+
+//                                 </div> : null}
+//                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3  mb-2">
+//                                 <div>
+//                                     <h3 className="chartsHeadName">
+//                                         {t('lagnaChart')}
+//                                     </h3>
+//                                     <LagnaChart />
+//                                 </div>
+
+
+//                             </div>
+//                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-3  mb-2">
+//                                 <div>
+//                                     <h3 className="chartsHeadName">
+//                                         {t('GocharChart')}
+//                                     </h3>
+//                                     <GocharChart />
+//                                 </div>
+
+
+//                             </div>
+//                         </div>
+//                         <div className="row ">
+
+
+
+
+
+//                         </div>
+//                         <br />
+//                     </div>
+
+//                 </div>
+//                 {/* ------------------------------Yogini Dasha----------------------------------               */}
+//                 {/* <div className='backgroundMargin'></div> */}
+//                 <div className='container-fluid find_now '>
+//                     <div className="container">
+//                         {/* <Common yogini='a' show1='a' /> */}
+//                         <div className='row '>
+//                             {/* <div className='col-sm-2 mt-3 mb-2'></div> */}
+//                             <div className='col-sm-12 mt-5 mb-4'>
+//                                 <Table className='for_css kmanage_table table-responsive table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{t('currentYoginiDasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     {currentYogini.major_dasha ?
+//                                         <>
+//                                             <thead className='ktableHead'>
+//                                                 <tr className='fontHead'>
+//                                                     <td>{t('Dasha')}</td>
+//                                                     <td>{t('Type')}</td>
+//                                                     <td>{t('Start Date')}</td>
+//                                                     <td>{t('End Date')}</td>
+//                                                 </tr>
+//                                             </thead>
+//                                             <tbody className='ktableBody'>
+
+//                                                 <tr>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.major_dasha.dasha_name : ""}</td>
+//                                                     <td>{t('mahadasha')}</td>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.major_dasha.start_date : ""}</td>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.major_dasha.end_date : ""}</td>
+//                                                 </tr>
+//                                                 <tr>
+//                                                     <td>{currentYogini && currentYogini.sub_dasha ? currentYogini.sub_dasha.dasha_name : ""}</td>
+//                                                     <td>{t('Antar Dasha')}</td>
+//                                                     <td>{currentYogini && currentYogini.sub_dasha ? currentYogini.sub_dasha.start_date : ""}</td>
+//                                                     <td>{currentYogini && currentYogini.sub_dasha ? currentYogini.sub_dasha.end_date : ""}</td>
+//                                                 </tr>
+//                                                 <tr>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.sub_sub_dasha.dasha_name : ""}</td>
+//                                                     <td>{t('Pratantar Dasha')}</td>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.sub_sub_dasha.start_date : ""}</td>
+//                                                     <td>{currentYogini && currentYogini.major_dasha ? currentYogini.sub_sub_dasha.end_date : ""}</td>
+//                                                 </tr>
+//                                             </tbody> </>
+//                                         :
+//                                         <td>{t('CurrentVDashaException')}</td>}
+//                                 </Table>
+//                             </div>
+//                         </div>
+//                         <div className="row">
+//                             <div className='col-sm-12 mt-3 mb-4'>
+//                                 <Table className='for_css kmanage_table table-responsive table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{t('majorYoginiDasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('Dasha')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+//                                             <td>{t('Duration')}</td>
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody className='ktableBody'>
+//                                         {majorYoginiDasha?.map((planet, index) => (
+//                                             <tr data-index={index}>
+//                                                 <td>{planet.dasha_name}</td>
+//                                                 <td>{planet.start_date}</td>
+//                                                 <td>{planet.end_date}</td>
+//                                                 <td>{planet.duration}</td>
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
+//                                 </Table>
+//                             </div>
+//                             <div className='col-sm-1 mt-5 mb-2'></div>
+//                         </div>
+//                         <br /><br />
+//                     </div>
+//                 </div>
+//                 {/* -------------------------------Char Dasha------------------------------                */}
+//                 {/* <div className='backgroundMargin'></div> */}
+//                 <div className='container-fluid find_now '>
+//                     <div className="container">
+//                         {/* <Common char='a' show1='a' /> */}
+//                         <div className='row '>
+//                             {/* <div className='col-sm-3 mt-3  mb-2'></div> */}
+//                             <div className='col-sm-12  mb-4'>
+//                                 <Table className='for_css kmanage_table table-responsive table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="5"><h5 className='headingTab'><b>{t('currentCharDasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('sign')}</td>
+//                                             <td>{t('Type')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+//                                             <td>{t('Duration')}</td>
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody className='ktableBody'>
+//                                         <tr>
+//                                             <td>{currentChar && currentChar.major_dasha ? currentChar.major_dasha.sign_name : ""}</td>
+//                                             <td>{t('mahadasha')}</td>
+//                                             <td>{currentChar && currentChar.major_dasha ? currentChar.major_dasha.start_date : ""}</td>
+//                                             <td>{currentChar && currentChar.major_dasha ? currentChar.major_dasha.end_date : ""}</td>
+//                                             <td>{currentChar && currentChar.major_dasha ? currentChar.major_dasha.duration : ""}</td>
+//                                         </tr>
+//                                         <tr>
+//                                             <td>{currentChar && currentChar.sub_dasha ? currentChar.sub_dasha.sign_name : ""}</td>
+//                                             <td>{t('Antar Dasha')}</td>
+//                                             <td>{currentChar && currentChar.sub_dasha ? currentChar.sub_dasha.start_date : ""}</td>
+//                                             <td>{currentChar && currentChar.sub_dasha ? currentChar.sub_dasha.end_date : ""}</td>
+//                                             <td>{currentChar && currentChar.sub_dasha ? currentChar.sub_dasha.duration : ""}</td>
+//                                         </tr>
+//                                         <tr>
+//                                             <td>{currentChar && currentChar.sub_sub_dasha ? currentChar.sub_sub_dasha.sign_name : ""}</td>
+//                                             <td>{t('Pratantar Dasha')}</td>
+//                                             <td>{currentChar && currentChar.sub_sub_dasha ? currentChar.sub_sub_dasha.start_date : ""}</td>
+//                                             <td>{currentChar && currentChar.sub_sub_dasha ? currentChar.sub_sub_dasha.end_date : ""}</td>
+//                                             <td>{currentChar && currentChar.sub_sub_dasha ? currentChar.sub_sub_dasha.duration : ""}</td>
+//                                         </tr>
+//                                     </tbody>
+//                                 </Table>
+//                             </div>
+//                         </div>
+//                         <div className="row ">
+//                             <div className='col-sm-12 mt-3 mb-4'>
+//                                 {/* <div className='tableHeadBirth'><h5 className='heading'>{t('majorCharDasha')}</h5></div> */}
+//                                 <Table className='for_css kmanage_table table-responsive table-striped fontSize' bordered hover>
+//                                     <thead className='tableHeadBirth'>
+//                                         <tr>
+//                                             <th colspan="4"><h5 className='headingTab'><b>{t('majorCharDasha')}</b></h5></th>
+//                                         </tr>
+//                                     </thead>
+//                                     <thead className='ktableHead'>
+//                                         <tr className='fontHead'>
+//                                             <td>{t('sign')}</td>
+//                                             <td>{t('Start Date')}</td>
+//                                             <td>{t('End Date')}</td>
+//                                             <td>{t('Duration')}</td>
+//                                         </tr>
+//                                     </thead>
+//                                     <tbody className='ktableBody'>
+//                                         {majorCharDasha?.map((mChar, index) => (
+//                                             <tr data-index={index}>
+//                                                 <td>{mChar.sign_name}</td>
+//                                                 <td>{mChar.start_date}</td>
+//                                                 <td>{mChar.end_date}</td>
+//                                                 <td>{mChar.duration}</td>
+//                                             </tr>
+//                                         ))}
+//                                     </tbody>
+//                                 </Table>
+//                             </div>
+//                             {/* <div className='col-sm-1 mt-3 mb-2'></div> */}
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+
+// }
+
+// export default Dasha;

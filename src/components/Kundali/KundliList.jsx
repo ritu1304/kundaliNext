@@ -74,7 +74,8 @@ const KundliList = () => {
       .then(() => {
         // Refetch data after deletion
         const IdStore = localStorage.getItem('id');
-        axios.get(`/api/kundali/get_Kundalis_by_userId?userId=${IdStore}&search=${filterSearch}&kundaliStatus=true`)
+        axios.get(`https://apis.sanatanjyoti.com/kundali/get_Kundalis_by_userId?userId=3615&search=&kundaliStatus=true`)
+        // axios.get(`/api/kundali/get_Kundalis_by_userId?userId=${IdStore}&search=${filterSearch}&kundaliStatus=true`)
           .then((res) => {
             setData(res.data.data || []);
           })

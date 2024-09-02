@@ -1,212 +1,129 @@
-"use client"
-import React, { Fragment, useEffect } from 'react'
-// import './MatchMaking.css'
-import { useState } from "react";
+
+"use client";
+
+import React, { Fragment, useEffect, useState } from 'react'
 import { useRouter } from "next/navigation";
-import { useDispatch } from 'react-redux';
-// import {
-//     matchFormData
-// } from "../../Redux/Action/matchDetails"
 import { useTranslation } from "react-i18next";
 import DatePicker from "react-datepicker";
-// import GoogleSearchPlace from '../SearchPlace/GoogleSearchPlace';
 import moment from 'moment';
-// import { MatchProfileAction } from '../../Redux/Action/matchProfileAction'
 import { ToastContainer, toast } from 'react-toastify';
-// import MatchList from '../Profiles/MatchList';
 import 'react-toastify/dist/ReactToastify.css';
 import Common from '@/components/Common';
 import ReactReadMoreReadLess from "react-read-more-read-less";
-// import mixpanel from 'mixpanel-browser';
 import matchGroup from '../../../public/Match-Making small 200kb.png'
 import Image from 'next/image';
+
+
+const LATITUDE = 26.449923;
+const LONGITUDE = 80.3318736;
+const TIMEZONE = 5.5;
+const PLACE_MALE = "Kota";
+const PLACE_FEMALE = "Indore";
+
 const MatchMaking = (props) => {
-    useEffect(() => {
-        // mixpanel.track('matchMakingPageViewed');
-    }, []);
-    var IdStore = localStorage.getItem("id")
-    const token_v = localStorage.getItem("token");
-    const [dateToday, setDateToday] = useState(new Date());
-    const userId = process.env.NEXT_PUBLIC_SANTAN_USER_ID;
-    const apiKey = process.env.NEXT_PUBLIC_SANTAN_API_KEY;
-    // const dispatch = useDispatch()
-    const [open, setOpen] = React.useState(true);
-    const [login, setLogin] = React.useState(false);
-    const router = useRouter();
     const [date, setDate] = useState(new Date());
     const [dateFemale, setDateFemale] = useState(new Date());
-    const [time, setTime] = useState('10:10');
-    const [timeFemale, setTimeFemale] = useState('10:10');
-    const [hour, min] = time.split(':');
-    const [hourFemale, minFemale] = timeFemale.split(':');
-    // const [formData, setFormData] = useState({});
-    const [mName, setMName] = useState('')
-    const [fName, setFName] = useState('')
-    // ---------------male lat long----------------
-    const [latitude, setLatitude] = useState("")
-    const [longitude, setLongitude] = useState("")
-    const [timezone, setTimezone] = useState("")
-    const [place, setPlace] = useState("");
-    const [latitudeFemale, setLatitudeFemale] = useState(28.7041)
-    const [longitudeFemale, setLongitudeFemale] = useState(77.1025)
-    const [timezoneFemale, setTimezoneFemale] = useState(19.0760)
-    const [placeFemale, setPlaceFemale] = useState(72.8777);
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [isSaveSubmitting, setIsSaveSubmitting] = useState(false)
-    const [errors, setErrors] = useState({})
-    let LocalStore = localStorage.getItem('lng');
-
-    const callbackFunction = (latitude, longitude, timezone, place) => {
-        if ((latitude, longitude, timezone, place)) {
-            setLatitude(latitude);
-            setLongitude(longitude);
-            setTimezone(timezone);
-            setPlace(place)
-        }
-    }
-    // ---------------end of male lat long----------------
-    const validate = () => {
-        let errors = {}
-
-        if (!formData.name) {
-            errors.name = 'Name is required!'
-        }
-        var rule = /^[a-zA-Z\s]*$/;
-        if (!rule.test(formData.name)) {
-            errors.name = 'Name is Invalid!'
-        }
-        if (!place) {
-            errors.place = 'Select Place!'
-        }
-        if (!placeFemale) {
-            errors.placeFemale = 'Select Place!'
-        }
-        return errors
-    }
-
-    const formData = { f_name: fName, m_name: mName }
-    // -----------------------------female lat long------------------------
-    const callbackFunctionFemale = (latitude, longitude, timezone, place) => {
-        if (latitude, longitude, timezone, place) {
-            setLatitudeFemale(latitude);
-            setLongitudeFemale(longitude);
-            setTimezoneFemale(timezone);
-            setPlaceFemale(place)
-        }
-    }
-    // -----------------------------end of female lat long------------------------
-
-
+    const [time, setTime] = useState(JSON.parse(sessionStorage.getItem('matchmakingData'))?.m_hour + ':' + JSON.parse(sessionStorage.getItem('matchmakingData'))?.m_min || moment().format('HH:mm'));
+    const [timeFemale, setTimeFemale] = useState(JSON.parse(sessionStorage.getItem('matchmakingData'))?.f_hour + ':' + JSON.parse(sessionStorage.getItem('matchmakingData'))?.f_min || moment().format('HH:mm'));
+    const [mName, setMName] = useState(JSON.parse(sessionStorage.getItem('matchmakingData'))?.m_name || '');
+    const [fName, setFName] = useState(JSON.parse(sessionStorage.getItem('matchmakingData'))?.f_name || '');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSaveSubmitting, setIsSaveSubmitting] = useState(false);
+    const [errors, setErrors] = useState({});
+    const router = useRouter();
     const { t } = useTranslation();
+    const token_v = localStorage.getItem("token");
 
-    const maleDayOfWeek = moment(date).format('dddd');
-    const femaleDayOfWeek = moment(dateFemale).format('dddd');
+    const [m_hour, m_min] = time.split(':');
+    const [f_hour, f_min] = timeFemale.split(':');
 
     const matchmakingData = {
-        latitude, longitude, timezone, latitudeFemale, longitudeFemale, place, placeFemale, formData, maleDayOfWeek, femaleDayOfWeek,
-        "m_name": formData.m_name,
-        "m_day": moment(date).format('DD'),
-        "m_month": moment(date).format('M'),
-        "m_year": moment(date).format('yy'),
-        "m_hour": hour,
-        "m_min": min,
-        "m_lat": latitude,
-        "m_lon": longitude,
-        "m_tzone": timezone,
-        "f_name": formData.f_name,
-        "f_day": moment(dateFemale).format('DD'),
-        "f_month": moment(dateFemale).format('M'),
-        "f_year": moment(dateFemale).format('yy'),
-        "f_hour": hourFemale,
-        "f_min": minFemale,
-        "f_lat": latitudeFemale,
-        "f_lon": longitudeFemale,
-        "f_tzone": timezoneFemale
-    }
+        m_name: mName,
+        m_day: moment(date).format('DD'),
+        m_month: moment(date).format('M'),
+        m_year: moment(date).format('yy'),
+        m_hour,
+        m_min,
+        m_lat: LATITUDE,
+        m_lon: LONGITUDE,
+        m_tzone: TIMEZONE,
+        m_place: PLACE_MALE,
 
+        f_name: fName,
+        f_day: moment(dateFemale).format('DD'),
+        f_month: moment(dateFemale).format('M'),
+        f_year: moment(dateFemale).format('yy'),
+        f_hour,
+        f_min,
+        f_lat: LATITUDE,
+        f_lon: LONGITUDE,
+        f_tzone: TIMEZONE,
+        f_place: PLACE_FEMALE,
+    };
 
-    let form = { m_name: mName, f_name: fName, m_date: moment(date).format('DD/MM/YYYY'), f_date: moment(dateFemale).format('DD/MM/YYYY'), m_time: time, timeFemale, place, placeFemale }
-    var dataMatchProfile = {
-        "m_name": formData.m_name,
-        "m_day": moment(date).format('DD'),
-        "m_month": moment(date).format('M'),
-        "m_year": moment(date).format('yy'),
-        "m_hour": hour,
-        "m_min": min,
-        "m_lat": latitude,
-        "m_lon": longitude,
-        "m_tzone": timezone,
-        "f_name": formData.f_name,
-        "f_day": moment(dateFemale).format('DD'),
-        "f_month": moment(dateFemale).format('M'),
-        "f_year": moment(dateFemale).format('yy'),
-        "f_hour": hourFemale,
-        "f_min": minFemale,
-        "f_lat": latitudeFemale,
-        "f_lon": longitudeFemale,
-        "f_tzone": timezoneFemale,
-        "userId": IdStore,
-        "createdDate": moment(dateToday).format('dd/MM/yyyy'),
-        "modifiedDate": "",
-        "m_dayOfBirth": maleDayOfWeek,
-        "f_dayOfBirth": femaleDayOfWeek,
-        "m_place": place,
-        "f_place": placeFemale
-    }
-    useEffect(() => {
-        if (place && placeFemale && isSubmitting) {
-            // dispatch(matchFormData(matchmakingData))
-           router.push('/MatchMaking/MatchMakingHome')
-            sessionStorage.setItem('form', JSON.stringify(form));
+    const validate = () => {
+        let errors = {};
+        if (!matchmakingData.m_name) {
+            errors.m_name = 'Male name is required!';
         }
-    }, [errors])
+        if (!matchmakingData.f_name) {
+            errors.f_name = 'Female name is required!';
+        }
+        const rule = /^[a-zA-Z\s]*$/;
+        if (!rule.test(matchmakingData.m_name)) {
+            errors.m_name = 'Male name is Invalid!';
+        }
+        if (!rule.test(matchmakingData.f_name)) {
+            errors.f_name = 'Female name is Invalid!';
+        }
+        return errors;
+    };
+
+    useEffect(() => {
+        if (Object.keys(errors).length === 0 && isSubmitting) {
+            sessionStorage.setItem('matchmakingData', JSON.stringify(matchmakingData));
+            router.push('/MatchMaking/MatchMakingHome');
+        }
+    }, [errors, isSubmitting, router, matchmakingData]);
+
+    useEffect(() => {
+        if (Object.keys(errors).length === 0 && isSaveSubmitting) {
+          
+
+            sessionStorage.setItem('matchmakingData', JSON.stringify(matchmakingData));
+            router.push('/MatchMaking/MatchMakingHome');
+        }
+    }, [errors, isSaveSubmitting, router, matchmakingData]);
 
     const onSubmit = (e) => {
-        // mixpanel.track('getYourFreeMatchingDetailsNowClicked', { buttonName: 'getYourFreeMatchingDetailsNowClicked' });
-        e.preventDefault()
-        setErrors(validate(formData));
+        e.preventDefault();
+        setErrors(validate());
         setIsSubmitting(true);
     };
-    useEffect(() => {
-        if (place && placeFemale && isSaveSubmitting) {
-            // dispatch(MatchProfileAction(dataMatchProfile))
-            // dispatch(matchFormData(matchmakingData))
-            router.push('/MatchMaking/MatchMakingHome')
-            sessionStorage.setItem('form', JSON.stringify(form));
-        }
-    }, [errors])
 
     const onSaveAndContinue = (e) => {
-        e.preventDefault()
-        if (token_v) {
-            setErrors(validate(formData));
+        e.preventDefault();
+        if (localStorage.getItem("token")) {
+            setErrors(validate());
             setIsSaveSubmitting(true);
-            // mixpanel.track('matchMakingSaveAndContinueClicked', { buttonName: 'matchMakingSaveAndContinueClicked' });
-        }
-        else {
+        } else {
             toast.error("Login first to save");
-            // mixpanel.track('matchMakingiSaveAndContinueFailed', { buttonName: 'matchMakingiSaveAndContinueFailed' });
-
         }
     };
-    useEffect(() => {
-        if (JSON.parse(sessionStorage.getItem('form'))) {
-            let mDate = (JSON.parse(sessionStorage.getItem('form')))
-            setMName(mDate.m_name)
-            setFName(mDate.f_name)
-            const parts = `${mDate.m_date}`.split('/');
-            setDate(new Date(parts[2], parts[1] - 1, parts[0]))
-            const parts2 = `${mDate.f_date}`.split('/');
-            setDateFemale(new Date(parts2[2], parts2[1] - 1, parts2[0]))
-            setTime(mDate.m_time)
-            setTimeFemale(mDate.timeFemale)
-        }
-        else {
-            setDate(new Date())
-        }
-    }, [])
 
-    return (
+    useEffect(() => {
+        const storedData = JSON.parse(sessionStorage.getItem('matchmakingData'));
+        if (storedData) {
+            setMName(storedData.m_name);
+            setFName(storedData.f_name);
+            setDate(new Date(`20${storedData.m_year}`, storedData.m_month - 1, storedData.m_day));
+            setDateFemale(new Date(`20${storedData.f_year}`, storedData.f_month - 1, storedData.f_day));
+            setTime(`${storedData.m_hour}:${storedData.m_min}`);
+            setTimeFemale(`${storedData.f_hour}:${storedData.f_min}`);
+        }
+    }, []);
+
+        return (
         <div className='wrapper1'>
             <Fragment>
                 <div div className="for_backgrounds">
@@ -392,7 +309,4 @@ const MatchMaking = (props) => {
         </div>
     )
 }
-
-
-
 export default MatchMaking;
