@@ -92,7 +92,7 @@ const FestivalCategory = () => {
         setShowCategory(true);
     
         try {
-            const response = await fetch(`/api/festivals?category=${value.value}&year=${categoryYear}`);
+            const response = await fetch(`http://172.31.11.181:5001/api/festivals?category=${value.value}&year=${categoryYear}`);
         //   const response = await fetch(`/api/festivals?category=Jayanti&year=2024`);
           const data = await response.json();
           setFestivalCategory(data.data || []);

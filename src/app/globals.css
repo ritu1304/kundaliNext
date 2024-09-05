@@ -5673,7 +5673,7 @@ body {
   background-color: white;
   width: 100%;
 
-  border-radius: 5px;
+  border-radius: 5px ;
   text-align: center;
 }
 
@@ -5697,7 +5697,10 @@ body {
 .fesSearch {
   margin-top: -40%;
 }
-
+.flex-items-search{
+  display: flex;
+  flex-direction: row;
+}
 .searchFestival {
   color: black !important;
   margin-left: 0% !important;
@@ -6265,6 +6268,9 @@ body {
   .calSearch11 {
      margin-top: 0%;
   }
+  .calSearch12 {
+    margin-top: 3%;
+ }
 
   .calSearchYearSelect {
      margin-left: 0px;
@@ -6381,6 +6387,13 @@ body {
  color: #9C4018;
  text-align: center;
 }
+@media (min-width:992px)  {
+  .flex-festivals{
+    display: flex;
+    gap: 10px;
+  }
+}
+
 
 /* Profile css */
 /* .proCard{
