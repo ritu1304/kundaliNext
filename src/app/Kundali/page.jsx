@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect } from 'react'
 import { useTranslation } from "react-i18next";
-import Kunda from '../../components/Form';
+import Kunda from '../../components/Kundali/Form';
 import "react-datepicker/dist/react-datepicker.css";
-// import KundliList from '../Profiles/KundliList';
+import KundliList from '@/components/Kundali/KundliList';
 import ReadMoreReact from 'read-more-react';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 // import mixpanel from 'mixpanel-browser';
@@ -68,13 +68,13 @@ function Kundali(props) {
                         <div className='col-sm-5 col-md-5 text-center' >
                         </div>
                     </div>
-                    {/* {token_v ?
+                    {token_v ?
                         <div className="row">
                             <div className="col-sm-12 ">
                                 <KundliList />
                             </div>
                             <hr />
-                        </div> : ""} */}
+                        </div> : ""}
                     <br></br><br></br>
                 </div>
             </div>

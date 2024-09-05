@@ -12,7 +12,8 @@ const MatchMakingHome = (props) => {
     }, []);
     const [astroData, setAstroData] = useState(null);
     const [birthData, setBirthData] = useState(null);
-    const [planetData, setPlanetData] = useState(null);
+    const [malePlanetData, setMalePlanetData] = useState(null);
+    const [femalePlanetData, setFemalePlanetData] = useState(null)
     const [ashtakootData, setAshtakootData] = useState(null);
     const [dashakootData, setDashakootData] = useState(null);
     const [manglikData, setManglikData] = useState(null);
@@ -77,7 +78,8 @@ const MatchMakingHome = (props) => {
         const fetchPlanetDetails = async () => {
             const response = await fetch('https://json.astrologyapi.com/v1/match_planet_details', requestOptions);
             const data = await response.json();
-            setPlanetData(data);
+            setMalePlanetData(data?.male_planet_details);
+            setFemalePlanetData(data?.female_planet_details)
         };
 
         const fetchAshtakootPoints = async () => {
@@ -365,7 +367,7 @@ const MatchMakingHome = (props) => {
                                         <th scope="col">{t('naksahtraLord')}</th>
                                         <th scope="col">{t('house')}</th>
                                     </tr>
-                                    {/* {malePlanetData?.map((planet, index) => (
+                                    {malePlanetData?.map((planet, index) => (
                                         <tr data-index={index}>
                                             <td>{planet.name}</td>
                                             <td>{
@@ -379,7 +381,7 @@ const MatchMakingHome = (props) => {
                                             <td>{planet.house}</td>
 
                                         </tr>
-                                    ))} */}
+                                    ))}
 
 
 
@@ -414,7 +416,7 @@ const MatchMakingHome = (props) => {
                                         <th scope="col">{t('naksahtraLord')}</th>
                                         <th scope="col">{t('house')}</th>
                                     </tr>
-                                    {/* {femalePlanetData?.map((planet, index) => (
+                                    {femalePlanetData?.map((planet, index) => (
                                         <tr data-index={index}>
                                             <td>{planet.name}</td>
                                             <td>{
@@ -428,7 +430,7 @@ const MatchMakingHome = (props) => {
                                             <td>{planet.house}</td>
 
                                         </tr>
-                                    ))} */}
+                                    ))}
 
 
                                 </tbody>
@@ -558,7 +560,9 @@ const MatchMakingHome = (props) => {
                 </div>
 
                 {/* -----------------------Dashakoot Score----------------------*/}
-
+                {/* <div className="boxHeadingMale">
+                                    <h4 className='text-center boxHeadingText'>{t('conclusion')}</h4>
+                                </div> */}
                 <div className='container-fluid '>
                     <div className='row'>
                         <div className='col-sm-1'></div>
@@ -566,7 +570,7 @@ const MatchMakingHome = (props) => {
                             <Table className='for_css manage_table_match_making mDashaTable table-responsive commonTableColor' striped bordered hover>
                                 <thead className='tableHeadBirth'>
                                     <tr>
-                                        <th colSpan="3"><h5 className=''>{t('matchDashakootPoints')}</h5>
+                                        <th colSpan="3"><h5 className='tableHeadBirth'>{t('matchDashakootPoints')}</h5>
 
                                         </th>
                                         <th colSpan="2">

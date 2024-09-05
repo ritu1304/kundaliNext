@@ -1,86 +1,180 @@
-"use client"
-import React, { useState, useEffect } from 'react'
-import { Table } from 'react-bootstrap'
-import { bindActionCreators } from 'redux';
-import { useDispatch, useSelector } from 'react-redux'
-import { connect } from 'react-redux';
+"use client";
+import React, { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
+import { useTranslation } from "react-i18next";
 import KundliNavbar from '../../../components/KundaliNavBar';
 
-const AshtakVarga = () => {
+const AshtakVarga = (props) => {
     let LocalStore = localStorage.getItem('lng');
-    const dispatch = useDispatch()
-    const [selected, setSelected] = useState();
-    const userId = process.env.NEXT_APP_SANTAN_USER_ID;
-    const apiKey = process.env.NEXT_APP_SANTAN_API_KEY;
+
+    const kundliForm = JSON.parse(sessionStorage.getItem('Form'));
+    const userId = process.env.NEXT_PUBLIC_SANTAN_USER_ID; 
+    const apiKey = process.env.NEXT_PUBLIC_SANTAN_API_KEY; 
+    const [Ashtakvarga, setAshtakVarga] = useState([]);
+    const [Sarvashtakvarga, setSarvashtakvarga] = useState([]);
+    const [sarvashtakVargaChart, setSarvashtakVargaChart] = useState([]);
+    const [selected, setSelected] = useState("SUN");
     const body = {
-        day: kundliForm.day,
-        month: kundliForm.month,
-        year: kundliForm.year,
-        hour: kundliForm.hour,
-        min: kundliForm.min,
-        place: kundliForm.place,
-        lat: kundliForm.lat,
-        lon: kundliForm.lon,
-        tzone: kundliForm.tzone,
+        day: kundliForm?.day || "14",
+            month: kundliForm?.month || "8",
+            year: kundliForm?.year || "2023",
+            hour: kundliForm?.hour || "13",
+            min: kundliForm?.min || "45",
+            place: kundliForm?.place || "Kota, Rajasthan, India",
+            lat: kundliForm?.lat || 25.2138156,
+            lon: kundliForm?.lon || 75.8647527,
+            tzone: kundliForm?.tzone || 5.5,
         "planetColor": "#8E2E0F",
         "signColor": "#ff4500",
         "lineColor": "#F29726"
-    }
+    };
+
     const Options = {
         method: "POST",
         body: JSON.stringify({
-            day: kundliForm.day,
-            month: kundliForm.month,
-            year: kundliForm.year,
-            hour: kundliForm.hour,
-            min: kundliForm.min,
-            place: kundliForm.place,
-            lat: kundliForm.lat,
-            lon: kundliForm.lon,
-            tzone: kundliForm.tzone
+            day: kundliForm?.day || "14",
+            month: kundliForm?.month || "8",
+            year: kundliForm?.year || "2023",
+            hour: kundliForm?.hour || "13",
+            min: kundliForm?.min || "45",
+            place: kundliForm?.place || "Kota, Rajasthan, India",
+            lat: kundliForm?.lat || 25.2138156,
+            lon: kundliForm?.lon || 75.8647527,
+            tzone: kundliForm?.tzone || 5.5
         }),
         headers: {
             'Authorization': "Basic " + btoa(userId + ":" + apiKey),
             'Content-Type': 'application/json',
             'Accept-Language': LocalStore
-        },
+        }
+    };
+    const fetchSarvashtak = async () => {
+        const response = await fetch(`https://json.astrologyapi.com/v1/sarvashtak`, {
+            method: "POST",
+            body: JSON.stringify({
+                day: kundliForm?.day || "14",
+            month: kundliForm?.month || "8",
+            year: kundliForm?.year || "2023",
+            hour: kundliForm?.hour || "13",
+            min: kundliForm?.min || "45",
+            place: kundliForm?.place || "Kota, Rajasthan, India",
+            lat: kundliForm?.lat || 25.2138156,
+            lon: kundliForm?.lon || 75.8647527,
+            tzone: kundliForm?.tzone || 5.5
+            }),
+            headers: {
+                'Authorization': `Basic ${btoa(`${userId}:${apiKey}`)}`,
+                'Content-Type': 'application/json',
+                'Accept-Language': LocalStore
+            }
+        });
+        const data = await response.json();
+        setSarvashtakvarga(data)
     };
     useEffect(() => {
-        dispatch(sarvashtak(Options))
-        dispatch(sarvashtakVarga(body))
+        fetchSarvashtak(); 
+        fetchSarvashtakVargaChart(); 
+    }, []);
+    const fetchSarvashtakVargaChart = async () => {
+        const response = await fetch(`https://apis.sanatanjyoti.com/kundali/getChart/LAGNA/null`, {
+            day: kundliForm?.day || "14",
+            month: kundliForm?.month || "8",
+            year: kundliForm?.year || "2023",
+            hour: kundliForm?.hour || "13",
+            min: kundliForm?.min || "45",
+            place: kundliForm?.place || "Kota, Rajasthan, India",
+            lat: kundliForm?.lat || 25.2138156,
+            lon: kundliForm?.lon || 75.8647527,
+            tzone: kundliForm?.tzone || 5.5,
+        "planetColor": "#8E2E0F",
+        "signColor": "#ff4500",
+        "lineColor": "#F29726"
+        });
+        const data = await response.json();
+        setSarvashtakVargaChart(data);
+    };
+    useEffect(() => {
+        fetchSarvashtak(); 
+        fetchSarvashtakVargaChart 
+    }, []);
+    const fetchBhinnashtak = async () => {
+        const response = await fetch(`https://json.astrologyapi.com/v1/planet_ashtak/${selected}`, {
+            method: "POST",
+            body: JSON.stringify({
+                day: kundliForm?.day || "14",
+            month: kundliForm?.month || "8",
+            year: kundliForm?.year || "2023",
+            hour: kundliForm?.hour || "13",
+            min: kundliForm?.min || "45",
+            place: kundliForm?.place || "Kota, Rajasthan, India",
+            lat: kundliForm?.lat || 25.2138156,
+            lon: kundliForm?.lon || 75.8647527,
+            tzone: kundliForm?.tzone || 5.5
+            }),
+            headers: {
+                'Authorization': `Basic ${btoa(`${userId}:${apiKey}`)}`,
+                'Content-Type': 'application/json',
+                'Accept-Language': LocalStore
+            }
+        });
+        const data = await response.json();
+        setAshtakVarga(data?.ashtak_points);
+    };
+    useEffect(() => {
+        fetchBhinnashtak();  
     }, []);
 
-    var data = selected;
-    var OPTIONS = { Options, data }
-    useEffect(() => {
-        var data = "SUN"
-        var OPTIONS = { Options, data }
-        dispatch(bhinnashtak(OPTIONS));
-    }, [1]);
     const onSubmit = async () => {
-        dispatch(bhinnashtak(OPTIONS))
-    }
+        await fetchBhinnashtak();  
+    };
+
+    // useEffect(() => {
+    //     const fetchSarvashtakVarga = async () => {
+    //         try {
+    //             const response = await fetch(`https://json.astrologyapi.com/v1/planet_ashtak/SUN`, Options);
+    //             const data = await response.json();
+    //             setSarvashtakvargai(data); 
+    //             setAshtakVarga(data)
+    //             console.log("=========", Sarvashtakvarga)
+    //         } catch (error) {
+    //             console.error('Error fetching Sarvashtak Varga:', error);
+    //         }
+    //     };
+
+    //     fetchSarvashtakVarga();
+    // }, []);
+    // var data = selected;
+    // var OPTIONS = { Options, data }
+    // useEffect(() => {
+    //     var data = "SUN"
+    //     var OPTIONS = { Options, data }
+    //     dispatch(bhinnashtak(OPTIONS));
+    // }, [1]);
+    // const onSubmit = async () => {
+    //     dispatch(bhinnashtak(OPTIONS))
+    // }
+    const { t } = useTranslation();
     return (
-        <div>
-            <div div className="for_background wrapper1"  >
+        <div style={{marginTop: "150px"}}>
+            <div div className="for_background"  >
                 <div className='container-fluid find_now '>
                     <div className="container" >
 
                         <KundliNavbar />
                         <br />
-                        </div>
+                   </div>
                     <div className="container-fluid">
                         <div className="row">
                             <div className='col-sm-12  mb-2'>
                                 <center>
-                                    <h4 className=' fw-bolder sarvaHeading'>What are the points in BhinnashtakVarga?</h4>
+                                    <h4 className=' fw-bolder sarvaHeading'>{t('What are the points in BhinnashtakVarga?')}</h4>
                                 </center>
-                                <h5 className='sarvaPara'>BhinnashtakVarga</h5>
+                                <h5 className='sarvaPara'>{t('BhinnashtakVarga')}</h5>
                             </div>
                         </div>
 
                         <div className='row bhinnash '>
-                            <div className="col-sm-12 col-md-12 col-lg-12 mt-3">
+                           <div className="col-sm-12 col-md-12 col-lg-12 mt-3">
                                 <div className='tableHeadBirth'>
                                 </div>
                                 <Table className='for_css kmanage_table table-responsive fontSize planetTableData ' striped bordered hover >
@@ -89,47 +183,45 @@ const AshtakVarga = () => {
                                             <th colspan="13">
                                                 <div className="row">
                                                     <div className="col-sm-6">
-                                                        <h4><b className=''>bhinnashtakVarga</b></h4>
+                                                        <h4><b className=''>{t('bhinnashtakVarga')}</b></h4>
                                                     </div>
                                                     <div className="col-sm-6">
                                                         <form className="" action="" method="post">
                                                             <select className="selectFormVarga" id="planetId" onClick={(e) => onSubmit(e)} name="planet" onChange={(e) => setSelected(e.target.value)}>
-                                                                <option value="sun">Ashtak Varga For Sun</option>
-                                                                <option value="Moon">Ashtak Varga For Moon</option>
-                                                                <option value="Mars">Ashtak Varga For Mars</option>
-                                                                <option value="Mercury">Ashtak Varga For Mercury</option>
-                                                                <option value="Jupiter">Ashtak Varga For Jupiter</option>
-                                                                <option value="Venus">Ashtak Varga For Venus</option>
-                                                                <option value="Saturn">Ashtak Varga For Saturn</option>
+                                                                <option value="sun">{t('Ashtak Varga For Sun')}</option>
+                                                                <option value="Moon">{t('Ashtak Varga For Moon')}</option>
+                                                                <option value="Mars">{t('Ashtak Varga For Mars')}</option>
+                                                                <option value="Mercury">{t('Ashtak Varga For Mercury')}</option>
+                                                                <option value="Jupiter">{t('Ashtak Varga For Jupiter')}</option>
+                                                                <option value="Venus">{t('Ashtak Varga For Venus')}</option>
+                                                                <option value="Saturn">{t('Ashtak Varga For Saturn')}</option>
                                                             </select>
                                                         </form>
                                                     </div>
                                                 </div>
-
-
-                                            </th>
+                                           </th>
                                         </tr>
                                     </thead>
                                     <thead className='ktableHead'>
                                         <tr>
-                                            <th scope="col"><b>planetZodiac</b></th>
-                                            <th scope="col"><b>aries</b></th>
-                                            <th scope="col"><b>taurus</b></th>
-                                            <th scope="col"><b>gemini</b></th>
-                                            <th scope="col"><b>cancer</b></th>
-                                            <th scope="col"><b>Leo</b></th>
-                                            <th scope="col"><b>virgo</b></th>
-                                            <th scope="col"><b>libra</b></th>
-                                            <th scope="col"><b>scorpio</b></th>
-                                            <th scope="col"><b>sagittarius</b></th>
-                                            <th scope="col"><b>capricorn</b></th>
-                                            <th scope="col"><b>aquarius</b></th>
-                                            <th scope="col"><b>pisces</b></th>
+                                            <th scope="col"><b>{t('planetZodiac')}</b></th>
+                                            <th scope="col"><b>{t('aries')}</b></th>
+                                            <th scope="col"><b>{t('taurus')}</b></th>
+                                            <th scope="col"><b>{t('gemini')}</b></th>
+                                            <th scope="col"><b>{t('cancer')}</b></th>
+                                            <th scope="col"><b>{t('Leo')}</b></th>
+                                            <th scope="col"><b>{t('virgo')}</b></th>
+                                            <th scope="col"><b>{t('libra')}</b></th>
+                                            <th scope="col"><b>{t('scorpio')}</b></th>
+                                            <th scope="col"><b>{t('sagittarius')}</b></th>
+                                            <th scope="col"><b>{t('capricorn')}</b></th>
+                                            <th scope="col"><b>{t('aquarius')}</b></th>
+                                            <th scope="col"><b>{t('pisces')}</b></th>
                                         </tr>
                                     </thead>
                                     <tbody className='ktableBody'>
-                                         <tr >
-                                            <th>sun</th>
+                                        <tr >
+                                            <th>{t('sun')}</th>
                                             <td>{Ashtakvarga?.aries?.sun}</td>
                                             <td>{Ashtakvarga?.taurus?.sun}</td>
                                             <td>{Ashtakvarga?.gemini?.sun}</td>
@@ -144,7 +236,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.sun}</td>
                                         </tr>
                                         <tr >
-                                            <th>moon</th>
+                                            <th>{t('moon')}</th>
                                             <td>{Ashtakvarga?.aries?.moon}</td>
                                             <td>{Ashtakvarga?.taurus?.moon}</td>
                                             <td>{Ashtakvarga?.gemini?.moon}</td>
@@ -159,7 +251,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.moon}</td>
                                         </tr>
                                         <tr >
-                                            <th>mars</th>
+                                            <th>{t('mars')}</th>
                                             <td>{Ashtakvarga?.aries?.mars}</td>
                                             <td>{Ashtakvarga?.taurus?.mars}</td>
                                             <td>{Ashtakvarga?.gemini?.mars}</td>
@@ -174,7 +266,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.mars}</td>
                                         </tr>
                                         <tr >
-                                            <th>mercury</th>
+                                            <th>{t('mercury')}</th>
                                             <td>{Ashtakvarga?.aries?.mercury}</td>
                                             <td>{Ashtakvarga?.taurus?.mercury}</td>
                                             <td>{Ashtakvarga?.gemini?.mercury}</td>
@@ -189,7 +281,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.mercury}</td>
                                         </tr>
                                         <tr >
-                                            <th>jupiter</th>
+                                            <th>{t('jupiter')}</th>
                                             <td>{Ashtakvarga?.aries?.jupiter}</td>
                                             <td>{Ashtakvarga?.taurus?.jupiter}</td>
                                             <td>{Ashtakvarga?.gemini?.jupiter}</td>
@@ -204,7 +296,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.jupiter}</td>
                                         </tr>
                                         <tr >
-                                            <th>venus</th>
+                                            <th>{t('venus')}</th>
                                             <td>{Ashtakvarga?.aries?.venus}</td>
                                             <td>{Ashtakvarga?.taurus?.venus}</td>
                                             <td>{Ashtakvarga?.gemini?.venus}</td>
@@ -219,7 +311,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.venus}</td>
                                         </tr>
                                         <tr >
-                                            <th>saturn</th>
+                                            <th>{t('saturn')}</th>
                                             <td>{Ashtakvarga?.aries?.saturn}</td>
                                             <td>{Ashtakvarga?.taurus?.saturn}</td>
                                             <td>{Ashtakvarga?.gemini?.saturn}</td>
@@ -234,7 +326,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.saturn}</td>
                                         </tr>
                                         <tr >
-                                            <th>ascendant</th>
+                                            <th>{t('ascendant')}</th>
                                             <td>{Ashtakvarga?.aries?.ascendant}</td>
                                             <td>{Ashtakvarga?.taurus?.ascendant}</td>
                                             <td>{Ashtakvarga?.gemini?.ascendant}</td>
@@ -249,7 +341,7 @@ const AshtakVarga = () => {
                                             <td>{Ashtakvarga?.pisces?.ascendant}</td>
                                         </tr>
                                         <tr className='ktableHead'>
-                                            <td className='rowColor'><b>Total</b></td>
+                                            <td className='rowColor'><b>{t('Total')}</b></td>
                                             <td className='rowColor'> <b> {Ashtakvarga?.aries?.total}</b></td>
                                             <td className='rowColor'> <b> {Ashtakvarga?.taurus?.total}</b></td>
                                             <td className='rowColor'> <b> {Ashtakvarga?.gemini?.total}</b></td>
@@ -266,19 +358,20 @@ const AshtakVarga = () => {
                                     </tbody>
                                 </Table>
                             </div>
-                             </div>
+                         </div>
                         <br />
                     </div>
                 </div>
                 {/* ---------------------------------------- sarvashtakVarga-------------------------               */}
-               <div className='container-fluid find_now'>
+               
+                <div className='container-fluid find_now'>
                     <div className="  ">
                         <div className="row">
                             <div className='col-sm-12  mb-2'>
                                 <center>
-                                    <h4 className=' fw-bolder sarvaHeading'> are the points in AshtakaVarga?</h4>
+                                    <h4 className=' fw-bolder sarvaHeading'>{t('What are the points in AshtakaVarga?')}</h4>
                                 </center>
-                                <h5 className='sarvaPara'>Sarvashtakavarga</h5>
+                                <h5 className='sarvaPara'>{t('Sarvashtakavarga')}</h5>
                             </div>
                         </div>
                         <div className="row scroll-table">
@@ -287,29 +380,29 @@ const AshtakVarga = () => {
                                 <Table className='for_css kmanage_table table-responsive  planetTableData scroll-table' striped bordered hover>
                                     <thead className='tableHeadBirth'>
                                         <tr>
-                                            <th colspan="13"><h5 className='headingTab'><b>sarvashtakVarga</b></h5></th>
+                                            <th colspan="13"><h5 className='headingTab'><b>{t('sarvashtakVarga')}</b></h5></th>
                                         </tr>
                                     </thead>
                                     <thead className='ktableHead'>
                                         <tr>
-                                            <th scope="col"><b>planetZodiac</b></th>
-                                            <th scope="col"><b>aries</b></th>
-                                            <th scope="col"><b>taurus</b></th>
-                                            <th scope="col"><b>gemini</b></th>
-                                            <th scope="col"><b>cancer</b></th>
-                                            <th scope="col"><b >Leo</b></th>
-                                            <th scope="col"><b>virgo</b></th>
-                                            <th scope="col"><b>libra</b></th>
-                                            <th scope="col"><b>scorpio</b></th>
-                                            <th scope="col"><b>sagittarius</b></th>
-                                            <th scope="col"><b>capricorn</b></th>
-                                            <th scope="col"><b>aquarius</b></th>
-                                            <th scope="col"><b>pisces</b></th>
+                                            <th scope="col"><b>{t('planetZodiac')}</b></th>
+                                            <th scope="col"><b>{t('aries')}</b></th>
+                                            <th scope="col"><b>{t('taurus')}</b></th>
+                                            <th scope="col"><b>{t('gemini')}</b></th>
+                                            <th scope="col"><b>{t('cancer')}</b></th>
+                                            <th scope="col"><b >{t('Leo')}</b></th>
+                                            <th scope="col"><b>{t('virgo')}</b></th>
+                                            <th scope="col"><b>{t('libra')}</b></th>
+                                            <th scope="col"><b>{t('scorpio')}</b></th>
+                                            <th scope="col"><b>{t('sagittarius')}</b></th>
+                                            <th scope="col"><b>{t('capricorn')}</b></th>
+                                            <th scope="col"><b>{t('aquarius')}</b></th>
+                                            <th scope="col"><b>{t('pisces')}</b></th>
                                         </tr>
                                     </thead>
                                     <tbody className='ktableBody' >
                                         <tr >
-                                            <th>sun</th>
+                                            <th>{t('sun')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.sun}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.sun}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.sun}</td>
@@ -324,7 +417,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.sun}</td>
                                         </tr>
                                         <tr >
-                                            <th>moon</th>
+                                            <th>{t('moon')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.moon}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.moon}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.moon}</td>
@@ -339,7 +432,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.moon}</td>
                                         </tr>
                                         <tr >
-                                            <th>mars</th>
+                                            <th>{t('mars')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.mars}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.mars}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.mars}</td>
@@ -354,7 +447,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.mars}</td>
                                         </tr>
                                         <tr >
-                                            <th>mercury</th>
+                                            <th>{t('mercury')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.mercury}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.mercury}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.mercury}</td>
@@ -369,7 +462,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.mercury}</td>
                                         </tr>
                                         <tr >
-                                            <th>jupiter</th>
+                                            <th>{t('jupiter')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.jupiter}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.jupiter}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.jupiter}</td>
@@ -384,7 +477,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.jupiter}</td>
                                         </tr>
                                         <tr >
-                                            <th>venus</th>
+                                            <th>{t('venus')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.venus}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.venus}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.venus}</td>
@@ -399,7 +492,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.venus}</td>
                                         </tr>
                                         <tr >
-                                            <th>saturn</th>
+                                            <th>{t('saturn')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.saturn}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.saturn}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.saturn}</td>
@@ -414,7 +507,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.saturn}</td>
                                         </tr>
                                         <tr >
-                                            <th>ascendant</th>
+                                            <th>{t('ascendant')}</th>
                                             <td>{Sarvashtakvarga?.ashtak_points?.aries.ascendant}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.taurus.ascendant}</td>
                                             <td>{Sarvashtakvarga?.ashtak_points?.gemini.ascendant}</td>
@@ -429,7 +522,7 @@ const AshtakVarga = () => {
                                             <td>{Sarvashtakvarga?.ashtak_points?.pisces.ascendant}</td>
                                         </tr>
                                         <tr className='ktableHead' >
-                                            <td className='rowColor'><b>Total</b></td>
+                                            <td className='rowColor'><b>{t('Total')}</b></td>
                                             <td className='rowColor'><b>{Sarvashtakvarga?.ashtak_points?.aries.total}</b></td>
                                             <td className='rowColor'><b>{Sarvashtakvarga?.ashtak_points?.taurus.total}</b></td>
                                             <td className='rowColor'><b>{Sarvashtakvarga?.ashtak_points?.gemini.total}</b></td>
@@ -443,25 +536,36 @@ const AshtakVarga = () => {
                                             <td className='rowColor'><b>{Sarvashtakvarga?.ashtak_points?.aquarius.total}</b></td>
                                             <td className='rowColor'><b>{Sarvashtakvarga?.ashtak_points?.pisces.total}</b></td>
                                         </tr>
+
+
                                     </tbody>
                                 </Table>
                             </div>
                             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-4 mb-3">
                                 <center>
                                     <h3 className="chartsHeadName">
-                                        Sarvashtak Varga Chart
+                                        {t('Sarvashtak Varga Chart')}
                                     </h3>
                                     <div className="sarvaChart" dangerouslySetInnerHTML={{
                                         __html: sarvashtakVargaChart ? sarvashtakVargaChart.svg : "",
                                     }}></div>
                                 </center>
-                                 </div>
+
+
+                            </div>
 
                         </div>
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-export default AshtakVarga
+export default AshtakVarga;

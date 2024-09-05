@@ -9,37 +9,34 @@ const Remedies = () => {
     const [sadhesatiRemedies, setSadhesatiRemedies] = useState(null);
     const userId = process.env.NEXT_PUBLIC_SANTAN_USER_ID;
     const apiKey = process.env.NEXT_PUBLIC_SANTAN_API_KEY;
-    const baseUrl = process.env.NEXT_PUBLIC_SANTAN_BASE_URL;
 
     useEffect(() => {
-        // Fetch form data from session storage
         const formData = JSON.parse(sessionStorage.getItem('Form'));
-        if (formData) {
-            setKundliForm(formData);
+       
 
             const OPTIONS = {
                 method: "POST",
                 body: JSON.stringify({
-                    day: formData.day,
-                    month: formData.month,
-                    year: formData.year,
-                    hour: formData.hour,
-                    min: formData.min,
-                    place: formData.place,
-                    "lat": formData.lat,
-                    "lon": formData.lon,
-                    "tzone": formData.tzone,
+                    day: kundliForm?.day || "14",
+        month: kundliForm?.month || "8",
+        year: kundliForm?.year || "2023",
+        hour: kundliForm?.hour || "13",
+        min: kundliForm?.min || "45",
+        place: kundliForm?.place || "Kota, Rajasthan, India",
+        lat: kundliForm?.lat || 25.2138156,
+        lon: kundliForm?.lon || 75.8647527,
+        tzone: kundliForm?.tzone || 5.5,
                     "maxRows": "6",
                 }),
                 headers: {
                     'Authorization': "Basic " + btoa( userId+ ":" + apiKey),
                     'Content-Type': 'application/json',
-                    'Accept-Language': localStorage.getItem('lng') || 'en',  // Default language fallback
+                    'Accept-Language': localStorage.getItem('lng') || 'en',  
                 },
             };
 
             // Fetch gemstone remedies
-            fetch(`${baseUrl}/basic_gem_suggestion`, OPTIONS)
+            fetch(`https://json.astrologyapi.com/v1/basic_gem_suggestion`, OPTIONS)
                 .then(response => response.json())
                 .then(data => {
                     setBgemRemedies(data);
@@ -49,7 +46,7 @@ const Remedies = () => {
                 });
 
             // Fetch rudraksha suggestions
-            fetch(`${baseUrl}/rudraksha_suggestion`, OPTIONS)
+            fetch(`https://json.astrologyapi.com/v1/rudraksha_suggestion`, OPTIONS)
                 .then(response => response.json())
                 .then(data => {
                     setRudrakshaRemedies(data);
@@ -59,7 +56,7 @@ const Remedies = () => {
                 });
 
             // Fetch sadhesati remedies
-            fetch(`${baseUrl}/sadhesati_remedies`, OPTIONS)
+            fetch(`https://json.astrologyapi.com/v1/sadhesati_remedies`, OPTIONS)
                 .then(response => response.json())
                 .then(data => {
                     setSadhesatiRemedies(data);
@@ -67,7 +64,7 @@ const Remedies = () => {
                 .catch(error => {
                     console.error('Error fetching sadhesati remedies:', error);
                 });
-        }
+        
     }, []);
     console.log("sadhesati", sadhesatiRemedies);
     console.log("gem", bgemRemedies)

@@ -110,9 +110,9 @@ body {
   border-radius: 4px;
 }
 .formHeader {
-  background-color: #8E2E0F;
-  color: white;
-  font-weight: bold;
+  background-color: #8E2E0F !important;
+  color: white !important;
+  font-weight: bold !important;
 }
 .card-header {
   padding: 0.75rem 1.25rem; /* Adjust padding as needed */
@@ -138,7 +138,7 @@ body {
   border-bottom: 2px solid;
 }
 .kundliSubNav {
-  display: contents;
+  display: contents !important;
 }
 .nav-item1{
   margin-top: 10px;
@@ -150,7 +150,7 @@ body {
   /* Example active state styles */
   background-color: #ffff !important;
   color: white !important;
-  font-weight: 700;
+  font-weight: 700 !important;
   
 }
 
@@ -224,7 +224,7 @@ button[type="button"] {
   font-weight: bold;
 }
 
-.tableHeadBirth {
+.tableHeadBirth th{
   text-align: center !important;
   background-color: #9C4018 !important;
   color: white !important;
@@ -529,11 +529,7 @@ input::placeholder {
 }
 /* -------------------------Kundali Home --------------------------------- */
 /* ------------------table-layout---------------- */
-.formHeader {
-  background-color: #8E2E0F;
-  color: white;
-  font-weight: bold;
-}
+
 
 .ktableBody,
 td {
@@ -2793,9 +2789,9 @@ button {
   }
 
   .kundliNvRow {
-     display: flex;
-     overflow-x: auto;
-     white-space: nowrap;
+     display: flex !important;
+     overflow-x: auto !important;
+     white-space: nowrap !important;
   }
 
   .sidebarleft {
@@ -2942,15 +2938,15 @@ button {
   }
 
   .kundliLinks {
-     display: flex;
-     overflow-x: auto;
-     white-space: nowrap;
+     display: flex !important;
+     overflow-x: auto !important;
+     white-space: nowrap !important;
   }
 
   .kundliNvRow {
-     display: flex;
-     overflow-x: auto;
-     white-space: nowrap;
+     display: flex !important;
+     overflow-x: auto !important;
+     white-space: nowrap !important;
 
   }
 
@@ -3137,13 +3133,7 @@ button {
   }
 }
 
-.nav_link1 {
-  /* Example active state styles */
-  background-color: #ffff !important;
-  color: white !important;
-  font-weight: 700;
-  
-}
+
 
 .nav-item1{
   margin-top: 10px;
@@ -3173,13 +3163,13 @@ button {
   }
 
   .kundliNvRow {
-     overflow-x: scroll;
-     overflow-y: none;
+     overflow-x: scroll !important;
+     overflow-y: none !important;
 
      /* overflow-x: scroll;
    overflow-y: none; */
-     height: 6rem;
-     font-size: .9rem;
+     height: 6rem !important;
+     font-size: .9rem !important;
 
   }
 
@@ -3776,27 +3766,27 @@ p a:hover {
 }
 
 .header .logo {
-  display: block;
-  width: 120px;
+  display: block !important;
+  width: 120px !important;
 }
 
 .header .center {
-  width: calc(100% - 300px);
+  width: calc(100% - 300px) !important;
 }
 
 .header .topLp {
-  padding-bottom: 15px;
-  margin-bottom: 12px;
-  width: 100%;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: flex-end;
-  border-bottom: 4px solid #9C4018;
+  padding-bottom: 15px !important ;
+  margin-bottom: 12px !important;
+  width: 100% !important;
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  border-bottom: 4px solid #9C4018 !important ;
 }
 
 .header .language li {
-  position: relative;
+  position: relative !important;
 }
 
 .header .language>li>a {
@@ -3865,7 +3855,7 @@ p a:hover {
 }
 
 .header .menu {
-  display: flex;
+  display: flex ;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -4699,19 +4689,19 @@ p a:hover {
   }
 
   .header {
-    min-height: 100px;
+    min-height: 100px !important;
   }
 
   .header .logo {
-    width: 80px;
+    width: 80px !important;
   }
 
   .header .ganesha {
-    width: 80px;
+    width: 80px !important;
   }
 
   .header .center {
-    width: calc(100% - 200px);
+    width: calc(100% - 200px) !important;
   }
 
   .header .mobileMenu {
@@ -4744,13 +4734,13 @@ p a:hover {
   }
 
   .header .menu li .nav-link {
-    text-align: center;
+    text-align: center !important;
   }
 
   .header .topLp {
-    padding: 0;
-    margin: 0;
-    border: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
   }
 
   .hero h1 {
@@ -5179,32 +5169,32 @@ p a:hover {
   }
 
   .header {
-    min-height: 80px;
+    min-height: 80px !important;
   }
 
   .header .logo {
-    width: 60px;
+    width: 60px !important;
   }
 
   .header .ganesha {
-    display: none;
+    display: none !important;
   }
 
   .header .center {
-    width: auto;
+    width: auto !important;
   }
 
   .header .topLp {
-    gap: 15px;
+    gap: 15px !important;
   }
 
   .header .btn {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   .header .language>li>a,
   .header .language li>ul>li>a {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   .header .mainMenu {
@@ -5683,7 +5673,7 @@ body {
   background-color: white;
   width: 100%;
 
-  border-radius: 5px;
+  border-radius: 5px ;
   text-align: center;
 }
 
@@ -5707,7 +5697,10 @@ body {
 .fesSearch {
   margin-top: -40%;
 }
-
+.flex-items-search{
+  display: flex;
+  flex-direction: row;
+}
 .searchFestival {
   color: black !important;
   margin-left: 0% !important;
@@ -6275,6 +6268,9 @@ body {
   .calSearch11 {
      margin-top: 0%;
   }
+  .calSearch12 {
+    margin-top: 3%;
+ }
 
   .calSearchYearSelect {
      margin-left: 0px;
@@ -6391,6 +6387,13 @@ body {
  color: #9C4018;
  text-align: center;
 }
+@media (min-width:992px)  {
+  .flex-festivals{
+    display: flex;
+    gap: 10px;
+  }
+}
+
 
 /* Profile css */
 /* .proCard{
@@ -6961,7 +6964,9 @@ a :hover {
       white-space: nowrap;
   }
 }
+
 /* Panchang */
+
 .muhurat p{
   margin-bottom: -7px;
   line-height: 35px;
@@ -9983,12 +9988,7 @@ teCardMonthly h6 {
   font-weight: bold;
 }
 
-.tableHeadBirth {
-  text-align: center !important;
-  background-color: #9C4018 !important;
-  color: white !important;
-  font-weight: bold !important;
-}
+
 
 .birthtableimg {
   border: 1px solid;
